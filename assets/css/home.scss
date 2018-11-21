@@ -1,0 +1,151 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
+@import 'mixins';
+
+$buttonBackground: #2c3e50;
+$buttonColor: rgba(255, 255, 255, 1);
+
+body {
+  margin: 0;
+  background: $bgcolor;
+  font-family: "Montserrat", "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
+}
+
+a {
+  color: $linkcolor;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.indent-sm {
+  margin-left: 10px;
+}
+
+#topbar {
+  background-color: $bgcolor;
+  color: $linkcolor;
+  padding: 0 30px;
+  line-height: 30px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  .nav {
+    margin: 10px 0;
+    flex: 1;
+  }
+}
+
+#main {
+  padding: 0;
+  background-color: $contrastcolor;
+}
+
+#footer {
+  background-color: $bgcolor;
+  margin: 0;
+  padding: 20px 0;
+  text-align: center;
+  .left {
+    float: left;
+  }
+  .nav-bottom {
+    padding: 0 10px;
+  }
+}
+
+#clickbait-buttons {
+  font-weight: bold;
+  font-size: 28px;
+  flex-wrap: wrap;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.container {
+  padding: 22px;
+}
+
+.share {
+  text-align: center;
+  .button {
+    width: 10%;
+    min-width: 100px;
+  }
+}
+
+.button.button--clickbait {
+  font-family: 'Lobster Two', cursive;
+  font-weight: 700;
+  margin: 28px;
+  flex-basis: 0;
+  flex-grow: 1;
+  margin-top: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button--clickbait:active {
+  position: relative;
+  top: 1px;
+}
+
+#init-twit {
+  padding: 0 2em;
+  height: 50px;
+}
+
+#headline {
+  min-height: 160px;
+  font-size: 40px;
+  text-align: center;
+  padding: 0 14px;
+  margin: 14px auto;
+  &.got-headline {
+    background: none;
+  }
+}
+
+#clickbait {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 20px 0;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#clickbait {
+}
+
+#clickbait-placeholder {
+  display: block;
+}
+
+.sparkley {
+  transition: all 0.25s ease;
+}
+
+.text-center { text-align: center; }
+
+.clickbait-link {
+  width: 75%;
+  font-size: 22px;
+  padding: 11px;
+  display: block;
+  margin: 10px auto;
+}
+
+.ladom.modal {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 80px;
+  border: 8px solid $button-grad;
+  background-color: $contrastcolor;
+  border-radius: 80px;
+}

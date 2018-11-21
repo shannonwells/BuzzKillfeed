@@ -1,0 +1,50 @@
+*~
+.idea
+*.gem
+*.rbc
+.env
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/test/tmp/
+/test/version_tmp/
+/tmp/
+/log
+
+
+## Specific to RubyMotion:
+.dat*
+.repl_history
+build/
+
+## Documentation cache and generated files:
+/.yardoc/
+/_yardoc/
+/doc/
+
+## Elixir/Phoenix
+_build
+/deps
+tmp
+node_modules
+/installer/_build
+*.dump
+
+# Since we are building js and css from web/static,
+# we ignore priv/static/{css,js}. You may want to
+# comment this depending on your deployment strategy.
+/priv/static/css
+/priv/static/js
+/priv/static/images
+/priv/static
+/rel
+
+# The config/prod.secret.exs file by default contains sensitive
+# data and you should not commit it into version control.
+#
+# Alternatively, you may comment the line below and commit the
+# secrets file as long as you replace its contents by environment
+# variables.
+/config/prod.secret.exs
