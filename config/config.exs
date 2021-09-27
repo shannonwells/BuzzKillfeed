@@ -26,6 +26,12 @@ config :esbuild,
          env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
        ]
 
+# Use phoenix slime for rendering slim templates
+config :phoenix, :template_engines,
+       slim: PhoenixSlime.Engine,
+       slime: PhoenixSlime.Engine,
+       slimleex: PhoenixSlime.LiveViewEngine # If you want to use LiveView
+
 # Configures Elixir's Logger
 config :logger, :console,
        format: "$time $metadata[$level] $message\n",

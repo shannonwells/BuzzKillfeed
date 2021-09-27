@@ -1,25 +1,23 @@
 defmodule BuzzKillfeed.Application do
-  use Application
-
-  alias BuzzKillfeedWeb.Endpoint
-
-  {Phoenix.PubSub, [name: BuzzKillfeed.PubSub, adapter: Phoenix.PubSub.PG2]}
-
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
-  def start(_type, _args) do
-    import Supervisor.Spec
+  @moduledoc false
 
-    # Define workers and child supervisors to be supervised
+  use Application
+
+  @impl true
+  def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      supervisor(BuzzKillfeed.Repo, []),
-
-      # Start the endpoint when the application starts
-      supervisor(BuzzKillfeedWeb.Endpoint, []),
-
-      # Start your own worker by calling: BuzzKillfeed.Worker.start_link(arg1, arg2, arg3)
-      # worker(BuzzKillfeed.Worker, [arg1, arg2, arg3]),
+      BuzzKillfeed.Repo,
+      # Start the Telemetry supervisor
+      BuzzKillfeedWeb.Telemetry,
+      # Start the PubSub system
+      {Phoenix.PubSub, name: BuzzKillfeed.PubSub},
+      # Start the Endpoint (http/https)
+      BuzzKillfeedWeb.Endpoint
+      # Start a worker by calling: BuzzKillfeed.Worker.start_link(arg)
+      # {BuzzKillfeed.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
@@ -30,8 +28,9 @@ defmodule BuzzKillfeed.Application do
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
+  @impl true
   def config_change(changed, _new, removed) do
-    Endpoint.config_change(changed, removed)
+    BuzzKillfeedWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

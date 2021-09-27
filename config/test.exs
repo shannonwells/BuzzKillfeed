@@ -8,7 +8,7 @@ import Config
 config :buzz_killfeed, BuzzKillfeed.Repo,
        username: "root",
        password: "",
-       database: "test_app_test#{System.get_env("MIX_TEST_PARTITION")}",
+       database: "buzz_killfeed_test#{System.get_env("MIX_TEST_PARTITION")}",
        hostname: "localhost",
        pool: Ecto.Adapters.SQL.Sandbox,
        pool_size: 10
