@@ -1,21 +1,30 @@
-use Mix.Config
+import Config
 
-# We run a server during test for Wallaby integration testing.
+# Configure your database
+#
+# The MIX_TEST_PARTITION environment variable can be used
+# to provide built-in test partitioning in CI environment.
+# Run `mix help test` for more information.
+config :buzz_killfeed, BuzzKillfeed.Repo,
+       username: "root",
+       password: "",
+       database: "test_app_test#{System.get_env("MIX_TEST_PARTITION")}",
+       hostname: "localhost",
+       pool: Ecto.Adapters.SQL.Sandbox,
+       pool_size: 10
+
+# We don't run a server during test. If one is required,
+# you can enable the server option below.
 config :buzz_killfeed, BuzzKillfeedWeb.Endpoint,
-  http: [port: 4001],
-  server: true,
-  secret_key_base: "0123456789012345678901234567890123456789012345678901234567890123456789"
+       http: [ip: {127, 0, 0, 1}, port: 4002],
+       secret_key_base: "0zbJSKszHTfSaEIhmaqBzLNzPEkVE9zPfdLFMyFULH/pp0SbSytQmG/tzgDo335D",
+       server: false
+
+# In test we don't send emails.
+config :buzz_killfeed, BuzzKillfeed.Mailer, adapter: Swoosh.Adapters.Test
 
 # Print only warnings and errors during test
 config :logger, level: :warn
 
-# Configure your database
-config :buzz_killfeed, BuzzKillfeed.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "buzz_killfeed_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
-
-config :buzz_killfeed, :sql_sandbox, true
+# Initialize plugs at runtime for faster test compilation
+config :phoenix, :plug_init_mode, :runtime

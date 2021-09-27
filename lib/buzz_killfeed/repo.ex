@@ -1,5 +1,5 @@
 defmodule BuzzKillfeed.Repo do
-  use Ecto.Repo, otp_app: :buzz_killfeed
+  use Ecto.Repo, otp_app: :buzz_killfeed, adapter: Ecto.Adapters.MyXQL
 
   @doc """
   Dynamically loads the repository url from the
