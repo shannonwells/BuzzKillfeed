@@ -21,7 +21,7 @@ defmodule BuzzKillfeedWeb.Endpoint do
        at: "/",
        from: :buzz_killfeed,
        gzip: false,
-       only: ~w(assets fonts images favicon manifest.json favicon.ico robots.txt)
+       only: ~w(assets css fonts images favicon manifest.json favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

@@ -1,0 +1,29 @@
+.fitbGame__Form {
+  font-size: large;
+  margin: 40px auto;
+}
+.fitbGame__Labels {
+  display: flex;
+  justify-content: left;
+}
+
+.fitbGame__Label {
+  margin-right: 42px;
+}
+
+.fitbGame__LabelText {
+  margin-right: 12px;
+  &::after {
+    content: " 👉";
+    font-size: x-large;
+  }
+}
+
+.fitbGame__Blank {
+
+}
+
+.fitbGame__Submit {
+  margin-top: 22px;
+  padding: 22px;
+}

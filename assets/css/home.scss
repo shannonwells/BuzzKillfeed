@@ -9,6 +9,7 @@ $buttonColor: rgba(255, 255, 255, 1);
 
 body {
   margin: 0;
+  padding-top: 0;
   background: $bgcolor;
   font-family: "Montserrat", "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
 }
@@ -33,13 +34,14 @@ h1 {
   display: flex;
   justify-content: space-around;
   text-align: center;
-  .nav {
-    margin: 10px 0;
-    flex: 1;
-  }
 }
 
-#main {
+.nav {
+  margin: 10px 0;
+  flex: 1;
+}
+
+main {
   padding: 0;
   background-color: $contrastcolor;
 }

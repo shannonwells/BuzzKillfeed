@@ -1,10 +1,13 @@
-main class="container"
-  #topbar
-    .nav
-      a href="/" Home
-    .nav
-      a href="/clickbait_generator" Clickbait Generator
-    = @inner_content
+#topbar.container
+  .nav
+    a href="/" Home
+  .nav
+    a href="/clickbait_generator" Clickbait Generator
+  .nav
+    a href="/fill_in_the_bait" Fill In the Bait
+  .nav
+    a href="/about" About
+= @inner_content
 //javascript:
 //  window.twttr = (function (d, s, id) {
 //    var js, fjs = d.getElementsByTagName(s)[0],

@@ -1,11 +1,8 @@
 $icon-font-path: "/fonts/"; /* use fonts from priv/static/fonts/ */
-body {
-    padding-top: 65px;
-    background: red;
-}
 /* Custom Stuff */
 @import "buzz_killfeed";
 @import "home";
 @import "mixins";
 @import "variables";
+@import "fill_in_the_blank";
 /* This file is for your main application css. */

@@ -1,4 +1,4 @@
-defmodule BuzzKillfeedWeb.FillInTheBlankController do
+defmodule FillInTheBait.FillInTheBaitController do
   use BuzzKillfeedWeb, :controller
 
   def index(conn, _params) do

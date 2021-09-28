@@ -18,6 +18,8 @@ defmodule BuzzKillfeedWeb.Router do
     pipe_through :browser
 
     get "/", HomeController, :index
+
+    get "/about", HomeController, :about
   end
 
   scope "/clickbait_generator", ClickbaitGenerator do
@@ -26,6 +28,12 @@ defmodule BuzzKillfeedWeb.Router do
     get "/", ClickbaitGeneratorController, :index
 
     get "/best_of", ClickbaitGeneratorController, :best_of
+  end
+
+  scope "/fill_in_the_bait", FillInTheBait do
+    pipe_through :browser
+
+    get "/", FillInTheBaitController, :index
   end
 
 
@@ -42,18 +50,6 @@ defmodule BuzzKillfeedWeb.Router do
     scope "/" do
       pipe_through :browser
       live_dashboard "/dashboard", metrics: BuzzKillfeedWeb.Telemetry
-    end
-  end
-
-  # Enables the Swoosh mailbox preview in development.
-  #
-  # Note that preview only shows emails that were sent by the same
-  # node running the Phoenix server.
-  if Mix.env() == :dev do
-    scope "/dev" do
-      pipe_through :browser
-
-#      forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
   end
 end
