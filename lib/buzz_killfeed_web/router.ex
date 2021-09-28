@@ -20,6 +20,15 @@ defmodule BuzzKillfeedWeb.Router do
     get "/", HomeController, :index
   end
 
+  scope "/clickbait_generator", ClickbaitGenerator do
+    pipe_through :browser
+
+    get "/", ClickbaitGeneratorController, :index
+
+    get "/best_of", ClickbaitGeneratorController, :best_of
+  end
+
+
   # Enables LiveDashboard only for development
   #
   # If you want to use the LiveDashboard in production, you should put

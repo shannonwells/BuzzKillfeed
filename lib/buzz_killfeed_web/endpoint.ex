@@ -13,6 +13,7 @@ defmodule BuzzKillfeedWeb.Endpoint do
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
   # Serve at "/" the static files from "priv/static" directory.
+  # Put static files into priv/static
   #
   # You should set gzip to true if you are running phx.digest
   # when deploying your static files in production.

@@ -1,4 +1,4 @@
-defmodule BuzzKillfeedWeb.ClickbaitGeneratorController do
+defmodule ClickbaitGenerator.ClickbaitGeneratorController do
   use BuzzKillfeedWeb, :controller
 
   def index(conn, _params) do
@@ -6,7 +6,7 @@ defmodule BuzzKillfeedWeb.ClickbaitGeneratorController do
     |> render("index.html")
   end
 
-  def best_of(conn, %{"id" => id}) do
-    render conn, "best_of.html", id: id
+  def best_of(conn, _params) do
+    render conn, "best_of.html"
   end
 end
