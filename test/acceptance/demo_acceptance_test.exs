@@ -5,6 +5,6 @@ defmodule BuzzKillfeed.UserListTest do
     session
     |> visit("/")
     |> find(Query.css("#js-demo"))
-    |> assert_text("Brunch with custom js is working")
+    |> assert_text("custom js is working")
   end
 end

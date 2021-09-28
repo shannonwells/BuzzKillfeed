@@ -1,7 +1,10 @@
 import Config
+zombie = Path.expand("../zombie.sh", __DIR__)
+{cmds, _} = Code.eval_file("config/cmds.exs")
 
 # Configure your database
-config :buzz_killfeed, BuzzKillfeed.Repo,
+config :buzz_killfeed,
+       BuzzKillfeed.Repo,
        username: "root",
        password: "",
        database: "buzz_killfeed_dev",
@@ -15,15 +18,24 @@ config :buzz_killfeed, BuzzKillfeed.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with esbuild to bundle .js and .css sources.
-config :buzz_killfeed, BuzzKillfeedWeb.Endpoint,
+config :buzz_killfeed,
+       BuzzKillfeedWeb.Endpoint,
        # Binding to loopback ipv4 address prevents access from other machines.
        # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
-       http: [ip: {127, 0, 0, 1}, port: 4000],
+       http: [
+         ip: {127, 0, 0, 1},
+         port: 4000
+       ],
        check_origin: false,
        code_reloader: true,
        debug_errors: true,
        secret_key_base: "6MG997wc3n/8SnWEIofkU03QE+P4ZsRcbIGZjal1AJP3qYq//RFp6BSLahJCiYyH",
        watchers: [
+         sass: [
+           "--watch",
+           "assets/css/app.scss",
+           "priv/static/css/app.css"
+         ],
          # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
          esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
        ]
@@ -53,7 +65,8 @@ config :buzz_killfeed, BuzzKillfeedWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :buzz_killfeed, BuzzKillfeedWeb.Endpoint,
+config :buzz_killfeed,
+       BuzzKillfeedWeb.Endpoint,
        live_reload: [
          patterns: [
            ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",

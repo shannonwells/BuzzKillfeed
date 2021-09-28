@@ -7,6 +7,11 @@ html lang="en"
     = csrf_meta_tag()
     = live_title_tag assigns[:page_title] || "TestApp", suffix: " · Phoenix Framework"
     link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.scss"
+    link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"
+    link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"
+    link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"
+    link rel="manifest" href="manifest.json"
+    link rel="stylesheet" href="/assets/app.css"
   body
     main role="main"
       = @inner_content
