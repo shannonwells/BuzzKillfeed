@@ -86,9 +86,8 @@ defmodule BuzzKillfeedWeb do
 
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
-
       import BuzzKillfeedWeb.ErrorHelpers
-      import BuzzKillfeedWeb.Gettext
+
       alias BuzzKillfeedWeb.Router.Helpers, as: Routes
     end
   end
