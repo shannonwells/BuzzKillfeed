@@ -1,5 +1,6 @@
 defmodule BuzzKillfeed.Repo do
   use Ecto.Repo, otp_app: :buzz_killfeed, adapter: Ecto.Adapters.MyXQL
+  import Ecto.Query
 
   @doc """
   Dynamically loads the repository url from the
@@ -14,5 +15,10 @@ defmodule BuzzKillfeed.Repo do
     |> Keyword.put(:pool_size, pool_size)
 
     {:ok, opts}
+  end
+
+  def random_noun() do
+    q =  from(BuzzKillfeed.Noun, order_by: [fragment("RAND()")], limit: 1)
+    q |> one
   end
 end

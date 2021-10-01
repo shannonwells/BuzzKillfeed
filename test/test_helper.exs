@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(TestApp.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(BuzzKillfeed.Repo, :manual)

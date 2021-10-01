@@ -28,6 +28,8 @@ defmodule BuzzKillfeedWeb.Router do
     get "/", ClickbaitGeneratorController, :index
 
     get "/best_of", ClickbaitGeneratorController, :best_of
+
+    get "/generate", ClickbaitGeneratorController, :generate
   end
 
   scope "/fill_in_the_bait", FillInTheBait do
