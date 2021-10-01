@@ -1,5 +1,5 @@
 # Buzz Killfeed
-![main](https://github.com/shannonwells/BuzzKillfeed/.github/workflows/elixir.yml/badge.svg?branch=main)
+![main](https://github.com/shannonwells/BuzzKillfeed/docs/actions/workflows/elixir.yml/badge.svg?branch=main)
 
 
 ## ClickbaitGenerator rewritten in Elixir/Phoenix
