@@ -59,5 +59,4 @@ config :buzz_killfeed, BuzzKillfeedWeb.Endpoint,
 
 # Configure your database
 config :buzz_killfeed, BuzzKillfeed.Repo,
-  adapter: Ecto.Adapters.Postgres
   # ssl: true

@@ -5,4 +5,9 @@ defmodule BuzzKillfeedWeb.HomeController do
     conn
     |> render("index.html")
   end
+
+  def about(conn, _params) do
+    conn
+    |> render("about.html")
+  end
 end

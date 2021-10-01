@@ -1,48 +1,29 @@
-doctype 5
-html lang="en"
-  head
-    title Buzz Killfeed
-    meta charset="utf-8"
-    meta http-equiv="X-UA-Compatible" content="IE=edge"
-    meta name="viewport" content="width=device-width, initial-scale=1"
-    meta name="description" content=""
-    meta name="author" content=""
-    meta name="twitter:site" content="@shannonewells"
-
-    link rel="stylesheet" href="#{static_path(@conn, "/css/app.css")}"
-
-  body
-      main role="main"
-        #topbar
-            .nav I'm Buzz Killfeed! I'm Here To Rescue You
-            .nav
-              a href="/" Home
-            .nav
-              a href="/clickbait_generator" Clickbait Generator
-        = render @view_module, @view_template, assigns
-
-    script src="#{static_path(@conn, "/js/app.js")}"
-
-    footer
-      .container
-        p &copy; shannonewells, All rights reserved.
-        .twitter-button
-          a href="https://twitter.com/shannonewells" class="twitter-follow-button" data-show-count="false" data-lang="en" data-size="medium"
-      javascript:
-        window.twttr = (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-          t = window.twttr || {};
-        if (d.getElementById(id)) return t;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://platform.twitter.com/widgets.js";
-        fjs.parentNode.insertBefore(js, fjs);
-
-        t._e = [];
-        t.ready = function(f) {
-          t._e.push(f);
-        };
-
-        return t;
-      }(document, "script", "twitter-wjs"));
-    script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', type="application/javascript"
+#topbar.container
+  .nav
+    a href="/" Home
+  .nav
+    a href="/clickbait_generator" Clickbait Generator
+  .nav
+    a href="/fill_in_the_bait" Fill In the Bait
+  .nav
+    a href="/about" About
+= @inner_content
+//javascript:
+//  window.twttr = (function (d, s, id) {
+//    var js, fjs = d.getElementsByTagName(s)[0],
+//      t = window.twttr || {};
+//    if (d.getElementById(id)) return t;
+//    js = d.createElement(s);
+//    js.id = id;
+//    js.src = "https://platform.twitter.com/widgets.js";
+//    fjs.parentNode.insertBefore(js, fjs);
+//
+//    t._e = [];
+//    t.ready = function (f) {
+//      t._e.push(f);
+//    };
+//
+//    return t;
+//  }(document, "script", "twitter-wjs"));
+/
+/ script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', type="application/javascript"

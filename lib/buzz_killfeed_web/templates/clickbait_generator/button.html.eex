@@ -1,0 +1,6 @@
+<span class="<%= BuzzKillfeedWeb.ClickbaitGeneratorView.button_class(@button_type, "listicle") %>"
+      id="<%= @button_type %>"
+      title="<%= humanize(@button_type) %>"
+      data-icon="<%= BuzzKillfeedWeb.ClickbaitGeneratorView.button_icon(@button_type) %>">
+    <%= humanize(@button_type) %>
+</span>

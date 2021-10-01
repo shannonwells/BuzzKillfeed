@@ -1,6 +1,9 @@
 @import "variables";
+body {
+    background: $bgcolor
+}
+
 .jumbotron {
     background: $contrastcolor;
-    color: $bgcolor;
     padding: 30px;
 }
