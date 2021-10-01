@@ -3,6 +3,9 @@
 
 
 ## ClickbaitGenerator rewritten in Elixir/Phoenix
+See the old and busted [Ruby on Rails version](http://www.buzzkillfeed.com)
+
+The fresh, new, amazing version is not yet released.
 
 ## Learn more about Phoenix
 
