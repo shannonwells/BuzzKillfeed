@@ -3,7 +3,7 @@
 
 
 ## ClickbaitGenerator rewritten in Elixir/Phoenix
-See the old and busted [Ruby on Rails version](http://www.buzzkillfeed.com)
+See the old and busted [Ruby on Rails version](http://www.buzzkillfeed.me)
 
 The fresh, new, amazing version is not yet released.
 
