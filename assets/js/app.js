@@ -1,6 +1,10 @@
+import "./clickbait_generator"
+const bk = require("./buzz_killfeed");
+
 // We import the CSS which is extracted to its own file by esbuild.
-// Remove this line if you add a your own CSS build pipeline (e.g postcss).
-import "../../_build/assets/app.css"
+// Remove this line if you add your own CSS build pipeline (e.g postcss).
+console.log("foo")
+import "../../priv/static/assets/app.css"
 
 // If you want to use Phoenix channels, run `mix help phx.gen.channel`
 // to get started and then uncomment the line below.
@@ -12,6 +16,8 @@ import "../../_build/assets/app.css"
 // import them using relative paths:
 //
 //     import "./vendor/some-package.js"
+import "./vendor/jquery.modal.min"
+import "./vendor/sparklotron"
 //
 // Alternatively, you can `npm install some-package` and import
 // them using a path starting with the package name:
@@ -39,6 +45,4 @@ liveSocket.connect()
 // >> liveSocket.enableDebug()
 // >> liveSocket.enableLatencySim(1000)  // enabled for duration of browser session
 // >> liveSocket.disableLatencySim()
-
-document.getElementById("js-demo").textContent = "I am from app.js"
 

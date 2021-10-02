@@ -34,7 +34,7 @@ config :buzz_killfeed,
          sass: [
            "--watch",
            "assets/css/app.scss",
-           "priv/static/css/app.css"
+           "priv/static/assets/app.css"
          ],
          # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
          esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}

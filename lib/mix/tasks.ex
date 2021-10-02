@@ -5,7 +5,7 @@ defmodule Mix.Tasks.SassWatch do
   def run(_args) do
     {cmds, _} = Code.eval_file("config/cmds.exs")
 
-    run_cmd(cmds.sass, ["--style=compressed"])
+    run_cmd(cmds.sass, ["--style=compressed","--watch"])
   end
 
   defp run_cmd(cmd, args) do

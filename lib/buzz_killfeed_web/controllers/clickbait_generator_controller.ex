@@ -8,6 +8,7 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorController do
     |> render("index.html")
   end
 
+  # TODO: should be restricted to JSON only
   def generate(conn, %{"headline_type" => headline_type}) do
     headline = case headline_type do
       "listicle" -> build_listicle()

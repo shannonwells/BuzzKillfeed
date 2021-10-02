@@ -84,11 +84,6 @@ CBG = {
 
 
 window.onload = function () {
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
     $("a.clickbaits #clickbait-buttons .button--clickbait").click(function (event) {
         window.location = '/';
     });
@@ -110,4 +105,5 @@ window.onload = function () {
     } else if ($('.home #headline').length) {
         CBG.getHeadline('listicle');
     }
+    document.getElementById("js-demo").textContent = "I am from clickbait_generator.js"
 };

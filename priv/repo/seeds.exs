@@ -337,6 +337,8 @@ seasonal_adj = %{
   ],
   :winter => ["Icy", "Snowy", "Yuletide", "Christmasy", "Fried", "Festive", "Sparkling", "Jingling"]
 }
+
+# TODO: add season field to adjectives
 seasonal_adj
 |> Map.keys
 |> Enum.map (fn season_a ->
@@ -699,7 +701,7 @@ nexts = [
   "Is Binge-Worthy",
   "Is Splurge-Worthy",
   "Is So Cringe",
-  "Is Testing My Faith"
+  "Is Testing My Faith",
   "Will Make You Be Like...WHOA",
   "Does Not Live Up To Anyone's Expectations",
   "Is A Complete Disappointment",
@@ -714,12 +716,36 @@ particles = ["A","The","Some"]
 Repo.insert_all(Verb, verbs, on_conflict: :nothing)
 
 templates = [
-  "Some #{noun} Tried To #{verb} Mount Everest. What Happened Next Has #{adjective} #{people} Rioting",
-  "The #{number} #{adjective} #{plural_noun} That #{verb} Your #{noun}",
-  "When #{celebrity} #{past_tense_verb} A #{adjective} #{noun}, ",
-  "You Don't Want to #{verb} This #{adjective} #{noun}"
-  "This #{adjective} #{noun} That #{past_tense_verb} a #{noun} Can't Be Unseen"
-  "This #{person} Wants to #{verb} Your #{noun}. What Could Go Wrong?"
-  "#{celebrity} #{adverb} }Wishes Everyone Would Stop #{verb}ing So #{adjective}"
-  "My #{noun} Stopped #{verb}ing, And Now I Can't Stop #{verb}ing my #{noun}"
+  "Some {noun} Tried To {verb} Mount Everest. What Happened Next Has {adjective} {people} Rioting",
+  "The {number} {adjective} {plural_noun} That {verb} Your {noun}",
+  "The {number} {adjective} {plural_noun} That {verb} Your {noun}",
+  "The {number} {adjective} {plural_noun} That {verb} Your {noun}",
+  "The {number} {adjective} {plural_noun} That {verb} Your {noun}",
+  "When {celebrity} {past_tense_verb} A {adjective} {noun}, ",
+  "When {celebrity} {past_tense_verb} A {adjective} {noun}, ",
+  "When {celebrity} {past_tense_verb} A {adjective} {noun}, ",
+  "When {celebrity} {past_tense_verb} A {adjective} {noun}, ",
+  "You Don't Want to {verb} This {adjective} {noun}",
+  "You Don't Want to {verb} This {adjective} {noun}",
+  "You Don't Want to {verb} This {adjective} {noun}",
+  "You Don't Want to {verb} This {adjective} {noun}",
+  "This {adjective} {noun} That {past_tense_verb} a {noun} Can't Be Unseen",
+  "This {adjective} {noun} That {past_tense_verb} a {noun} Can't Be Unseen",
+  "This {adjective} {noun} That {past_tense_verb} a {noun} Can't Be Unseen",
+  "This {adjective} {noun} That {past_tense_verb} a {noun} Can't Be Unseen",
+  "This {adjective} {noun} That {past_tense_verb} a {noun} Can't Be Unseen",
+  "This {person} Wants to {verb} Your {noun}. What Could Go Wrong?",
+  "This {person} Wants to {verb} Your {noun}. What Could Go Wrong?",
+  "This {person} Wants to {verb} Your {noun}. What Could Go Wrong?",
+  "This {person} Wants to {verb} Your {noun}. What Could Go Wrong?",
+  "{celebrity} {adverb} }Wishes Everyone Would Stop {verb}ing So {adjective}",
+  "{celebrity} {adverb} }Wishes Everyone Would Stop {verb}ing So {adjective}",
+  "{celebrity} {adverb} }Wishes Everyone Would Stop {verb}ing So {adjective}",
+  "{celebrity} {adverb} }Wishes Everyone Would Stop {verb}ing So {adjective}",
+  "{celebrity} {adverb} }Wishes Everyone Would Stop {verb}ing So {adjective}",
+  "My {noun} Stopped {verb}ing, And Now I Can't Stop {verb}ing my {noun}",
+  "My {noun} Stopped {verb}ing, And Now I Can't Stop {verb}ing my {noun}",
+  "My {noun} Stopped {verb}ing, And Now I Can't Stop {verb}ing my {noun}",
+  "My {noun} Stopped {verb}ing, And Now I Can't Stop {verb}ing my {noun}",
+  "My {noun} Stopped {verb}ing, And Now I Can't Stop {verb}ing my {noun}",
 ]
