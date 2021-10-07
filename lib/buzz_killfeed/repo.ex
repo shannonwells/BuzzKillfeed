@@ -1,6 +1,10 @@
 defmodule BuzzKillfeed.Repo do
   use Ecto.Repo, otp_app: :buzz_killfeed, adapter: Ecto.Adapters.MyXQL
   import Ecto.Query
+  alias BuzzKillfeed.Adjective
+  alias BuzzKillfeed.First
+  alias BuzzKillfeed.Noun
+  alias BuzzKillfeed.Predicate
 
   @doc """
   Dynamically loads the repository url from the
@@ -18,7 +22,20 @@ defmodule BuzzKillfeed.Repo do
   end
 
   def random_noun() do
-    q =  from(BuzzKillfeed.Noun, order_by: [fragment("RAND()")], limit: 1)
+    q =  from(Noun, order_by: [fragment("RAND()")], limit: 1)
+    q |> one
+  end
+
+  def random_adj() do
+    q =  from(Adjective, order_by: [fragment("RAND()")], limit: 1)
+    q |> one
+  end
+  def random_first() do
+    q =  from(First, order_by: [fragment("RAND()")], limit: 1)
+    q |> one
+  end
+  def random_pred() do
+    q =  from(Predicate, order_by: [fragment("RAND()")], limit: 1)
     q |> one
   end
 end

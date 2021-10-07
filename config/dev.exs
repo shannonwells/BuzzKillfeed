@@ -31,12 +31,7 @@ config :buzz_killfeed,
        debug_errors: true,
        secret_key_base: "6MG997wc3n/8SnWEIofkU03QE+P4ZsRcbIGZjal1AJP3qYq//RFp6BSLahJCiYyH",
        watchers: [
-         sass: [
-           "--watch",
-           "assets/css/app.scss",
-           "priv/static/assets/app.css"
-         ],
-         # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
+         {cmds.zombie, cmds.sass ++ ["--watch"]},
          esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
        ]
 

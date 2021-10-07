@@ -18,11 +18,12 @@ config :buzz_killfeed, BuzzKillfeedWeb.Endpoint,
        live_view: [signing_salt: "bkebIZ7t"]
 
 # Configure esbuild (the version is required)
+# this has to be duplicated here beacuse apparently setting the NODE_PATH environment variable there
+#       breaks it here. Or else I haven't figured out how to make it work.
 config :esbuild,
        version: "0.12.26",
        default: [
-         args: ~w(js/app.js --bundle --target=es2016 --outdir=../priv/static/assets),
-         cd: Path.expand("../assets", __DIR__),
+         args: ~w(./assets/js/app.js --bundle --target=es2016 --outfile=priv/static/js/app.js),
          env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
        ]
 

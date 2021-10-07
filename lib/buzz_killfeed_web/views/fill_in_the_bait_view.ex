@@ -1,3 +1,3 @@
-defmodule BuzzKillfeedWeb.FillInTheBaitView do
+defmodule FillInTheBait.FillInTheBaitView do
   use BuzzKillfeedWeb, :view
 end
