@@ -1,6 +1,6 @@
 <div.jumbotron>
     <div id="clickbait" class="clickbait-area">
-        <h1 id="headline">content here</h1>
+        <h1 id="headline"><%= @headline %></h1>
         <div id="clickbait-buttons">
             <%= for button_type <- button_types() do %>
                 <%= render("button.html", button_type: button_type) %>

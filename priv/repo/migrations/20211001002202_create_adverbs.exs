@@ -7,5 +7,12 @@ defmodule BuzzKillfeed.Repo.Migrations.CreateAdverbs do
 
       timestamps()
     end
+    alter table(:adverbs) do
+      modify(:inserted_at, :timestamp, default: fragment("NOW()"))
+      modify(:updated_at, :timestamp, default: fragment("NOW()"))
+    end
+  end
+  def down do
+    drop table(:adverbs)
   end
 end

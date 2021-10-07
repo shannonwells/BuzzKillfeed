@@ -4,8 +4,9 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorController do
   alias BuzzKillfeed.Repo
 
   def index(conn, _params) do
+    headline =
     conn
-    |> render("index.html")
+    |> render("index.html", %{headline: random_headline()})
   end
 
   # TODO: should be restricted to JSON only
@@ -24,8 +25,11 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorController do
     "This is a new #{Repo.random_noun()}"
   end
 
-  defp show(conn, %{"id" => id}) do
+  def show(conn, %{"id" => id}) do
     headline = "This is a saved headline fetched by id from the db"
-    render conn, "headline.html", %{headline: headline}
+
+    conn
+    |> render( "index.html", %{headline: headline})
   end
+
 end

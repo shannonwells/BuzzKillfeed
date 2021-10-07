@@ -13,11 +13,78 @@ alias BuzzKillfeed.Repo
 alias BuzzKillfeed.Noun
 alias BuzzKillfeed.Adjective
 alias BuzzKillfeed.First
-alias BuzzKillfeed.Last
 alias BuzzKillfeed.Predicate
 alias BuzzKillfeed.Adverb
-alias BuzzKillfeed.Particle
 alias BuzzKillfeed.Superlative
+alias BuzzKillfeed.Headline
+alias BuzzKillfeed.Verb
+alias BuzzKillfeed.Next
+
+Repo.insert_all(
+  Headline,
+  [
+    [
+      headline: "This Very First Clickbait Generator Headline Will Make You Laugh So Hard You'll Vomit",
+      headline_type: 2
+    ],
+    [headline: "The 82 SAD Jawas That Prove You're A Complete Jerk", headline_type: 0],
+    [headline: "Watch As This Old Cat Sniffs A Funny Flight Attendant", headline_type: 4],
+    [
+      headline: "The 28 Coma-Inducing Circuses That The Russians Definitely Did Not Hack Into. They Didn't Do It, Nobody Saw Them, You Can't Prove Anything!!!",
+      headline_type: 0
+    ],
+    [headline: "Watch As  Megatron Ogles  Alien Kim Jong Un", headline_type: 4],
+    [headline: "The 86 Rigged Animal Vines That All Tea Lovers Need In Their Lives", headline_type: 0],
+    [
+      headline: "Some Celebrity Took This Photograph. What Happened Next Will Give You All The Feels.",
+      headline_type: 1
+    ],
+    [
+      headline: "Donald Trump Discovered There Were Snakes On His Motherf*n' Plane. What Happened Next Is the Best Thing You'll See In The Whole Frigging World.",
+      headline_type: 1
+    ],
+    [headline: "Watch As  Beavis Goes Near Gorgeous Kim Jong Un", headline_type: 4],
+    [headline: "You Don't Want To Answer This Bozonic Leg Lamp", headline_type: 2],
+    [headline: "Watch As This Honey Badger Sees This Fabulous Cranky Old Cat", headline_type: 4],
+    [
+      headline: "Seth Rogen Built Darth Vader Out Of Sex Toys. What Happened Next Will Make You Crap Your Pants.",
+      headline_type: 2
+    ],
+    [headline: "Watch As This Short Fingered Vulgarian Steals  Coma Inducing Obi-Wan Kenobi", headline_type: 4],
+    [headline: "The 71 Scruffy-Looking Friendships That You Ignore At Your Peril", headline_type: 0],
+    [headline: "The 52 Hoopy Leg Lamps That Ran Yelping Like Scalded Dogs", headline_type: 0],
+    [headline: "The 97 Time-Travelling Furries That Today's Kids Will Never Understand", headline_type: 0],
+    [headline: "Watch As This Cranky Old Cat Tells Your Mom About  Time-Travelling Shia LaBeouf", headline_type: 4],
+    [headline: "Watch As  Mrs. Claus Answers Some Unbelievable Florida Man", headline_type: 4],
+    [
+      headline: "The 5 Time-Travelling Microdown Patagonia Jackets That Remind Everyone of Used Car Salesmen",
+      headline_type: 0
+    ],
+    [headline: "The 91 Haunted Ukeleles That Think They're Getting Away With It", headline_type: 0],
+    [
+      headline: "Lando Calrissian Washed His Car. What Happened Next Will Literally Scare You to Death. No Really, You'll Actually Die.",
+      headline_type: 2
+    ],
+    [headline: "The 64 SAD Nerds That Truly Capture The Intensity of Dungeons and Dragons", headline_type: 0],
+    [headline: "The 32 Smurfing Signs That Will Make Your Commute Less Crappy", headline_type: 0],
+    [headline: "The 48 Alien Americans That Aren't Poop", headline_type: 0],
+    [headline: "Watch As This Short Fingered Vulgarian Runs Into  Crooked Ivanka Trump", headline_type: 4],
+    [headline: "You Don't Want To Trick This HUGE Lover", headline_type: 2],
+    [headline: "You Don't Want To Flee This Short-Fingered Mom", headline_type: 2],
+    [headline: "The 95 Filthy Felonies That Prove San Francisco Blows Goats", headline_type: 0],
+    [headline: "Watch As  Kellyann Conway Sniffs  Confused Kim Kardashian", headline_type: 4],
+    [headline: "You Don't Want To Befriend This Boozy Virgin Ragequitter", headline_type: 2],
+    [
+      headline: "Steve Bannon Saw A Bee. What Happened Next Will Warm the Cockles of Your Heart. Whatever That Means.",
+      headline_type: 1
+    ],
+    [headline: "The 67 X-Rated Short-Fingered Vulgarians That Are a Worse Threat Than Terrorism", headline_type: 0],
+    [headline: "The 20 Bacon-Wrapped Circuses That Will Dogwalk You If You Don't Leave Them Alone", headline_type: 0],
+    [headline: "The 31 Unbelievable Signs That Prove San Francisco Blows Goats", headline_type: 0],
+    [headline: "The 52 Weird Snowflakes That Are The Bees Knees", headline_type: 0],
+  ],
+  on_conflict: :nothing
+)
 
 objects = [
             "Low-Carb Lunch",
@@ -122,8 +189,8 @@ agents = [
            "Geek",
            "Cosplayer",
            "Otaku",
-          "Anti-Vaxxer",
-          "Anti-Masker",
+           "Anti-Vaxxer",
+           "Anti-Masker",
          ]
          |> Enum.map(fn name -> [name: name, is_agent: true] end)
 Repo.insert_all(Noun, agents, on_conflict: :nothing)
@@ -206,9 +273,9 @@ agents_proper = [
                   "Jeff Bezos",
                   "Marjorie Taylor Greene",
                   "Ron DeSantis",
-              "Mario Cuomo",
-"George Soros",
-"Joe Rogan"
+                  "Mario Cuomo",
+                  "George Soros",
+                  "Joe Rogan"
                 ]
                 |> Enum.map(fn name -> [name: name, is_agent: true, is_proper: true] end)
 Repo.insert_all(Noun, agents_proper, on_conflict: :nothing)
@@ -345,7 +412,7 @@ seasonal_adj
   values = Map.get(seasonal_adj, season_a)
   %{^season_a => season} = season_enums
   changeset = values
-              |> Enum.map(fn value -> [value: value, season: season] end)
+              |> Enum.map(fn v -> [value: v, season: season] end)
   Repo.insert_all(Adjective, changeset, on_conflict: :nothing)
              end)
 
@@ -526,7 +593,7 @@ adjectives = [
                "Terrifying",
                "Horrifying",
                "Irritating",
-              "Cringey",
+               "Cringey",
                "Rude",
                "Secret",
                "Shameless",
@@ -610,108 +677,110 @@ verbs = [
 Repo.insert_all(Verb, verbs, on_conflict: :nothing)
 
 firsts = [
-  "Signed A Petition",
-  "Called This News Anchor Fat",
-  "Flew Over A Pig Farm",
-  "Was Tipped By A Girl",
-  "Started Off Well",
-  "Did a Study",
-  "Made a Horrible Decision",
-  "Gave A Homeless Person Some Money",
-  "Washed His Car",
-  "Saw A Kitten Drowning",
-  "Took This Photograph",
-  "Tried To Climb Mount Everest",
-  "Woke Up To Find The House on Fire",
-  "Sowed Some Magic Beans",
-  "Was Getting Bombarded With Complaints",
-  "Stumbled Upon An Abandoned House In the Woods",
-  "Found A Couple of Old Oak Slabs",
-  "Finally Solved That Weird Puzzle Box In the Attic",
-  "Picked Up Some Hitchhikers",
-  "Sees For the First Time What A Jerk They Are",
-  "Discovered Snakes On His Motherflippin' Plane",
-  "Suffered Spontaneous Internal Combustion",
-  "Found a Mysterious Board Game And Decided to Play It",
-  "Cut a Cabbage in Half",
-  "Told Us You Farted",
-  "Saw These Boxes On A Lawn",
-  "Wanted To Be A Princess",
-  "Took On Racism With Cupcakes",
-  "Had Given Up On Human Connection"
-] |> Enum.map(fn v -> [value: v] end)
+           "Signed A Petition",
+           "Called This News Anchor Fat",
+           "Flew Over A Pig Farm",
+           "Was Tipped By A Girl",
+           "Started Off Well",
+           "Did a Study",
+           "Made a Horrible Decision",
+           "Gave A Homeless Person Some Money",
+           "Washed His Car",
+           "Saw A Kitten Drowning",
+           "Took This Photograph",
+           "Tried To Climb Mount Everest",
+           "Woke Up To Find The House on Fire",
+           "Sowed Some Magic Beans",
+           "Was Getting Bombarded With Complaints",
+           "Stumbled Upon An Abandoned House In the Woods",
+           "Found A Couple of Old Oak Slabs",
+           "Finally Solved That Weird Puzzle Box In the Attic",
+           "Picked Up Some Hitchhikers",
+           "Sees For the First Time What A Jerk They Are",
+           "Discovered Snakes On His Motherflippin' Plane",
+           "Suffered Spontaneous Internal Combustion",
+           "Found a Mysterious Board Game And Decided to Play It",
+           "Cut a Cabbage in Half",
+           "Told Us You Farted",
+           "Saw These Boxes On A Lawn",
+           "Wanted To Be A Princess",
+           "Took On Racism With Cupcakes",
+           "Had Given Up On Human Connection"
+         ]
+         |> Enum.map(fn v -> [value: v] end)
 Repo.insert_all(First, firsts, on_conflict: :nothing)
 
 
 nexts = [
-  ". . . Please, We Really Need The Clickthroughs",
-  "Is So Worth Your Time",
-  "Is A Bit of All Right",
-  "Will Stun You",
-  "Will Warm the Cockles of Your Heart. Whatever That Means",
-  "Might Be The Cutest Thing In the Universe. Seriously",
-  "Will Blow Your Mind",
-  "Will Give You the Heebie-Jeebies",
-  "Will Tingle Your Naughty Bits",
-  "Will Make You Cry",
-  "Will Make Your Life Worth Living",
-  "Will Allow You To Die Happy",
-  "Will Creep You Right Out",
-  "Will Literally Scare You to Death. No Really, You'll Actually Die",
-  "Will Make You Crap Your Pants",
-  "Blew the Whole City Away",
-  "Is Disturbing",
-  "Made a Lot of Scientists Very, Very Upset",
-  "Is All Your Fault",
-  "Is All Our Fault",
-  "Will School You To The Max",
-  "Is the Best Thing We've Seen All Year",
-  "Is the Best Thing You'll See In The Whole Frigging World",
-  "Will Make All Your Other Life Experiences Pale In Comparison And You'll Just Want to End It All Immediately",
-  "Will Surprise You",
-  "Is Leaving Billions of People Homeless and Starving",
-  "Made Me -- And Millions of Women -- Feel Great",
-  "Will Shock You. Except Not",
-  "You'll Never Forget",
-  "Is Probably Not Worth Your Time",
-  "Will Make You Wish You Could Demand That Two Minutes of Your Life Back",
-  "Is Straight From Your Worst Nightmare. Trust Me",
-  "Is Hysterical",
-  "Might Be The Cutest Thing In the Universe. Seriously",
-  "Will Warm the Cockles of Your Heart. Whatever That Means",
-  "Kylo Ren Would Be Proud Of",
-  "Gets More Epic By The Nanosecond",
-  "Will Be Your New Favorite Acid Trip",
-  "...Just Click It Already",
-  "Has A Tragic Twist",
-  "Is Really Dumb, But You'll Click Anyway",
-  "Will Make You Realize You Should Get Out More Often",
-  "Will Render You Completely Unable To Get Any Work Done",
-  "Is Yet Another Internet Rabbit Hole",
-  "Will Give You All The Feels",
-  "Cannot Be Unseen",
-  "Is A Train Wreck",
-  "Broke The Internet",
-  "Won The Internet",
-  "Made Me LQTM",
-  "Will Make You Cry Out For Brain Bleach",
-  "Will Have You In Tears",
-  "Will Make You Cry Blood",
-  "Is Kleenex-Worthy",
-  "Is Binge-Worthy",
-  "Is Splurge-Worthy",
-  "Is So Cringe",
-  "Is Testing My Faith",
-  "Will Make You Be Like...WHOA",
-  "Does Not Live Up To Anyone's Expectations",
-  "Is A Complete Disappointment",
-  "Is Utterly Boring, But We Know You Have Nothing Better To Do Right Now",
-  "Shows Why We Can't Have Nice Things"
-]        |> Enum.map(fn v -> [value: v] end)
+          ". . . Please, We Really Need The Clickthroughs",
+          "Is So Worth Your Time",
+          "Is A Bit of All Right",
+          "Will Stun You",
+          "Will Warm the Cockles of Your Heart. Whatever That Means",
+          "Might Be The Cutest Thing In the Universe. Seriously",
+          "Will Blow Your Mind",
+          "Will Give You the Heebie-Jeebies",
+          "Will Tingle Your Naughty Bits",
+          "Will Make You Cry",
+          "Will Make Your Life Worth Living",
+          "Will Allow You To Die Happy",
+          "Will Creep You Right Out",
+          "Will Literally Scare You to Death. No Really, You'll Actually Die",
+          "Will Make You Crap Your Pants",
+          "Blew the Whole City Away",
+          "Is Disturbing",
+          "Made a Lot of Scientists Very, Very Upset",
+          "Is All Your Fault",
+          "Is All Our Fault",
+          "Will School You To The Max",
+          "Is the Best Thing We've Seen All Year",
+          "Is the Best Thing You'll See In The Whole Frigging World",
+          "Will Make All Your Other Life Experiences Pale In Comparison And You'll Just Want to End It All Immediately",
+          "Will Surprise You",
+          "Is Leaving Billions of People Homeless and Starving",
+          "Made Me -- And Millions of Women -- Feel Great",
+          "Will Shock You. Except Not",
+          "You'll Never Forget",
+          "Is Probably Not Worth Your Time",
+          "Will Make You Wish You Could Demand That Two Minutes of Your Life Back",
+          "Is Straight From Your Worst Nightmare. Trust Me",
+          "Is Hysterical",
+          "Might Be The Cutest Thing In the Universe. Seriously",
+          "Will Warm the Cockles of Your Heart. Whatever That Means",
+          "Kylo Ren Would Be Proud Of",
+          "Gets More Epic By The Nanosecond",
+          "Will Be Your New Favorite Acid Trip",
+          "...Just Click It Already",
+          "Has A Tragic Twist",
+          "Is Really Dumb, But You'll Click Anyway",
+          "Will Make You Realize You Should Get Out More Often",
+          "Will Render You Completely Unable To Get Any Work Done",
+          "Is Yet Another Internet Rabbit Hole",
+          "Will Give You All The Feels",
+          "Cannot Be Unseen",
+          "Is A Train Wreck",
+          "Broke The Internet",
+          "Won The Internet",
+          "Made Me LQTM",
+          "Will Make You Cry Out For Brain Bleach",
+          "Will Have You In Tears",
+          "Will Make You Cry Blood",
+          "Is Kleenex-Worthy",
+          "Is Binge-Worthy",
+          "Is Splurge-Worthy",
+          "Is So Cringe",
+          "Is Testing My Faith",
+          "Will Make You Be Like...WHOA",
+          "Does Not Live Up To Anyone's Expectations",
+          "Is A Complete Disappointment",
+          "Is Utterly Boring, But We Know You Have Nothing Better To Do Right Now",
+          "Shows Why We Can't Have Nice Things"
+        ]
+        |> Enum.map(fn v -> [value: v] end)
 Repo.insert_all(Next, nexts, on_conflict: :nothing)
 
 
-particles = ["A","The","Some"]
+particles = ["A", "The", "Some"]
             |> Enum.map(fn v -> [value: v] end)
 Repo.insert_all(Verb, verbs, on_conflict: :nothing)
 

@@ -8,5 +8,15 @@ defmodule BuzzKillfeed.Repo.Migrations.CreateVerbs do
 
       timestamps()
     end
+
+    alter table(:verbs) do
+      modify(:inserted_at, :timestamp, default: fragment("NOW()"))
+      modify(:updated_at, :timestamp, default: fragment("NOW()"))
+    end
   end
+
+  def down do
+    drop table(:verbs)
+  end
+
 end

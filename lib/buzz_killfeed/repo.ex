@@ -5,6 +5,7 @@ defmodule BuzzKillfeed.Repo do
   alias BuzzKillfeed.First
   alias BuzzKillfeed.Noun
   alias BuzzKillfeed.Predicate
+  alias BuzzKillfeed.Headline
 
   @doc """
   Dynamically loads the repository url from the
@@ -26,16 +27,21 @@ defmodule BuzzKillfeed.Repo do
     q |> one
   end
 
+  def random_headline() do
+    q =  from(Headline, order_by: [fragment("RAND()")], limit: 1)
+    (q |> one).headline
+  end
+
   def random_adj() do
     q =  from(Adjective, order_by: [fragment("RAND()")], limit: 1)
     q |> one
   end
   def random_first() do
     q =  from(First, order_by: [fragment("RAND()")], limit: 1)
-    q |> one
+    (q |> one).value
   end
   def random_pred() do
     q =  from(Predicate, order_by: [fragment("RAND()")], limit: 1)
-    q |> one
+    (q |> one).value
   end
 end

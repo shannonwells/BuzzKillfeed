@@ -7,5 +7,13 @@ defmodule BuzzKillfeed.Repo.Migrations.CreateSuperlatives do
 
       timestamps()
     end
+    alter table(:superlatives) do
+      modify(:inserted_at, :timestamp, default: fragment("NOW()"))
+      modify(:updated_at, :timestamp, default: fragment("NOW()"))
+    end
+  end
+
+  def down do
+    drop table(:superlatives)
   end
 end

@@ -7,5 +7,15 @@ defmodule BuzzKillfeed.Repo.Migrations.CreateNexts do
 
       timestamps()
     end
+
+    alter table(:nexts) do
+      modify(:inserted_at, :timestamp, default: fragment("NOW()"))
+      modify(:updated_at, :timestamp, default: fragment("NOW()"))
+    end
   end
+
+  def down do
+    drop table(:nexts)
+  end
+
 end
