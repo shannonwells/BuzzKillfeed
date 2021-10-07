@@ -1,3 +1,4 @@
+# most helpful: https://jsonmaur.com/using-phoenix-without-webpack/
 %{
   zombie: Path.expand("../zombie.sh", __DIR__),
   sass: [

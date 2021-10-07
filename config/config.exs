@@ -18,6 +18,7 @@ config :buzz_killfeed, BuzzKillfeedWeb.Endpoint,
        live_view: [signing_salt: "bkebIZ7t"]
 
 # Configure esbuild (the version is required)
+# most helpful: https://jsonmaur.com/using-phoenix-without-webpack/
 # this has to be duplicated here beacuse apparently setting the NODE_PATH environment variable there
 #       breaks it here. Or else I haven't figured out how to make it work.
 config :esbuild,

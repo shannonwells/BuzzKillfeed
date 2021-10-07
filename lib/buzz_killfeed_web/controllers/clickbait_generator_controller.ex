@@ -23,4 +23,9 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorController do
   defp build_listicle do
     "This is a new #{Repo.random_noun()}"
   end
+
+  defp show(conn, %{"id" => id}) do
+    headline = "This is a saved headline fetched by id from the db"
+    render conn, "headline.html", %{headline: headline}
+  end
 end

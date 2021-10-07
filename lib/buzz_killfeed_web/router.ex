@@ -12,6 +12,7 @@ defmodule BuzzKillfeedWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug :fetch_session
   end
 
   scope "/", BuzzKillfeedWeb do
@@ -29,8 +30,17 @@ defmodule BuzzKillfeedWeb.Router do
 
     get "/best_of", ClickbaitGeneratorController, :best_of
 
-    get "/generate", ClickbaitGeneratorController, :generate
+    get "/:id", ClickbaitGeneratorController, :show
   end
+
+  scope "/api" do
+    scope "/clickbait_generator", ClickbaitGenerator do
+      pipe_through :api
+
+      get "/generate/:headline_type", ClickbaitGeneratorController, :generate
+    end
+  end
+
 
   scope "/fill_in_the_bait", FillInTheBait do
     pipe_through :browser
