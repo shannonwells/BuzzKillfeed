@@ -10,15 +10,15 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 alias BuzzKillfeed.Repo
-alias BuzzKillfeed.Noun
+#alias BuzzKillfeed.Adverb
 alias BuzzKillfeed.Adjective
 alias BuzzKillfeed.First
-alias BuzzKillfeed.Predicate
-alias BuzzKillfeed.Adverb
-alias BuzzKillfeed.Superlative
 alias BuzzKillfeed.Headline
-alias BuzzKillfeed.Verb
 alias BuzzKillfeed.Next
+alias BuzzKillfeed.Noun
+alias BuzzKillfeed.Predicate
+alias BuzzKillfeed.Superlative
+alias BuzzKillfeed.Verb
 
 Repo.insert_all(
   Headline,
@@ -196,86 +196,88 @@ agents = [
 Repo.insert_all(Noun, agents, on_conflict: :nothing)
 
 agents_proper = [
-                  "Vladimir Putin",
-                  "The CIA",
-                  "Edward Snowden",
-                  "Linus Torvalds",
                   "Ada Lovelace",
-                  "Brian Kernighan",
-                  "Dennis Ritchie",
-                  "Grace Hopper",
-                  "Steve Jobs",
-                  "Steve Ballmer",
-                  "Paul Allen",
                   "Alan Turing",
-                  "Martin Shkreli",
-                  "Bae",
-                  "Wil Wheaton",
-                  "Mayim Bialik",
-                  "Neil Patrick Harris",
-                  "David Tennant",
-                  "Peter Capaldi",
-                  "Matt",
-                  "Lil Nas X",
-                  "Kylie Jenner",
-                  "Taylor Swift",
-                  "Katy Perry",
-                  "Billie Eilish",
-                  "Elon Musk",
-                  "Rainn Wilson",
-                  "Mindy Kaling",
-                  "Brad Pitt",
-                  "John Cleese",
-                  "Eric Idle",
-                  "Terry Gilliam",
-                  "Hugh Jackman",
-                  "Robert Downey, Jr",
-                  "Chris Evans",
-                  "Tom Hiddleston",
-                  "Ed Helms",
-                  "Mark Ruffalo",
-                  "Chis Hemson",
-                  "Gwynyth Paltrow",
-                  "Dwayne 'The Rock' Johnson",
                   "Alexis Denisoff",
-                  "David Boreanaz",
-                  "Terry Jones",
-                  "Daniel Radcliffe",
-                  "Elijah Wood",
-                  "M. Night Shyamalan",
-                  "Ryan Reynolds",
-                  "Keanu Reeves",
-                  "Nic Cage",
+                  "Bae",
                   "Benedict Cumberbatch",
-                  "Scarlett Johanssen",
+                  "Billie Eilish",
+                  "Brad Pitt",
+                  "Brian Kernighan",
+                  "Britney Spears",
                   "Cardi B",
-                  "Maggie Smith",
-                  "Orlando Bloom",
+                  "Chis Hemson",
+                  "Chris Evans",
+                  "Daniel Radcliffe",
+                  "David Boreanaz",
+                  "David Tennant",
+                  "Dennis Ritchie",
+                  "Dr Dre",
+                  "Dwayne 'The Rock' Johnson",
+                  "Ed Helms",
+                  "Edward Snowden",
+                  "Elijah Wood",
+                  "Elon Musk",
                   "Emilia Clarke",
-                  "Peter Dinklage",
-                  "Kit Harington",
-                  "Lena Headey",
-                  "Rick Sanchez",
+                  "Eminem",
+                  "Eric Idle",
+                  "George Soros",
+                  "Gordon Ramsay",
+                  "Grace Hopper",
+                  "Gwynyth Paltrow",
+                  "Hugh Jackman",
+                  "Jack Black",
+                  "Jeff Bezos",
+                  "Jenny McCarthy",
                   "Jerry Smith",
+                  "Joe Rogan",
+                  "John Cleese",
+                  "Katy Perry",
+                  "Keanu Reeves",
+                  "Kim Kardashian",
+                  "Kit Harington",
+                  "Kyle Gass",
+                  "Kylie Jenner",
+                  "Lena Headey",
+                  "Lil Nas X",
+                  "Linus Torvalds",
+                  "M. Night Shyamalan",
+                  "Maggie Smith",
+                  "Mario Cuomo",
+                  "Marjorie Taylor Greene",
+                  "Mark Ruffalo",
+                  "Martha Stewart",
+                  "Martin Shkreli",
+                  "Matt",
+                  "Mayim Bialik",
+                  "Mindy Kaling",
                   "Morty Smith",
+                  "Neil Patrick Harris",
+                  "Nic Cage",
+                  "Orlando Bloom",
+                  "Paul Allen",
+                  "Peter Capaldi",
+                  "Peter Dinklage",
+                  "Rainn Wilson",
+                  "Rick Sanchez",
+                  "Robert Downey, Jr",
+                  "Ron DeSantis",
                   "Ru Paul",
+                  "Ryan Reynolds",
+                  "Scarlett Johanssen",
                   "Seth McFarlane",
                   "Seth Rogen",
-                  "Gordon Ramsay",
-                  "Steve Carell",
-                  "Eminem",
-                  "Britney Spears",
                   "Snoop Dogg",
-                  "Martha Stewart",
-                  "Dr Dre",
-                  "Kim Kardashian",
-                  "Jenny McCarthy",
-                  "Jeff Bezos",
-                  "Marjorie Taylor Greene",
-                  "Ron DeSantis",
-                  "Mario Cuomo",
-                  "George Soros",
-                  "Joe Rogan"
+                  "Steve Ballmer",
+                  "Steve Carell",
+                  "Steve Jobs",
+                  "Taylor Swift",
+                  "Terry Gilliam",
+                  "Terry Jones",
+                  "The CIA",
+                  "Tom Hiddleston",
+                  "Vladimir Putin",
+                  "Wil Wheaton",
                 ]
                 |> Enum.map(fn name -> [name: name, is_agent: true, is_proper: true] end)
 Repo.insert_all(Noun, agents_proper, on_conflict: :nothing)
@@ -290,29 +292,37 @@ season_enums = %{
 
 seasonal_noun_objects = %{
   :spring => [
-    "Hamantaschen",
-    "Easter Egg",
-    "Tulip",
-    "Gragger",
-    "Firecracker",
-    "Orange",
-    "Niangao",
+    "Blackeyed Pea",
     "Dumpling",
-    "Blackeyed Pea"
+    "Easter Egg",
+    "Firecracker",
+    "Gragger",
+    "Hamantaschen",
+    "Niangao",
+    "Orange",
+    "Tulip",
   ],
   :summer => [
     "Barbecue",
-    "Swimming Pool",
-    "Summer Camp",
-    "Band Camp",
-    "Lawnmower",
     "Baseball",
-    "Futbol",
+    "Cucumber",
     "Fireworks",
+    "Futbol",
+    "Lawnmower",
     "Strawberry",
-    "Cucumber"
+    "Summer Camp",
+    "Swimming Pool"
   ],
-  :halloween => ["Necronomicon", "Poison", "Puppet", "Voodoo Doll", "Gravestone", "Grave", "Dead Body"],
+  :halloween => [
+    "Necronomicon",
+    "Poison",
+    "Puppet",
+    "Voodoo Doll",
+    "Gravestone",
+    "Grave",
+    "Dead Body",
+    "Ventroliquist Dummy"
+  ],
   :winter => ["Jingle Bell", "Christmas Tree", "Dreidel", "Menorah", "Sock", "Gelt", "Latke",
     "Candle", "Candy Cane", "Stocking", "Snowflake", "Sleigh", "Christmas Carol", "Sugar Plum",
     "Nutcracker", "Plum Pudding", "Icicle", "Snowboard", "Hockey Puck", "Hockey Stick", "Ice Rink"]
@@ -320,30 +330,29 @@ seasonal_noun_objects = %{
 seasonal_noun_objects
 |> Map.keys
 |> Enum.map (fn season_a ->
-  names = Map.get(seasonal_noun_objects, season_a)
-  %{^season_a => season} = season_enums
-  changeset = names
-              |> Enum.map(fn name -> [name: name, is_agent: false, season: season] end)
-  Repo.insert_all(Noun, changeset, on_conflict: :nothing)
+              names = Map.get(seasonal_noun_objects, season_a)
+              %{^season_a => season} = season_enums
+              changeset = Enum.map(names, fn name -> [name: name, is_agent: false, season: season] end)
+              Repo.insert_all(Noun, changeset, on_conflict: :nothing)
              end)
 
 seasonal_agents = %{
   :spring => ["Bunny", "Clown", "Rooster", "Nian", "Chick"],
   :summer => ["Pitcher", "Shortstop", "Cicada"],
-  :halloween => [
-    "Raven",
-    "Magpie",
-    "Owl",
-    "Spider",
-    "Black Bat",
+  :halloween => ["Black Bat",
     "Black Cat",
-    "Goblin",
+    "Crow",
+    "Ghost",
     "Ghoul",
-    "Skeleton",
+    "Goblin",
+    "Magpie",
     "Monster",
+    "Owl",
+    "Raven",
+    "Skeleton",
+    "Spider",
     "Vampire",
-    "Zombie",
-    "Ghost"
+    "Zombie"
   ],
   :winter => ["Yule", "Angel", "Elf", "Snowman", "Snow Woman"]
 }
@@ -361,18 +370,26 @@ seasonal_proper_nouns = %{
   :spring => ["Easter Bunny", "Haman"],
   :summer => ["Puck", "Titania", "Guy Fieri", "Oberon"],
   :halloween => [
-    "Christopher Lee",
-    "Lon Chaney",
+    "Bram Stoker",
     "Bela Lugosi",
-    "Elvira",
+    "Christopher Lee",
     "Dracula",
-    "Vincent Price",
-    "H.P. Lovecraft",
     "Edgar Allan Poe",
+    "Elvira",
+    "H.P. Lovecraft",
+    "Lon Chaney",
     "Mary Shelley",
-    "Bram Stoker"
+    "Vincent Price"
   ],
-  :winter => ["King Wenceslas", "Charles Dickens", "Ebenezer Scrooge", "Krampus", "Santa Claus", "Mrs. Claus"]
+  :winter => [
+    "Buddy",
+    "Charles Dickens",
+    "Ebenezer Scrooge",
+    "King Wenceslas",
+    "Krampus",
+    "Mrs. Claus",
+    "Santa Claus"
+  ]
 }
 seasonal_proper_nouns
 |> Map.keys
@@ -739,7 +756,7 @@ nexts = [
           "Will Surprise You",
           "Is Leaving Billions of People Homeless and Starving",
           "Made Me -- And Millions of Women -- Feel Great",
-          "Will Shock You. Except Not",
+          "Will Shock You!!! . . . Will It Though?",
           "You'll Never Forget",
           "Is Probably Not Worth Your Time",
           "Will Make You Wish You Could Demand That Two Minutes of Your Life Back",
@@ -779,42 +796,13 @@ nexts = [
         |> Enum.map(fn v -> [value: v] end)
 Repo.insert_all(Next, nexts, on_conflict: :nothing)
 
-
-particles = ["A", "The", "Some"]
-            |> Enum.map(fn v -> [value: v] end)
-Repo.insert_all(Verb, verbs, on_conflict: :nothing)
-
 templates = [
-  "Some {noun} Tried To {verb} Mount Everest. What Happened Next Has {adjective} {people} Rioting",
+  "Some {person_or_animal} Tried To {verb} Mount Everest. What Happened Next Has {adjective} {plural_person_or_animal} Rioting",
   "The {number} {adjective} {plural_noun} That {verb} Your {noun}",
-  "The {number} {adjective} {plural_noun} That {verb} Your {noun}",
-  "The {number} {adjective} {plural_noun} That {verb} Your {noun}",
-  "The {number} {adjective} {plural_noun} That {verb} Your {noun}",
-  "When {celebrity} {past_tense_verb} A {adjective} {noun}, ",
-  "When {celebrity} {past_tense_verb} A {adjective} {noun}, ",
-  "When {celebrity} {past_tense_verb} A {adjective} {noun}, ",
-  "When {celebrity} {past_tense_verb} A {adjective} {noun}, ",
-  "You Don't Want to {verb} This {adjective} {noun}",
-  "You Don't Want to {verb} This {adjective} {noun}",
-  "You Don't Want to {verb} This {adjective} {noun}",
-  "You Don't Want to {verb} This {adjective} {noun}",
+  "When {celebrity} {past_tense_verb} A {adjective} {noun}, I {past_tense_verb} my {noun}",
+  "You {adverb} Don't Want to {verb} This {adjective} {noun}",
   "This {adjective} {noun} That {past_tense_verb} a {noun} Can't Be Unseen",
-  "This {adjective} {noun} That {past_tense_verb} a {noun} Can't Be Unseen",
-  "This {adjective} {noun} That {past_tense_verb} a {noun} Can't Be Unseen",
-  "This {adjective} {noun} That {past_tense_verb} a {noun} Can't Be Unseen",
-  "This {adjective} {noun} That {past_tense_verb} a {noun} Can't Be Unseen",
-  "This {person} Wants to {verb} Your {noun}. What Could Go Wrong?",
-  "This {person} Wants to {verb} Your {noun}. What Could Go Wrong?",
-  "This {person} Wants to {verb} Your {noun}. What Could Go Wrong?",
-  "This {person} Wants to {verb} Your {noun}. What Could Go Wrong?",
-  "{celebrity} {adverb} }Wishes Everyone Would Stop {verb}ing So {adjective}",
-  "{celebrity} {adverb} }Wishes Everyone Would Stop {verb}ing So {adjective}",
-  "{celebrity} {adverb} }Wishes Everyone Would Stop {verb}ing So {adjective}",
-  "{celebrity} {adverb} }Wishes Everyone Would Stop {verb}ing So {adjective}",
-  "{celebrity} {adverb} }Wishes Everyone Would Stop {verb}ing So {adjective}",
-  "My {noun} Stopped {verb}ing, And Now I Can't Stop {verb}ing my {noun}",
-  "My {noun} Stopped {verb}ing, And Now I Can't Stop {verb}ing my {noun}",
-  "My {noun} Stopped {verb}ing, And Now I Can't Stop {verb}ing my {noun}",
-  "My {noun} Stopped {verb}ing, And Now I Can't Stop {verb}ing my {noun}",
+  "{person_name} Wants to {verb} Your {noun}. What Could Go Wrong?",
+  "{celebrity} {adverb} Wishes Everyone Would Stop {verb}ing So {adjective}",
   "My {noun} Stopped {verb}ing, And Now I Can't Stop {verb}ing my {noun}",
 ]

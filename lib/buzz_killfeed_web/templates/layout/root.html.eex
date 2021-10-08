@@ -7,7 +7,7 @@ doctype 5
     <%= csrf_meta_tag() %>
     <%= live_title_tag assigns[:page_title] || "TestApp", suffix: " · Phoenix Framework" %>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>" phx-track-static></script>
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/>
@@ -19,6 +19,6 @@ doctype 5
       <%= @inner_content %>
     </main>
     <footer>
-      <div id={js-demo> Uh oh, this text should have been replaced by buzz_killfeed.js.</div>
+      <div id=js-demo> Uh oh, this text should have been replaced by buzz_killfeed.js.</div>
     </footer>
   </body>

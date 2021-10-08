@@ -5,6 +5,7 @@ defmodule BuzzKillfeed.Headline do
   schema "headlines" do
     field :headline, :string
     field :headline_type, :integer
+    field :views, :integer
     timestamps([type: :utc_datetime])
   end
 

@@ -2,13 +2,8 @@ CBG = {
     getNewHeadline: function (event) {
         CBG.getHeadline($(this).attr('id'));
     },
-
-    getBestOf: function (id) {
-        $.get('/home/generate', {id: id}, CBG.onGetSuccess, "json");
-    },
-
     getHeadline: function (headlineType) {
-        $.get('/home/generate.json', {headline_type: headlineType}, CBG.onGetSuccess);
+        $.getJSON(`/api/clickbait_generator/generate/${headlineType}`, {}, CBG.onGetSuccess);
         CBG.resetLocationHash();
     },
 
@@ -34,9 +29,10 @@ CBG = {
 
     // maybe this will do something else later, like register analytics
     onGetSuccess: function (data, status, xhr, leaveHashAlone) {
+        data = JSON.parse(data)
         // clear the share modal link
         $(".ladom").html("");
-        $("#headline").html(data.clickbait.headline);
+        $("#headline").html(data.headline);
 
         const ogUrl = document.createElement("meta");
 
@@ -45,12 +41,12 @@ CBG = {
         document.head.appendChild(ogUrl);
 
         const ogTitle =  document.createElement("meta");
-        ogUrl.setAttribute("property", "og:title");
-        ogUrl.setAttribute("content", data.clickbait.headline);
+        ogTitle.setAttribute("property", "og:title");
+        ogTitle.setAttribute("content", data.clickbait.headline);
 
         const ogImage =  document.createElement("meta");
-        ogUrl.setAttribute("property", "og:image");
-        ogUrl.setAttribute("content", "/images/animagicalunicorn.gif");
+        ogImage.setAttribute("property", "og:image");
+        ogImage.setAttribute("content", "/images/animagicalunicorn.gif");
 
         CBG.reTwit(data.clickbait.headline);
         CBG.setActiveButton(data.clickbait.type);
@@ -64,7 +60,6 @@ CBG = {
 
     sharePermalink: function (event) {
         var $modalDiv = $(".ladom");
-        var imageUrl = $("#headline-img").attr("href");
         event.preventDefault();
         if ($modalDiv.text() == "") {
             var headLine = $("#headline").text();
@@ -83,11 +78,11 @@ CBG = {
 }
 
 
-window.onload = function () {
+$(document).ready(function () {
     $("a.clickbaits #clickbait-buttons .button--clickbait").click(function (event) {
         window.location = '/';
     });
-    $('.home #clickbait-buttons .button--clickbait').click(CBG.getNewHeadline);
+    $('#clickbait-buttons .button--clickbait').click(CBG.getNewHeadline);
     $('#manual-ajax').click(CBG.sharePermalink);
 
     // rainbow as a color generates random rainbow colros
@@ -95,15 +90,8 @@ window.onload = function () {
     // overlap allows sparkles to migrate... watch out for other dom elements though.
     $(".sparkley").sparkleh({
         color: "rainbow",
-        count: 100,
-        overlap: 20
+        count: 75,
+        overlap: 15
     });
-
-    // fetch best_of if the anchor tag is present
-    if (location.hash) {
-        CBG.getBestOf(location.hash.substr(1));
-    } else if ($('.home #headline').length) {
-        CBG.getHeadline('listicle');
-    }
     document.getElementById("js-demo").textContent = "I am from clickbait_generator.js"
-};
+});

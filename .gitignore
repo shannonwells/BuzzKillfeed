@@ -31,6 +31,7 @@ tmp
 node_modules
 /installer/_build
 *.dump
+cache_manifest.json
 
 # Since we are building js and css from web/static,
 # we ignore priv/static/{css,js}. You may want to

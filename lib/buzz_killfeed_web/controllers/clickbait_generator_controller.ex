@@ -22,12 +22,11 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorController do
   end
 
   defp build_listicle do
-    "This is a new #{Repo.random_noun()}"
+    "This is a new #{Repo.random_noun().name}"
   end
 
   def show(conn, %{"id" => id}) do
-    headline = "This is a saved headline fetched by id from the db"
-
+    headline = BuzzKillfeed.Headline.get(id)
     conn
     |> render( "index.html", %{headline: headline})
   end
