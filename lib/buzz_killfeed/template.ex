@@ -1,7 +1,6 @@
 defmodule BuzzKillfeed.Template do
   use Ecto.Schema
 
-  import Ecto.Query, only: [from: 2]
   import Ecto.Changeset
 
   schema "templates" do

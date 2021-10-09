@@ -33,13 +33,8 @@ node_modules
 *.dump
 cache_manifest.json
 
-# Since we are building js and css from web/static,
-# we ignore priv/static/{css,js}. You may want to
-# comment this depending on your deployment strategy.
 /priv/static/css
 /priv/static/js
-#/priv/static/images
-#/priv/static
 /rel
 
 # The config/prod.secret.exs file by default contains sensitive

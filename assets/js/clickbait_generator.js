@@ -1,4 +1,4 @@
-CBG = {
+const CBG = {
     getNewHeadline: function (event) {
         CBG.getHeadline($(this).attr('id'));
     },

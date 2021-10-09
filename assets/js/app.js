@@ -1,4 +1,5 @@
 import "./clickbait_generator"
+import "./fill_in_the_bait"
 // I added my own CSS build pipeline
 
 // If you want to use Phoenix channels, run `mix help phx.gen.channel`

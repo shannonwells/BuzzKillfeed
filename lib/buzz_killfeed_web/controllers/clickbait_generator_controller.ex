@@ -2,9 +2,9 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorController do
   use BuzzKillfeedWeb, :controller
   import BuzzKillfeed.Repo
   alias BuzzKillfeed.Repo
+  import BuzzKillfeed.RepoHelpers
 
   def index(conn, _params) do
-    headline =
     conn
     |> render("index.html", %{headline: random_headline()})
   end
@@ -26,7 +26,7 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorController do
   end
 
   def show(conn, %{"id" => id}) do
-    headline = BuzzKillfeed.Headline.get(id)
+    headline = get_headline!(id)
     conn
     |> render( "index.html", %{headline: headline})
   end

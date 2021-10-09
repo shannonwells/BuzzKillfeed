@@ -1,8 +1,7 @@
 defmodule BuzzKillfeed.HeadlinesFixtures do
   alias BuzzKillfeed.RepoHelpers
   @moduledoc """
-  This module defines test helpers for creating
-  entities via the `BuzzKillfeed.Accounts` context.
+  This module defines test helpers for creating Headline entities
   """
 
   @doc """
