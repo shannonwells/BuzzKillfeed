@@ -6,11 +6,11 @@ import Config
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :buzz_killfeed, BuzzKillfeed.Repo,
-       username: System.get_env("DB_USER"),
-       password: System.get_env("DB_PASSWORD"),
-       database: System.get_env("DB_DATABASE")<>System.get_env("MIX_TEST_PARTITION"),
-       hostname: System.get_env("DB_HOST"),
-       port: System.get_env("DB_PORT"),
+       username: "#{System.get_env("DB_USER")}",
+       password: "#{System.get_env("DB_PASSWORD")}",
+       database: "#{System.get_env("DB_DATABASE")}",
+       hostname: "#{System.get_env("DB_HOST")}",
+       port: "#{System.get_env("DB_PORT")}",
        pool: Ecto.Adapters.SQL.Sandbox,
        pool_size: 10
 

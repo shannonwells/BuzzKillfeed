@@ -13,7 +13,7 @@ jobs:
 
     env:
       MIX_ENV: cli
-      DB_DATABASE: buzz_killfeed_cli
+      DB_DATABASE: buzz_killfeed_test
       DB_USER: root
       DB_PASSWORD: root
       DB_HOST: localhost
