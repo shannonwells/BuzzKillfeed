@@ -18,6 +18,7 @@ alias BuzzKillfeed.Next
 alias BuzzKillfeed.Noun
 alias BuzzKillfeed.Predicate
 alias BuzzKillfeed.Superlative
+alias BuzzKillfeed.Template
 alias BuzzKillfeed.Verb
 
 Repo.insert_all(
@@ -328,8 +329,8 @@ seasonal_noun_objects = %{
     "Nutcracker", "Plum Pudding", "Icicle", "Snowboard", "Hockey Puck", "Hockey Stick", "Ice Rink"]
 }
 seasonal_noun_objects
-|> Map.keys
-|> Enum.map (fn season_a ->
+|> Map.keys()
+|> Enum.map(fn season_a ->
               names = Map.get(seasonal_noun_objects, season_a)
               %{^season_a => season} = season_enums
               changeset = Enum.map(names, fn name -> [name: name, is_agent: false, season: season] end)
@@ -357,8 +358,8 @@ seasonal_agents = %{
   :winter => ["Yule", "Angel", "Elf", "Snowman", "Snow Woman"]
 }
 seasonal_agents
-|> Map.keys
-|> Enum.map (fn season_a ->
+|> Map.keys()
+|> Enum.map(fn season_a ->
   names = Map.get(seasonal_noun_objects, season_a)
   %{^season_a => season} = season_enums
   changeset = names
@@ -392,8 +393,8 @@ seasonal_proper_nouns = %{
   ]
 }
 seasonal_proper_nouns
-|> Map.keys
-|> Enum.map (fn season_a ->
+|> Map.keys()
+|> Enum.map(fn season_a ->
   names = Map.get(seasonal_noun_objects, season_a)
   %{^season_a => season} = season_enums
   changeset = names
@@ -424,8 +425,8 @@ seasonal_adj = %{
 
 # TODO: add season field to adjectives
 seasonal_adj
-|> Map.keys
-|> Enum.map (fn season_a ->
+|> Map.keys()
+|> Enum.map(fn season_a ->
   values = Map.get(seasonal_adj, season_a)
   %{^season_a => season} = season_enums
   changeset = values
@@ -805,4 +806,6 @@ templates = [
   "{person_name} Wants to {verb} Your {noun}. What Could Go Wrong?",
   "{celebrity} {adverb} Wishes Everyone Would Stop {verb}ing So {adjective}",
   "My {noun} Stopped {verb}ing, And Now I Can't Stop {verb}ing my {noun}",
-]
+] |> Enum.map(fn v -> [value: v] end)
+Repo.insert_all(Template, templates, on_conflict: :nothing)
+

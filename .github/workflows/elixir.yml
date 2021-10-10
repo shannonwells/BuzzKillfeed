@@ -10,14 +10,25 @@ jobs:
   build:
     name: Build and test
     runs-on: ubuntu-latest
-
+    services:
+      postgres:
+        image: postgres:14.0
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+          # will assign a random free host port
+          - 5432:5432
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     env:
       MIX_ENV: cli
-      DB_DATABASE: buzz_killfeed_test
-      DB_USER: root
-      DB_PASSWORD: root
+      DB_USER:  postgres
+      DB_PASSWORD: postgres
+      DB_PORT: 5432
       DB_HOST: localhost
-      DB_PORT: 3306
+      DB_DATABASE: app_test
 
     steps:
     - uses: actions/checkout@v2
@@ -29,14 +40,16 @@ jobs:
     - name: Restore dependencies cache
       uses: actions/cache@v2
       with:
-        path: deps
-        key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
-        restore-keys: ${{ runner.os }}-mix-
+        path: |
+          deps
+          _build
+          priv/plts
+        key: ${{ runner.os }}-${{ matrix.otp }}-${{ matrix.elixir }}-${{ hashFiles('mix.lock') }}
     - name: Install dependencies
-      run: mix deps.get & mix deps.compile
+      run: mix deps.get
     - name: Set up database
       run:  |
-        sudo systemctl start mysql.service
-        mix mix ecto.create && mix ecto.migrate
+        mix ecto.create
+        mix ecto.migrate
     - name: Run tests
       run: mix test

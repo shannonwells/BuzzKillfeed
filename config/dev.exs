@@ -5,8 +5,8 @@ zombie = Path.expand("../zombie.sh", __DIR__)
 # Configure your database
 config :buzz_killfeed,
        BuzzKillfeed.Repo,
-       username: "root",
-       password: "",
+       username: "postgres",
+       password: "postgres",
        database: "buzz_killfeed_dev",
        hostname: "localhost",
        show_sensitive_data_on_connection_error: true,

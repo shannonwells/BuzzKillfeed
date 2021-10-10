@@ -4,8 +4,8 @@ defmodule BuzzKillfeed.Headline do
 
   schema "headlines" do
     field :headline, :string
-    field :headline_type, :integer
-    field :views, :integer
+    field :headline_type, :integer, default: 0
+    field :views, :integer, default: 0
     timestamps([type: :utc_datetime])
   end
 

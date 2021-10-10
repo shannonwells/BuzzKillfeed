@@ -1,12 +1,10 @@
 defmodule ClickbaitGenerator.ClickbaitGeneratorController do
   use BuzzKillfeedWeb, :controller
-  import BuzzKillfeed.Repo
-  alias BuzzKillfeed.Repo
   import BuzzKillfeed.RepoHelpers
 
   def index(conn, _params) do
     conn
-    |> render("index.html", %{headline: random_headline()})
+    |> render("index.html", %{headline: random_headline().headline})
   end
 
   # TODO: should be restricted to JSON only
@@ -22,13 +20,13 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorController do
   end
 
   defp build_listicle do
-    "This is a new #{Repo.random_noun().name}"
+    "This is a new #{random_noun().name}"
   end
 
   def show(conn, %{"id" => id}) do
     headline = get_headline!(id)
     conn
-    |> render( "index.html", %{headline: headline})
+    |> render( "index.html", %{headline: headline.value})
   end
 
 end

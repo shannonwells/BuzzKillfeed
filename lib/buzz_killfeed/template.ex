@@ -15,16 +15,5 @@ defmodule BuzzKillfeed.Template do
     |> unique_constraint(:value)
   end
 
-  @doc """
-  Gets a single template.
-  Raises `Ecto.NoResultsError` if the template does not exist.
-  ## Examples
-      iex> get_template!(123)
-      %template{}
-
-      iex> get_template!(456)
-      ** (Ecto.NoResultsError)
-  """
-  def get_template!(id), do: Repo.get!(Template, id)
 
 end

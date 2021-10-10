@@ -1,5 +1,7 @@
 defmodule BuzzKillfeed.Repo do
-  use Ecto.Repo, otp_app: :buzz_killfeed, adapter: Ecto.Adapters.MyXQL
+  use Ecto.Repo,
+      otp_app: :buzz_killfeed,
+      adapter: Ecto.Adapters.Postgres
   import Ecto.Query
   alias BuzzKillfeed.Adjective
   alias BuzzKillfeed.First
@@ -21,27 +23,4 @@ defmodule BuzzKillfeed.Repo do
 
     {:ok, opts}
   end
-
-  def random_noun() do
-    q =  from(Noun, order_by: [fragment("RAND()")], limit: 1)
-    q |> one
-  end
-
-  def random_headline() do
-    q =  from(Headline, order_by: [fragment("RAND()")], limit: 1)
-    (q |> one).headline
-  end
-
-  def random_adj() do
-    q =  from(Adjective, order_by: [fragment("RAND()")], limit: 1)
-    q |> one
-  end
-  def random_first() do
-    q =  from(First, order_by: [fragment("RAND()")], limit: 1)
-    (q |> one).value
-  end
-  def random_pred() do
-    q =  from(Predicate, order_by: [fragment("RAND()")], limit: 1)
-    (q |> one).value
-  end
-end
+ end
