@@ -1,5 +1,5 @@
 defmodule BuzzKillfeed.HeadlinesFixtures do
-  alias BuzzKillfeed.RepoHelpers
+  import BuzzKillfeed.RepoHelpers
   @moduledoc """
   This module defines test helpers for creating Headline entities
   """
@@ -13,7 +13,7 @@ defmodule BuzzKillfeed.HeadlinesFixtures do
       |> Enum.into(%{
         headline: "some headline"
       })
-      |> RepoHelpers.create_headline()
+      |> create_headline()
     headline
   end
 end

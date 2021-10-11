@@ -33,5 +33,11 @@ defmodule BuzzKillfeed.HeadlinesTest do
       RepoHelpers.delete_headline(record)
       assert_raise Ecto.NoResultsError, fn -> RepoHelpers.get_headline!(record.id) end
     end
+
+    test "random_headline fetches a headline" do
+      record = headline_fixture()
+      hid = RepoHelpers.random_headline().id
+      assert(hid == record.id)
+    end
   end
 end

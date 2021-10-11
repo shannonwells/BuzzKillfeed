@@ -19,22 +19,15 @@ defmodule BuzzKillfeed.RepoHelpers do
                   |> where(^filter_tuple)
                   |> select(count())
                   |> Repo.one()
-    record_id = Enum.random(1..num_records)
-    Repo.get!(table, record_id)
+    offset = Enum.random(1..num_records) - 1
+    table |> where(^filter_tuple) |> offset(^offset) |> limit(1) |> Repo.one()
   end
 
   def random_noun() do random_record([], Noun)end
   def random_noun(filter_tuple) do random_record(filter_tuple, Noun)end
 
   def random_headline() do random_headline([]) end
-#  def random_headline(filter_tuple) do random_record(filter_tuple, Headline) end
-  def random_headline(filter_tuple) do
-    num_records = Headline
-                  |> where(^filter_tuple)
-                  |> select(count())
-                  |> Repo.one()
-    Repo.get!(Headline, Enum.random(1..num_records))
-  end
+  def random_headline(filter_tuple) do random_record(filter_tuple, Headline) end
 
   def random_adj(filter_tuple) do random_record(filter_tuple, Adjective) end
   def random_first(filter_tuple) do random_record(filter_tuple, First) end

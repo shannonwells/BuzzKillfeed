@@ -1,5 +1,5 @@
 defmodule BuzzKillfeed.NounsFixtures do
-  alias BuzzKillfeed.RepoHelpers
+  import BuzzKillfeed.RepoHelpers
   @moduledoc """
   This module defines test helpers for creating Noun entities
   """
@@ -13,7 +13,7 @@ defmodule BuzzKillfeed.NounsFixtures do
       |> Enum.into(%{
         name: "Rabbit"
       })
-      |> RepoHelpers.create_noun()
+      |> create_noun()
     noun
   end
 end

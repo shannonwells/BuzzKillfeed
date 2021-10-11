@@ -1,5 +1,5 @@
 defmodule BuzzKillfeed.TemplatesFixtures do
-  alias BuzzKillfeed.RepoHelpers
+  import BuzzKillfeed.RepoHelpers
 
   @moduledoc """
   This module defines test helpers for creating Template entities
@@ -14,7 +14,7 @@ defmodule BuzzKillfeed.TemplatesFixtures do
       |> Enum.into(%{
         value: "{proper_noun} {past_tense_verb} a bear."
       })
-      |> RepoHelpers.create_template()
+      |> create_template()
     template
   end
 
