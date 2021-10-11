@@ -1,4 +1,4 @@
-defmodule BuzzKillfeed.TempmlatesTest do
+defmodule BuzzKillfeed.TemplatesTest do
   use BuzzKillfeed.DataCase
 
   alias BuzzKillfeed.RepoHelpers
