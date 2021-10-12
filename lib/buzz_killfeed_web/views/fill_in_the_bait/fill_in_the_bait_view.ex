@@ -9,6 +9,7 @@ defmodule FillInTheBait.FillInTheBaitView do
       Enum.count(template_words) > Enum.count(user_words_capped) -> zip_it(template_words,user_words_capped)
       true -> zip_it(user_words_capped, template_words)
     end
+    |> String.trim_trailing(" ")
   end
 
   defp zip_it(longer, shorter) do

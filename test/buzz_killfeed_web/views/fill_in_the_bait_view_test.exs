@@ -28,7 +28,7 @@ defmodule FillInTheBait.FillInTheBaitViewTest do
       words = ["99", "goofy", "bananas","bounce","bunny"]
       res = zip_template_words(tmpl, words)
       # good enough for now.
-      assert res == "The 99 Goofy Bananas That Bounce Your Bunny "
+      assert res == "The 99 Goofy Bananas That Bounce Your Bunny"
     end
 
     test "works on #7" do
@@ -36,7 +36,7 @@ defmodule FillInTheBait.FillInTheBaitViewTest do
       words = ["Mitch McConnell", "really", "steal","his dank","memes"]
       res = zip_template_words(tmpl, words)
       # TODO: fix this stupidity of String.capitalize :P
-      assert res == "Mitch Mcconnell Really Wishes Everyone Would Stop Stealing His Dank Memes "
+      assert res == "Mitch Mcconnell Really Wishes Everyone Would Stop Stealing His Dank Memes"
     end
   end
 end
