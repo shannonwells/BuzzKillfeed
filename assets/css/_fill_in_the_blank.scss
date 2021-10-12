@@ -3,24 +3,25 @@
   margin: 40px auto;
 }
 .fitbGame__Labels {
-  display: flex;
   justify-content: left;
 }
 
 .fitbGame__Label {
-  margin-right: 42px;
+  display: flex;
+  margin-bottom: 22px;
 }
 
-.fitbGame__LabelText {
+.fitbGame__LabelText,.fitbGame__Blank {
   margin-right: 12px;
-  &::after {
-    content: " 👉";
-    font-size: x-large;
-  }
+}
+
+.fitbGame__Pointer {
+  margin-right: 12px;
+  font-size: x-large;
 }
 
 .fitbGame__Blank {
-
+  width: 300px;
 }
 
 .fitbGame__Submit {

@@ -28,6 +28,9 @@ defmodule BuzzKillfeed.RepoHelpers do
   def random_headline() do random_headline([]) end
   def random_headline(filter_tuple) do random_record(filter_tuple, Headline) end
 
+  def random_template() do random_template([]) end
+  def random_template(filter_tuple) do random_record(filter_tuple, Template) end
+
   def random_adj(filter_tuple) do random_record(filter_tuple, Adjective) end
   def random_first(filter_tuple) do random_record(filter_tuple, First) end
   def random_pred(filter_tuple) do random_record(filter_tuple, Predicate) end

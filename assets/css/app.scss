@@ -1,9 +1,10 @@
 $icon-font-path: "/fonts/"; /* use fonts from priv/static/fonts/ */
 /* Custom Stuff */
-@import "buzz_killfeed";
-@import "home";
+@import "basic";
 @import "mixins";
 @import "variables";
+@import "home";
+@import "buzz_killfeed";
 @import "fill_in_the_blank";
 @import "candy_buttons";
 /* This file is for your main application css. */

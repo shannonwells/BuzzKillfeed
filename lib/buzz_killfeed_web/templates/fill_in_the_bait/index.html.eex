@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <h1 id="headline"> Fill In the Bait</h1>
+    <h2 class="subhead2"> A Game for 2 or More</h2>
+    <h3 class="subhead3"> How to play:</h3>
+  <ol class="instructions">
+      <li class="instruction"> Create your own hilarious headline! Ask your fellow player for the parts of speech shown, in order.</li>
+      <li class="instruction"> Fill in each blank with their answer</li>
+      <li class="instruction"> Click "GO"</li>
+      <li class="instruction"> Read the hilarious result!</li>
+  </ol>
+
+  <form class="fitbGame__Form">
+      <div class="fitbGame_Labels">
+          <div class="error"></div>
+          <%= for word <- @wordlist  do %>
+          <label class="fitbGame__Label" for="<%= word %>">
+            <span class="fitbGame__LabelText" ><%= String.capitalize(word) |> String.replace("_", " ")%></span>
+            <span class="fitbGame__Pointer">👉</span>
+            <input class="fitbGame__Blank" id="<%= word %>" required>
+          </label>
+          <%= end %>
+      </div>
+    <button class="fitbGame__Submit" type="submit" >GO!</button>
+    <div ladom class="hidden"></div>
+  </form>
+
+</div>

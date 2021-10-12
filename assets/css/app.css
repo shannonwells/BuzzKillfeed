@@ -3,67 +3,27 @@
 /* Custom Stuff */
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:bold+Lobster);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
-body {
-  background: #000000;
+.hidden {
+  display: none;
 }
 
-.jumbotron {
-  background: #79c8c7;
-  padding: 30px;
+.error {
+  display: none;
+}
+.error.hasError {
+  display: inherit;
 }
 
-#main, #main-winter, #main-valentines {
-  -webkit-animation: main 10s 5s infinite ease;
-  /* Chrome, Safari, Opera */
-}
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes main-valentines {
-  0% {
-    background: #ffe2ea;
-  }
-  50% {
-    background: #ff00a1;
-  }
-  100% {
-    background: #ba000c;
-  }
-}
-/* Standard syntax */
-@keyframes main-valentines {
-  from {
-    background: #ffe2ea;
-  }
-  to {
-    background: #ba000c;
-  }
-}
-/* Chrome, Safari, Opera */
-@-webkit-keyframes main-winter-switch {
-  0% {
-    background: #ba000c;
-  }
-  50% {
-    background: #0038b8;
-  }
-  100% {
-    background: #ba000c;
-  }
-}
-/* Standard syntax */
-@keyframes main-winter-switch {
-  from {
-    background: #0038b8;
-  }
-  to {
-    background: #ba000c;
-  }
-}
 body {
   margin: 0;
   padding-top: 0;
   background: #000000;
   font-family: "Montserrat", "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
+}
+
+.jumbotron {
+  background: #79c8c7;
+  padding: 30px;
 }
 
 a {
@@ -203,73 +163,31 @@ main {
   border-radius: 80px;
 }
 
-#main, #main-winter, #main-valentines {
-  -webkit-animation: main 10s 5s infinite ease;
-  /* Chrome, Safari, Opera */
-}
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes main-valentines {
-  0% {
-    background: #ffe2ea;
-  }
-  50% {
-    background: #ff00a1;
-  }
-  100% {
-    background: #ba000c;
-  }
-}
-/* Standard syntax */
-@keyframes main-valentines {
-  from {
-    background: #ffe2ea;
-  }
-  to {
-    background: #ba000c;
-  }
-}
-/* Chrome, Safari, Opera */
-@-webkit-keyframes main-winter-switch {
-  0% {
-    background: #ba000c;
-  }
-  50% {
-    background: #0038b8;
-  }
-  100% {
-    background: #ba000c;
-  }
-}
-/* Standard syntax */
-@keyframes main-winter-switch {
-  from {
-    background: #0038b8;
-  }
-  to {
-    background: #ba000c;
-  }
-}
 .fitbGame__Form {
   font-size: large;
   margin: 40px auto;
 }
 
 .fitbGame__Labels {
-  display: flex;
   justify-content: left;
 }
 
 .fitbGame__Label {
-  margin-right: 42px;
+  display: flex;
+  margin-bottom: 22px;
 }
 
-.fitbGame__LabelText {
+.fitbGame__LabelText, .fitbGame__Blank {
   margin-right: 12px;
 }
-.fitbGame__LabelText::after {
-  content: " 👉";
+
+.fitbGame__Pointer {
+  margin-right: 12px;
   font-size: x-large;
+}
+
+.fitbGame__Blank {
+  width: 300px;
 }
 
 .fitbGame__Submit {

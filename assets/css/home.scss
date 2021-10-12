@@ -14,6 +14,11 @@ body {
   font-family: "Montserrat", "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
 }
 
+.jumbotron {
+  background: $contrastcolor;
+  padding: 30px;
+}
+
 a {
   color: $linkcolor;
 }
