@@ -1,0 +1,3 @@
+{
+  headline: "<%= zip_template_words(@template, @wordlist) %>"
+}

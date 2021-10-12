@@ -1,9 +1,9 @@
 defmodule FillInTheBait.FillInTheBaitView do
   use BuzzKillfeedWeb, :view
 
-  def zip_template_words(template, words) do
+  def zip_template_words(template, wordlist) do
     template_words = template |> String.split(~r/\{\w+\}/)
-    user_words_capped = words |> Enum.map(fn w -> capitalize_properly(w) end)
+    user_words_capped = wordlist |> Enum.map(fn w -> capitalize_properly(w) end)
 
     cond  do
       Enum.count(template_words) > Enum.count(user_words_capped) -> zip_it(template_words,user_words_capped)

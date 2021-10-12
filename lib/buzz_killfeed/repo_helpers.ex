@@ -2,7 +2,6 @@ defmodule BuzzKillfeed.RepoHelpers do
   @moduledoc """
   Helpers for getting records.
   """
-  #    import Ecto.Query, warn: false
   import Ecto.Query, warn: true
 
   alias BuzzKillfeed.Repo
@@ -44,7 +43,6 @@ defmodule BuzzKillfeed.RepoHelpers do
     Repo.all(Headline)
   end
 
-
   @doc """
   Gets a single headline by id.
   Raises `Ecto.NoResultsError` if the headline does not exist.
@@ -77,20 +75,6 @@ defmodule BuzzKillfeed.RepoHelpers do
     |> Repo.delete_all
   end
 
-  @doc """
-  Deletes a headline.
-  ## Examples
-      iex> delete_article(headline)
-      {:ok, %Headline{}}
-
-      iex> delete_article(headline)
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def delete_headline(%Headline{} = headline) do
-    Repo.delete(headline)
-  end
-
   # # # # # # # #  TEMPLATES
 
 
@@ -112,13 +96,7 @@ defmodule BuzzKillfeed.RepoHelpers do
     Repo.get!(Noun, id) end
 
   @doc """
-  Creates a noun.
-  ## Examples
-      iex> create_noun(%{noun: value})
-      {:ok, %noun{}}
-
-      iex> create_noun(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
+  Creates a noun. See create_headline.
   """
   def create_noun(attrs \\ %{}) do
     %Noun{}

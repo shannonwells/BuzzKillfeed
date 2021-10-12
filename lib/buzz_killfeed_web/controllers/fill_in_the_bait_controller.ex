@@ -9,9 +9,6 @@ defmodule FillInTheBait.FillInTheBaitController do
 
   def create(conn, %{"words" => words, "template_id" => template_id}) do
     template = get_template!(template_id).value
-    wordlist = template |> String.split(~r/\{\w+\}/)
-    conn |> render(ClickbaitGenerator.ClickbaitGeneratorView,
-              "headline.json",
-              %{headline: template})
+    conn |> render("create.json", %{template: template, wordlist: words})
   end
 end
