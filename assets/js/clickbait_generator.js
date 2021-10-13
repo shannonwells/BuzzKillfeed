@@ -3,7 +3,7 @@ const CBG = {
         CBG.getHeadline($(this).attr('id'));
     },
     getHeadline: function (headlineType) {
-        $.getJSON(`/api/clickbait_generator/generate/${headlineType}`, {}, CBG.onGetSuccess);
+        $.getJSON(`/api/clickbait_generator/generate/${headlineType}`, {}, this.onGetSuccess);
         CBG.resetLocationHash();
     },
 
@@ -61,7 +61,7 @@ const CBG = {
     sharePermalink: function (event) {
         var $modalDiv = $(".ladom");
         event.preventDefault();
-        if ($modalDiv.text() == "") {
+        if ($modalDiv.text() === "") {
             var headLine = $("#headline").text();
             var headlineType = "listicle";
             $.post("/clickbaits",
@@ -70,7 +70,7 @@ const CBG = {
                     headline_type: headlineType,
                 }
             },
-            CBG.onShareSuccess);
+            this.onShareSuccess);
         } else {
             $modalDiv.modal();
         }

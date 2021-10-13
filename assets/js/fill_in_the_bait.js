@@ -1,29 +1,48 @@
-const FITB =  {
+const FITB = {
+    // getHeadline: function (wordlist) {
+    // },
+
+    onGetSuccess: function (data, status, xhr, leaveHashAlone) {
+        console.log("Hereeeeeee")
+        const formClass=".fitbGame__Form";
+        const reloadClass=".fitbGame__Reload";
+        const resultSection=".fitbGame__Result__Section"
+        const resultClass=".fitbGame__NewHeadline";
+
+        $(formClass).addClass("hidden");
+        $(resultSection).removeClass("hidden")
+        data = JSON.parse(data);
+        $(resultClass).text(data.headline);
+        $(reloadClass).click((_) => window.location.reload(true) )
+    },
+
     register: function () {
         const missingFieldClass = "fitbGame__Blank__missing"
-        // const formClass = "fitbGame__Form"
+        const template_id = $(".fitbGame__Form").attr("id").split("_")[1]
         const inputClass = ".fitbGame__Blank"
         const submitClass = ".fitbGame__Submit"
-        const errorClass = "fitbGame__HasError"
+        const errorClass = ".fitbGame__HasError"
         const errorMessage = "You need to fill in all the fields!"
 
-        $(submitClass).click((event) => {
+        $(submitClass).click((_) => {
             const inputs = $(inputClass)
-            inputs.removeClass(missingFieldClass)
-            event.preventDefault()
+            // inputs.removeClass(missingFieldClass)
+            // $(errorClass).addClass("hidden")
             let error = false;
             const wordlist = inputs
-                .map( (idx,input) => {
+                .map((idx, input) => {
                     if (input.value === "") {
                         error = true;
                         $(input).addClass(missingFieldClass)
                     }
                     return input.value
-                });
-            if (error) {
-                $(".error").addClass(errorClass).text(errorMessage)
-            }
-            console.log(wordlist)
+                })
+                .get();
+            // if (error) {
+            //     $(errorClass).removeClass("hidden").text(errorMessage)
+            //     return;
+            // }
+            jQuery.post("/api/fill_in_the_bait", {wordlist: wordlist, template_id: template_id}, FITB.onGetSuccess, "json");
         })
     },
 }

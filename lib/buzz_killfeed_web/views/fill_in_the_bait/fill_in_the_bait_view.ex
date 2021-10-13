@@ -1,6 +1,13 @@
 defmodule FillInTheBait.FillInTheBaitView do
   use BuzzKillfeedWeb, :view
 
+  def get_needed_words(template) do
+    Regex.scan(~r/\{\w+\}/, template)
+    |> Enum.flat_map(fn l -> l end)
+    |> Enum.map(fn item -> Regex.replace(~r/[\{\}]/, item, "")  end)
+
+  end
+
   def zip_template_words(template, wordlist) do
     template_words = template |> String.split(~r/\{\w+\}/)
     user_words_capped = wordlist |> Enum.map(fn w -> capitalize_properly(w) end)

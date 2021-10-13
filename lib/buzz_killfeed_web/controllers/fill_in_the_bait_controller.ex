@@ -4,20 +4,13 @@ defmodule FillInTheBait.FillInTheBaitController do
 
   def index(conn, _params) do
     conn
-    |> render("index.html", %{wordlist: get_needed_words(random_template().value)})
+    |> render("index.html", %{template: random_template() })
   end
 
-  def create(conn, %{"words" => words, "template_id" => template_id}) do
-    IO.inspect(words)
+  def create(conn, %{"wordlist" => wordlist, "template_id" => template_id}) do
+    IO.inspect(wordlist)
     template = get_template!(template_id).value
     conn
-    |> render("create.json", %{template: template, wordlist: words})
-  end
-
-  def get_needed_words(template) do
-    Regex.scan(~r/\{\w+\}/, template)
-    |> Enum.flat_map(fn l -> l end)
-    |> Enum.map(fn item -> Regex.replace(~r/[\{\}]/, item, "")  end)
-
+    |> render("create.json", %{template: template, wordlist: wordlist})
   end
 end
