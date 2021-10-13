@@ -1,1 +1,41 @@
+@mixin candy-button {
+  font-family: "Lobster Two", cursive;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
 
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
+@mixin zero-green-glow {
+  box-shadow: 0 0 3px 5px rgba(43, 168, 5, 0.40);
+}
+@mixin zero-overlay-glow {
+  box-shadow: 0 0 3px 3px rgba(5, 163, 168, 0.4);
+}
+
+@keyframes glowing {
+  0% {
+    background-color: rgba(43, 168, 5, 0.11);
+    @include zero-green-glow;
+  }
+  25% {
+    background-color: rgba(73, 232, 25, 0.18);
+    box-shadow: 0 0 5px 5px rgba(73, 232, 25, 0.40);
+  }
+  50% {
+    background-color: rgba(73, 232, 25, 0.25);
+    box-shadow: 0 0 10px 5px rgba(25, 232, 35, 0.40);
+  }
+  75% {
+    background-color: rgba(73, 232, 25, 0.25);
+    box-shadow: 0 0 5px 5px rgba(10, 232, 45, 0.40);
+  }
+  100% {
+    background-color: rgba(43, 168, 5, 0.34);
+    box-shadow: 0 0 3px 5px rgba(0, 168, 55, 0.40);
+  }
+}

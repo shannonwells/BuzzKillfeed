@@ -26,8 +26,8 @@ const FITB = {
 
         $(submitClass).click((_) => {
             const inputs = $(inputClass)
-            // inputs.removeClass(missingFieldClass)
-            // $(errorClass).addClass("hidden")
+            inputs.removeClass(missingFieldClass)
+            $(errorClass).addClass("hidden")
             let error = false;
             const wordlist = inputs
                 .map((idx, input) => {
@@ -38,10 +38,10 @@ const FITB = {
                     return input.value
                 })
                 .get();
-            // if (error) {
-            //     $(errorClass).removeClass("hidden").text(errorMessage)
-            //     return;
-            // }
+            if (error) {
+                $(errorClass).removeClass("hidden").text(errorMessage)
+                return;
+            }
             jQuery.post("/api/fill_in_the_bait", {wordlist: wordlist, template_id: template_id}, FITB.onGetSuccess, "json");
         })
     },

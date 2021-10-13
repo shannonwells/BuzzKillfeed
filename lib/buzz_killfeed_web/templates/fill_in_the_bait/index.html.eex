@@ -12,11 +12,11 @@
     </ol>
     <div class="fitbGame__Result__Section hidden">
         <h1 class="fitbGame__NewHeadline"></h1>
-        <button class="fitbGame__Reload" type="submit">Again!</button>
+        <button class="fitbGame__Reload button round blue" type="submit">Again!</button>
     </div>
     <div class="fitbGame__Form" id="template_<%= @template.id %>">
-        <div class="fitbGame_Labels">
-            <div class="fitbGame__HasError"></div>
+        <div class="fitbGame__HasError"></div>
+        <div class="fitbGame__Labels">
             <%= for word <- get_needed_words(@template.value)  do %>
             <label class="fitbGame__Label" for="<%= word %>">
                 <span class="fitbGame__LabelText"><%= String.capitalize(word) |> String.replace("_", " ")%></span>
@@ -25,7 +25,7 @@
             </label>
             <%= end %>
         </div>
-        <button class="fitbGame__Submit">GO!</button>
+        <button class="button pink round fitbGame__Submit">GO!</button>
         <div ladom class="hidden"></div>
     </div>
 </div>

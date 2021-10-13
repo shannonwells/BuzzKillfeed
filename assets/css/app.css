@@ -7,13 +7,50 @@
   display: none;
 }
 
-.error {
-  display: none;
+@keyframes glowing {
+  0% {
+    background-color: rgba(43, 168, 5, 0.11);
+    box-shadow: 0 0 3px 5px rgba(43, 168, 5, 0.4);
+  }
+  25% {
+    background-color: rgba(73, 232, 25, 0.18);
+    box-shadow: 0 0 5px 5px rgba(73, 232, 25, 0.4);
+  }
+  50% {
+    background-color: rgba(73, 232, 25, 0.25);
+    box-shadow: 0 0 10px 5px rgba(25, 232, 35, 0.4);
+  }
+  75% {
+    background-color: rgba(73, 232, 25, 0.25);
+    box-shadow: 0 0 5px 5px rgba(10, 232, 45, 0.4);
+  }
+  100% {
+    background-color: rgba(43, 168, 5, 0.34);
+    box-shadow: 0 0 3px 5px rgba(0, 168, 55, 0.4);
+  }
 }
-.error.hasError {
-  display: inherit;
+@keyframes glowing {
+  0% {
+    background-color: rgba(43, 168, 5, 0.11);
+    box-shadow: 0 0 3px 5px rgba(43, 168, 5, 0.4);
+  }
+  25% {
+    background-color: rgba(73, 232, 25, 0.18);
+    box-shadow: 0 0 5px 5px rgba(73, 232, 25, 0.4);
+  }
+  50% {
+    background-color: rgba(73, 232, 25, 0.25);
+    box-shadow: 0 0 10px 5px rgba(25, 232, 35, 0.4);
+  }
+  75% {
+    background-color: rgba(73, 232, 25, 0.25);
+    box-shadow: 0 0 5px 5px rgba(10, 232, 45, 0.4);
+  }
+  100% {
+    background-color: rgba(43, 168, 5, 0.34);
+    box-shadow: 0 0 3px 5px rgba(0, 168, 55, 0.4);
+  }
 }
-
 body {
   margin: 0;
   padding-top: 0;
@@ -95,12 +132,17 @@ main {
 .button.button--clickbait {
   font-family: "Lobster Two", cursive;
   font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 700;
   margin: 28px;
   flex-basis: 0;
   flex-grow: 1;
   margin-top: 5px;
-  cursor: pointer;
-  text-decoration: none;
+}
+.button.button--clickbait:active {
+  position: relative;
+  top: 1px;
 }
 
 .button--clickbait:active {
@@ -168,7 +210,29 @@ main {
   margin: 40px auto;
 }
 
+button.fitbGame__Reload {
+  font-family: "Lobster Two", cursive;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+button.fitbGame__Reload:active {
+  position: relative;
+  top: 1px;
+}
+
+.fitbGame__HasError {
+  margin-top: 22px;
+  height: fit-content;
+  font-weight: bold;
+}
+
+.fitbGame__Blank__missing {
+  border: 2px solid #ff00a1;
+}
+
 .fitbGame__Labels {
+  margin-top: 22px;
   justify-content: left;
 }
 
@@ -190,13 +254,16 @@ main {
   width: 300px;
 }
 
-.fitbGame__Submit {
-  margin-top: 22px;
-  padding: 22px;
+button.fitbGame__Submit {
+  font-family: "Lobster Two", cursive;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 12px 24px;
 }
-
-.fitbGame__HasError {
-  display: block;
+button.fitbGame__Submit:active {
+  position: relative;
+  top: 1px;
 }
 
 /* BonBon Buttons 1.1 by simurai.com

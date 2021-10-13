@@ -2,7 +2,23 @@
   font-size: large;
   margin: 40px auto;
 }
+
+button.fitbGame__Reload {
+  @include candy-button;
+}
+
+.fitbGame__HasError {
+  margin-top: 22px;
+  height: fit-content;
+  font-weight: bold;
+}
+
+.fitbGame__Blank__missing  {
+  border: 2px solid #ff00a1;
+}
+
 .fitbGame__Labels {
+  margin-top: 22px;
   justify-content: left;
 }
 
@@ -24,11 +40,7 @@
   width: 300px;
 }
 
-.fitbGame__Submit {
-  margin-top: 22px;
-  padding: 22px;
-}
-
-.fitbGame__HasError {
-  display: block;
+button.fitbGame__Submit {
+  @include candy-button;
+  padding: 12px 24px;
 }

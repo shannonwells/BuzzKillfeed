@@ -86,14 +86,12 @@ main {
 }
 
 .button.button--clickbait {
-  font-family: 'Lobster Two', cursive;
+  @include candy-button;
   font-weight: 700;
   margin: 28px;
   flex-basis: 0;
   flex-grow: 1;
   margin-top: 5px;
-  cursor: pointer;
-  text-decoration: none;
 }
 
 .button--clickbait:active {
