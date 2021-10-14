@@ -3,7 +3,6 @@ const FITB = {
     // },
 
     onGetSuccess: function (data, status, xhr, leaveHashAlone) {
-        console.log("Hereeeeeee")
         const formClass=".fitbGame__Form";
         const reloadClass=".fitbGame__Reload";
         const resultSection=".fitbGame__Result__Section"
@@ -11,7 +10,12 @@ const FITB = {
 
         $(formClass).addClass("hidden");
         $(resultSection).removeClass("hidden")
-        data = JSON.parse(data);
+        try {
+            data = JSON.parse(data);
+        } catch (e) {
+            console.error("could not parse response: ", data)
+            data = {headline: "Whoops! Something broke. Please try again."}
+        }
         $(resultClass).text(data.headline);
         $(reloadClass).click((_) => window.location.reload(true) )
     },
