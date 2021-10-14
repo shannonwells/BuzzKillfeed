@@ -31,22 +31,24 @@ h1 {
   margin-left: 10px;
 }
 
-#topbar {
+nav {
+  display: flex;
   background-color: $bgcolor;
   color: $linkcolor;
   padding: 0 32px;
   line-height: 32px;
-  display: flex;
   align-content: flex-start;
   font-weight: bold;
   justify-content: flex-start;
   text-align: left;
+  @media (max-width: $breakpoint-tablet) {
+    font-size: smaller;
+    padding: 0 22px;
+  }
 }
 
-.nav {
-  margin: 10px 0;
-  padding: 0 22px;
-  flex-basis: auto;
+.nav__Item {
+  padding: 0 32px 0 0;
 }
 
 main {

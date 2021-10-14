@@ -1,6 +1,6 @@
 doctype 5
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +12,19 @@ doctype 5
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/>
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/>
-    <link rel="manifest" href="manifest.json" />
-  </head>
-  <body>
-    <main role="main">
-      <%= @inner_content %>
-    </main>
-    <footer>
-      <div id=js-demo> Uh oh, this text should have been replaced by buzz_killfeed.js.</div>
-    </footer>
-  </body>
+    <link rel="manifest" href="manifest.json"/>
+</head>
+<body>
+<nav>
+    <span class="nav__Item"><a href="/">Home</a></span>
+    <span class="nav__Item"><a href="/clickbait_generator">Clickbait Generator</a></span>
+    <span class="nav__Item"><a href="/fill_in_the_bait">Fill In the Bait</a></span>
+    <span class="nav__Item"><a href="/about">About</a></span>
+</nav>
+<main role="main">
+    <%= @inner_content %>
+</main>
+<footer>
+    <div id=js-demo> Uh oh, this text should have been replaced by buzz_killfeed.js.</div>
+</footer>
+</body>

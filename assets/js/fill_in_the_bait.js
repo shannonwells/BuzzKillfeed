@@ -22,7 +22,9 @@ const FITB = {
 
     register: function () {
         const missingFieldClass = "fitbGame__Blank__missing"
-        const template_id = $(".fitbGame__Form").attr("id").split("_")[1]
+        const template_id = $(".fitbGame__Form")
+        if (template_id.length === 0) return;
+        template_id.attr("id").split("_")[1]
         const inputClass = ".fitbGame__Blank"
         const submitClass = ".fitbGame__Submit"
         const errorClass = ".fitbGame__HasError"
