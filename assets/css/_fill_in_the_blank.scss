@@ -1,54 +1,54 @@
-.fitbGame__Form {
+.fitbGame--Form {
   font-size: large;
   margin: 40px auto;
 }
 
-button.fitbGame__Reload {
+button.fitbGame--Reload {
   @include candy-button;
 }
 
-.fitbGame__HasError {
+.fitbGame--HasError {
   margin-top: 22px;
   height: fit-content;
   font-weight: bold;
 }
 
-.fitbGame__Blank__missing  {
+.fitbGame__Blank--missing  {
   border: 2px solid #ff00a1;
 }
 
-.fitbGame__Labels {
+.fitbGame--Labels {
   margin-top: 22px;
   display: table;
 }
 
-.fitbGame__Label {
+.fitbGame--Label {
   display: table-row;
   margin-bottom: 22px;
 }
 
-.fitbGame__LabelText,.fitbGame__Blank {
+.fitbGame--LabelText,.fitbGame--Blank {
   margin-right: 12px;
   display: table-cell;
 }
 
-.fitbGame__LabelText {
+.fitbGame--LabelText {
   padding: 6px 12px;
   text-align: right;
 }
 
-.fitbGame__Pointer {
+.fitbGame--Pointer {
   margin-right: 12px;
   font-size: x-large;
 }
 
-.fitbGame__Blank {
+.fitbGame--Blank {
   padding: 4px;
   text-align: left;
   width: 300px;
 }
 
-button.fitbGame__Submit {
+button.fitbGame--Submit {
   margin-top: 22px;
   @include candy-button;
   padding: 12px 52px;

@@ -4,9 +4,6 @@
 @import 'variables';
 @import 'mixins';
 
-$buttonBackground: #2c3e50;
-$buttonColor: rgba(255, 255, 255, 1);
-
 body {
   margin: 0;
   padding-top: 0;
@@ -47,8 +44,14 @@ nav {
   }
 }
 
-.nav__Item {
-  padding: 0 32px 0 0;
+.nav--Item {
+  margin: 0 32px 0 0;
+  padding: 4px 8px;
+  &:hover, &:active {
+    transition: background-color 300ms ease-out;
+    border-radius: 4px 4px 0 0;
+    background-color: $contrastcolor;
+  }
 }
 
 main {
@@ -143,4 +146,9 @@ main {
   border: 8px solid $button-grad;
   background-color: $contrastcolor;
   border-radius: 80px;
+}
+
+footer {
+  padding: 0 32px;
+  color: $footerText;
 }

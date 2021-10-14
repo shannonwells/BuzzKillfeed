@@ -3,10 +3,10 @@ const FITB = {
     // },
 
     onGetSuccess: function (data, status, xhr, leaveHashAlone) {
-        const formClass=".fitbGame__Form";
-        const reloadClass=".fitbGame__Reload";
-        const resultSection=".fitbGame__Result__Section"
-        const resultClass=".fitbGame__NewHeadline";
+        const formClass=".fitbGame--Form";
+        const reloadClass=".fitbGame--Reload";
+        const resultSection=".fitbGame--Result--Section"
+        const resultClass=".fitbGame--NewHeadline";
 
         $(formClass).addClass("hidden");
         $(resultSection).removeClass("hidden")
@@ -21,13 +21,13 @@ const FITB = {
     },
 
     register: function () {
-        const missingFieldClass = "fitbGame__Blank__missing"
-        const template_id = $(".fitbGame__Form")
+        const missingFieldClass = "fitbGame__Blank--missing"
+        const template_id = $(".fitbGame--Form")
         if (template_id.length === 0) return;
         template_id.attr("id").split("_")[1]
-        const inputClass = ".fitbGame__Blank"
-        const submitClass = ".fitbGame__Submit"
-        const errorClass = ".fitbGame__HasError"
+        const inputClass = ".fitbGame--Blank"
+        const submitClass = ".fitbGame--Submit"
+        const errorClass = ".fitbGame--HasError"
         const errorMessage = "You need to fill in all the fields!"
 
         $(submitClass).click((_) => {

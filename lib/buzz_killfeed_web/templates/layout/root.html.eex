@@ -16,15 +16,18 @@ doctype 5
 </head>
 <body>
 <nav>
-    <span class="nav__Item"><a href="/">Home</a></span>
-    <span class="nav__Item"><a href="/clickbait_generator">Clickbait Generator</a></span>
-    <span class="nav__Item"><a href="/fill_in_the_bait">Fill In the Bait</a></span>
-    <span class="nav__Item"><a href="/about">About</a></span>
+    <span class="nav--Item"><a href="/">Home</a></span>
+    <span class="nav--Item"><a href="/clickbait_generator">Clickbait Generator</a></span>
+    <span class="nav--Item"><a href="/fill_in_the_bait">Fill In the Bait</a></span>
+    <span class="nav--Item"><a href="/about">About</a></span>
 </nav>
 <main role="main">
     <%= @inner_content %>
 </main>
 <footer>
-    <div id=js-demo> Uh oh, this text should have been replaced by buzz_killfeed.js.</div>
+    <p class="Notice--GDPR--CCPA" >This website stores nothing about you or your browser, and it stores
+        nothing on your computer.
+        If you save a headline to share, or visit an existing headline, an overall "visit count" is updated
+        for the saved headline.</p>
 </footer>
 </body>
