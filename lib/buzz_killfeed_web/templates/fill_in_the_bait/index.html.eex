@@ -23,7 +23,7 @@
                 <span class="fitbGame__Pointer">👉</span>
                 <input class="fitbGame__Blank" id="<%= word %>" required>
             </label>
-            <%= end %>
+            <% end %>
         </div>
         <button class="button pink round fitbGame__Submit">GO!</button>
         <div ladom class="hidden"></div>

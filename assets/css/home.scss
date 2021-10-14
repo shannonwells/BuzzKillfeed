@@ -34,16 +34,19 @@ h1 {
 #topbar {
   background-color: $bgcolor;
   color: $linkcolor;
-  padding: 0 30px;
-  line-height: 30px;
+  padding: 0 32px;
+  line-height: 32px;
   display: flex;
-  justify-content: space-around;
-  text-align: center;
+  align-content: flex-start;
+  font-weight: bold;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .nav {
   margin: 10px 0;
-  flex: 1;
+  padding: 0 22px;
+  flex-basis: auto;
 }
 
 main {
@@ -84,21 +87,6 @@ main {
     min-width: 100px;
   }
 }
-
-.button.button--clickbait {
-  @include candy-button;
-  font-weight: 700;
-  margin: 28px;
-  flex-basis: 0;
-  flex-grow: 1;
-  margin-top: 5px;
-}
-
-.button--clickbait:active {
-  position: relative;
-  top: 1px;
-}
-
 #init-twit {
   padding: 0 2em;
   height: 50px;

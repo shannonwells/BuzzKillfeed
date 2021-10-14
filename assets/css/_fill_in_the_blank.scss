@@ -19,16 +19,22 @@ button.fitbGame__Reload {
 
 .fitbGame__Labels {
   margin-top: 22px;
-  justify-content: left;
+  display: table;
 }
 
 .fitbGame__Label {
-  display: flex;
+  display: table-row;
   margin-bottom: 22px;
 }
 
 .fitbGame__LabelText,.fitbGame__Blank {
   margin-right: 12px;
+  display: table-cell;
+}
+
+.fitbGame__LabelText {
+  padding: 6px 12px;
+  text-align: right;
 }
 
 .fitbGame__Pointer {
@@ -37,10 +43,13 @@ button.fitbGame__Reload {
 }
 
 .fitbGame__Blank {
+  padding: 4px;
+  text-align: left;
   width: 300px;
 }
 
 button.fitbGame__Submit {
+  margin-top: 22px;
   @include candy-button;
-  padding: 12px 24px;
+  padding: 12px 52px;
 }

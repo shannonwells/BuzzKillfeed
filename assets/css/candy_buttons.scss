@@ -34,6 +34,7 @@ $white2: rgba(255, 255, 255, 0.7);
 $white3: rgba(255, 255, 255, 0.8);
 $transparent: rgba(255, 255, 255, 0);
 
+/* -------------- THE button -------------- */
 .button {
   text-decoration: none;
   font: 24px/1em 'Droid Sans', sans-serif;
@@ -287,7 +288,7 @@ $shiitake: rgba(0, 0, 0, 0.3);
 
 
 /* -------------- Materials -------------- */
-$nearly-white: rgba(255, 255, 255, .6);
+$nearly-white: rgba(255, 255, 255, .55);
 $nothing: rgba(255, 255, 255, .1);
 
 .button.glossy:after, .button.glass:after {
@@ -302,7 +303,8 @@ $nothing: rgba(255, 255, 255, .1);
   -moz-border-radius: .5em .5em 1em 1em / .5em .5em 2em 2em;
   border-radius: .5em .5em 1em 1em / .5em .5em 2em 2em;
 
-  background-image: -webkit-gradient(linear, 0% 0, 100% 0, from($nearly-white), to($whitish)), color-stop(.5, $nothing), color-stop(.8, $nothing);
+  background-image: -webkit-gradient(linear, 0% 0, 100% 0, from($nearly-white), to($whitish),
+          color-stop(.5, $nothing), color-stop(.8, $nothing));
   background-image: -moz-linear-gradient(left, $nearly-white, $nothing 50%, $nothing 80%, $whitish);
   background-image: linear-gradient(0deg, $nearly-white, $whitish), color-stop(.5, $nothing), color-stop(.8, $nothing);
 }
@@ -320,9 +322,6 @@ $nothing: rgba(255, 255, 255, .1);
 }
 
 /* -------------- Glass + Transparent -------------- */
-$glassy1: rgba(0, 0, 0, 0.18);
-$glassy3: rgba(255, 255, 255, .3);
-
 .button.glass {
   text-shadow: $whitish 0 -1px 0, $glassy1 0 .18em .15em;
 }
@@ -330,6 +329,7 @@ $glassy3: rgba(255, 255, 255, .3);
 .button.glass:active {
   text-shadow: $glassy3 0 1px 0, $glassy2 0 .18em .15em;
 }
+
 
 /* -------------- Shapes -------------- */
 
@@ -403,13 +403,11 @@ $glassy3: rgba(255, 255, 255, .3);
 }
 
 /* back */
-$fun: rgba(255, 255, 255, 0.5);
-
 .back, .back.glossy:after, .back.glass:after {
-  border-top-color: $fun;
-  -webkit-border-radius: 1.6em 1.6em 1em 1em / 4em 4em 1em 1em;
-  -moz-border-radius: 1.6em 1.6em 1em 1em / 4em 4em 1em 1em;
-  border-radius: 1.6em 1.6em 1em 1em / 4em 4em 1em 1em;
+  border-top-color: 		$whitish;
+  -webkit-border-radius: 	1.6em 1.6em 1em 1em / 4em 4em 1em 1em;
+  -moz-border-radius: 	1.6em 1.6em 1em 1em / 4em 4em 1em 1em;
+  border-radius: 			1.6em 1.6em 1em 1em / 4em 4em 1em 1em;
 }
 
 .back.glossy:after, .back.glass:after {
