@@ -34,7 +34,7 @@ node_modules
 cache_manifest.json
 
 app.css
-app.map
+*.css.map
 /priv/static/css
 /priv/static/js
 /rel
