@@ -14,7 +14,7 @@ defmodule BuzzKillfeed.ClickbaitBuilder do
     first = random_first().value
     next = random_next().value
     noun = random_noun([is_agent: true])
-    "#{particle_for(noun.value, noun)} #{noun.value} #{first}."
+    "#{particle_for(noun.name, noun)} #{noun.name} #{first}. "
       <> "What Happened Next #{next}"
   end
 

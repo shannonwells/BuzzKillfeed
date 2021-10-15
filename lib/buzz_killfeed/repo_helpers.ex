@@ -38,8 +38,8 @@ defmodule BuzzKillfeed.RepoHelpers do
   def random_first() do random_record([], First) end
   def random_first(filter_tuple) do random_record(filter_tuple, First) end
 
-  def random_next() do random_record([], First) end
-  def random_next(filter_tuple) do random_record(filter_tuple, First) end
+  def random_next() do random_record([], Next) end
+  def random_next(filter_tuple) do random_record(filter_tuple, Next) end
 
   def random_predicate() do random_record([], Predicate) end
   def random_predicate(filter_tuple) do random_record(filter_tuple, Predicate) end

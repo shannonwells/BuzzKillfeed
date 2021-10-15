@@ -13,6 +13,7 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorController do
     headline = case headline_type do
       "listicle" -> build_listicle()
       "confession" -> build_confession()
+      "suspense" -> build_suspense()
       true -> "Whups"
     end
     render conn, "headline.json", %{headline: headline}

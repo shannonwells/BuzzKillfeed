@@ -1,7 +1,7 @@
 defmodule BuzzKillfeed.FirstsFixtures do
   import BuzzKillfeed.RepoHelpers
   @moduledoc """
-  This module defines test helpers for creating Adjectives entities
+  This module defines test helpers for creating First entities
   """
 
   @doc """

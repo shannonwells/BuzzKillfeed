@@ -3,12 +3,10 @@ defmodule BuzzKillfeed.ClickbaitBuilderTest do
 
   import BuzzKillfeed.ClickbaitBuilder
   import BuzzKillfeed.RepoHelpers
-#  import BuzzKillfeed.FirstsFixtures
+
   import BuzzKillfeed.NounsFixtures
-  import BuzzKillfeed.NextsFixtures
   import BuzzKillfeed.AdjectivesFixtures
   import BuzzKillfeed.PredicatesFixtures
-  import BuzzKillfeed.VerbsFixtures
 
   describe "build_listicle" do
     test "using selectors works for random_noun" do
@@ -27,21 +25,27 @@ defmodule BuzzKillfeed.ClickbaitBuilderTest do
     end
   end
   describe "build_confession" do
+    import BuzzKillfeed.VerbsFixtures
+
     test "works" do
       noun_fixture(%{name: "Rock"})
       adjective_fixture(%{value: "Gnarly"})
-      verb_fixture(%{value: "Drop"})
-
-      assert(build_confession()
-             |> String.match?(~r/ I Dropped \w+ Gnarly Rock\Z/))
+      verb_fixture(%{value: "Flee"})
+      headline = build_confession()
+      assert(headline
+             |> String.match?(~r/ I Fled \w+ Gnarly Rock\Z/))
     end
   end
-#  describe "build_suspense" do
-#    first_fixture()
-#    next_fixture()
-#    noun_fixture(%{name: "Clown", is_agent: true})
-#    assert(build_suspense()
-#      |> String.match?(~r/Foo/))
-#
-#  end
+  describe "build_suspense" do
+    import BuzzKillfeed.FirstsFixtures
+    import BuzzKillfeed.NextsFixtures
+
+    test "works" do
+      first_fixture()
+      next_fixture()
+      noun_fixture(%{name: "Clown", is_agent: true})
+      assert(build_suspense()
+             |> String.match?(~r/Clown Ate A Peanut. What Happened Next Will Flip Your Lid/))
+    end
+  end
 end

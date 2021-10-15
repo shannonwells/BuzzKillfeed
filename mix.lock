@@ -45,5 +45,5 @@
   "telemetry_metrics": {:hex, :telemetry_metrics, "0.6.1", "315d9163a1d4660aedc3fee73f33f1d355dcc76c5c3ab3d59e76e3edf80eef1f", [:mix], [{:telemetry, "~> 0.4 or ~> 1.0", [hex: :telemetry, repo: "hexpm", optional: false]}], "hexpm", "7be9e0871c41732c233be71e4be11b96e56177bf15dde64a8ac9ce72ac9834c6"},
   "telemetry_poller": {:hex, :telemetry_poller, "1.0.0", "db91bb424e07f2bb6e73926fcafbfcbcb295f0193e0a00e825e589a0a47e8453", [:rebar3], [{:telemetry, "~> 1.0", [hex: :telemetry, repo: "hexpm", optional: false]}], "hexpm", "b3a24eafd66c3f42da30fc3ca7dda1e9d546c12250a2d60d7b81d264fbec4f6e"},
   "unicode_util_compat": {:hex, :unicode_util_compat, "0.7.0", "bc84380c9ab48177092f43ac89e4dfa2c6d62b40b8bd132b1059ecc7232f9a78", [:rebar3], [], "hexpm", "25eee6d67df61960cf6a794239566599b09e17e668d3700247bc498638152521"},
-  "verbs": {:hex, :verbs, "0.5.5", "88b19aae0cd3a1cba841a7950849eed68938331395ef9a59fe4581a300fd119e", [:mix], [], "hexpm", "4df02f43567c02df727f655085c2dceb8eaa1fd7b1b4301a68d9349088a5afd3"},
+  "verbs": {:hex, :verbs, "0.6.0", "a27a61cec853542ba3f1381c8bce7f59e95eabb03c210a5b789aa1264fbdde4e", [:mix], [], "hexpm", "0f7ba2a547e93995058009dd2d14239c6bdb4930bda29573c1a2c648b4a0e712"},
 }
