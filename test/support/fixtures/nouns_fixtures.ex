@@ -11,7 +11,7 @@ defmodule BuzzKillfeed.NounsFixtures do
     {:ok, noun} =
       attrs
       |> Enum.into(%{
-        name: "Rabbit"
+        name: "Bucket"
       })
       |> create_noun()
     noun

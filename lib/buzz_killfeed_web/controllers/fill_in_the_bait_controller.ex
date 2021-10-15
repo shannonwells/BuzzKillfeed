@@ -8,7 +8,6 @@ defmodule FillInTheBait.FillInTheBaitController do
   end
 
   def create(conn, %{"wordlist" => wordlist, "template_id" => template_id}) do
-    IO.inspect(wordlist)
     template = get_template!(template_id).value
     conn
     |> render("create.json", %{template: template, wordlist: wordlist})

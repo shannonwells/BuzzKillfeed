@@ -1,10 +1,5 @@
 defmodule ClickbaitGenerator.ClickbaitGeneratorView do
   use BuzzKillfeedWeb, :view
-
-#  def render("headline.json", %{headline: headline}) do
-#    %{data: render_one(headline, ClickbaitGenerator.ClickbaitGeneratorView, "headline.json")}
-#  end
-
   def button_types() do
     ["listicle", "suspense", "temptation", "confession", "voyeurism"]
   end

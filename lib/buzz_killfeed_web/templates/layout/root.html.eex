@@ -26,8 +26,6 @@ doctype 5
 </main>
 <footer>
     <p class="Notice--GDPR--CCPA" >This website stores nothing about you or your browser, and it stores
-        nothing on your computer.
-        If you save a headline to share, or visit an existing headline, an overall "visit count" is updated
-        for the saved headline.</p>
+        nothing on your computer.</p>
 </footer>
 </body>

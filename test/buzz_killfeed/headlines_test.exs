@@ -30,7 +30,7 @@ defmodule BuzzKillfeed.HeadlinesTest do
 
     test "delete_headline/1 deletes the headline" do
       record = headline_fixture()
-      RepoHelpers.delete_headline(record)
+      RepoHelpers.delete_headline_by_id!(record.id)
       assert_raise Ecto.NoResultsError, fn -> RepoHelpers.get_headline!(record.id) end
     end
 
@@ -39,5 +39,20 @@ defmodule BuzzKillfeed.HeadlinesTest do
       hid = RepoHelpers.random_headline().id
       assert(hid == record.id)
     end
+  end
+  describe "firsts" do
+    import BuzzKillfeed.FirstsFixtures
+
+    test "create_first/1 works" do
+      val = "blah blah"
+      {:ok, record} = RepoHelpers.create_first(%{value: val})
+      assert record.value == val
+    end
+
+    test "get_first/1 works" do
+      record = first_fixture()
+      assert RepoHelpers.get_first!(record.id) == record
+    end
+
   end
 end

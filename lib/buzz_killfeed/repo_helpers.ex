@@ -3,14 +3,15 @@ defmodule BuzzKillfeed.RepoHelpers do
   Helpers for getting records.
   """
   import Ecto.Query, warn: true
-
   alias BuzzKillfeed.Repo
-  alias BuzzKillfeed.Headline
-  alias BuzzKillfeed.Noun
-  alias BuzzKillfeed.Template
-  alias BuzzKillfeed.Predicate
   alias BuzzKillfeed.Adjective
   alias BuzzKillfeed.First
+  alias BuzzKillfeed.Headline
+  alias BuzzKillfeed.Noun
+  alias BuzzKillfeed.Next
+  alias BuzzKillfeed.Predicate
+  alias BuzzKillfeed.Template
+  alias BuzzKillfeed.Verb
 
   # # # # # # # # # Random record fetching
   defp random_record(filter_tuple, table) do
@@ -31,9 +32,20 @@ defmodule BuzzKillfeed.RepoHelpers do
   def random_template() do random_template([]) end
   def random_template(filter_tuple) do random_record(filter_tuple, Template) end
 
-  def random_adj(filter_tuple) do random_record(filter_tuple, Adjective) end
+  def random_adjective() do random_record([], Adjective) end
+  def random_adjective(filter_tuple) do random_record(filter_tuple, Adjective) end
+
+  def random_first() do random_record([], First) end
   def random_first(filter_tuple) do random_record(filter_tuple, First) end
-  def random_pred(filter_tuple) do random_record(filter_tuple, Predicate) end
+
+  def random_next() do random_record([], First) end
+  def random_next(filter_tuple) do random_record(filter_tuple, First) end
+
+  def random_predicate() do random_record([], Predicate) end
+  def random_predicate(filter_tuple) do random_record(filter_tuple, Predicate) end
+
+  def random_verb() do random_record([], Verb) end
+  def random_verb(filter_tuple) do random_record(filter_tuple, Verb) end
 
   ######
 
@@ -78,25 +90,31 @@ defmodule BuzzKillfeed.RepoHelpers do
     |> Repo.delete_all
   end
 
-  # # # # # # # #  TEMPLATES
+  # # # # getters
 
 
   def get_template!(id) do
     Repo.get!(Template, id) end
 
-  def create_template(attrs \\ %{}) do
-    %Template{}
-    |> Template.changeset(attrs)
-    |> Repo.insert()
-  end
+  def get_first!(id) do
+    Repo.get!(First, id) end
 
-  # # # # # # # #  NOUNS
+
   @doc """
   Gets a single noun by id.
   Raises `Ecto.NoResultsError` if the noun does not exist.
   """
   def get_noun!(id) do
     Repo.get!(Noun, id) end
+
+
+
+  #### Creators
+  def create_template(attrs \\ %{}) do
+    %Template{}
+    |> Template.changeset(attrs)
+    |> Repo.insert()
+  end
 
   @doc """
   Creates a noun. See create_headline.
@@ -107,4 +125,49 @@ defmodule BuzzKillfeed.RepoHelpers do
     |> Repo.insert()
   end
 
+  @doc """
+    Creates a predicate. See create_headline.
+  """
+  def create_predicate(attrs \\ %{}) do
+    %Predicate{}
+    |> Predicate.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+    Creates an adjective. See create_headline.
+  """
+  def create_adjective(attrs \\ %{}) do
+    %Adjective{}
+    |> Adjective.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+    Creates a next. See create_headline.
+  """
+  def create_next(attrs \\ %{}) do
+    %Next{}
+    |> Next.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+    Creates a first. See create_headline.
+  """
+  def create_first(attrs \\ %{}) do
+    %First{}
+    |> First.changeset(attrs)
+    |> Repo.insert()
+  end
+
+
+  @doc """
+    Creates a verb. See create_headline.
+  """
+  def create_verb(attrs \\ %{}) do
+    %Verb{}
+    |> Verb.changeset(attrs)
+    |> Repo.insert()
+  end
 end
