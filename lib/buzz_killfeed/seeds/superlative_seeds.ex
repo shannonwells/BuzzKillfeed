@@ -37,7 +37,9 @@ defmodule BuzzKillfeed.Seeds.SuperlativeSeeds do
                      "Most Stunning",
                      "Epic",
                      "Most Hideous",
-                     "Most Disgusting"
+                     "Most Disgusting",
+                     "Most Incredible",
+                     "Wackiest",
                    ]
                    |> Enum.map(fn v -> [value: v] end)
     Repo.insert_all(Superlative, superlatives, on_conflict: :nothing)

@@ -93,5 +93,4 @@ $(document).ready(function () {
         count: 75,
         overlap: 15
     });
-    document.getElementById("js-demo").textContent = "I am from clickbait_generator.js"
 });

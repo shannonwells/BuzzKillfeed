@@ -84,6 +84,7 @@ defmodule BuzzKillfeed.Seeds.AdjectiveSeeds do
                    "Grotesque",
                    "Heartbreaking",
                    "Heartwarming",
+                   "Hipster",
                    "Horrifying",
                    "Hot",
                    "Incredible",

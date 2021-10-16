@@ -22,6 +22,8 @@ defmodule BuzzKillfeed.Seeds.TemplateSeeds do
       "This {adjective} Hack Will {adverb} Change The Way You {verb} {plural_noun} - No Peeler Necessary!",
       "{brand_name} Fitness Has Revived the Annual {adjective} {time_period} Workout Challenge — Our {plural_noun} Are {verb}ing Already",
       "{number} {noun} Patch Captions That Are Bound To Put You In A {adjective} Mood",
+      "A {person} Suffered Spontaneous {adjective} Combustion. What Happened Next Will Allow You To {verb} Happy",
+      "This {person} Stumbled Upon A {adjective} {noun} in {place}. What Happened Next Made Me -- And Millions of {plural_noun} -- Feel {adjective}",
     ]
     |> Enum.map(fn v -> [value: v] end)
     Repo.insert_all(Template, templates, on_conflict: :nothing)

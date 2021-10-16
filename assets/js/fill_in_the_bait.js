@@ -22,9 +22,9 @@ const FITB = {
 
     register: function () {
         const missingFieldClass = "fitbGame__Blank--missing"
-        const template_id = $(".fitbGame--Form")
-        if (template_id.length === 0) return;
-        template_id.attr("id").split("_")[1]
+        const form = $(".fitbGame--Form")
+        if (form.length === 0) return;
+        template_id = form.attr("id").split("_")[1]
         const inputClass = ".fitbGame--Blank"
         const submitClass = ".fitbGame--Submit"
         const errorClass = ".fitbGame--HasError"
@@ -48,13 +48,12 @@ const FITB = {
                 $(errorClass).removeClass("hidden").text(errorMessage)
                 return;
             }
+            console.log({wordlist, template_id})
             jQuery.post("/api/fill_in_the_bait", {wordlist: wordlist, template_id: template_id}, FITB.onGetSuccess, "json");
         })
     },
 }
 
 $(document).ready(function () {
-    const cont = document.getElementById("js-demo").textContent
-    document.getElementById("js-demo").textContent = cont + " I am from fill_in_the_bait.js"
     FITB.register();
 });
