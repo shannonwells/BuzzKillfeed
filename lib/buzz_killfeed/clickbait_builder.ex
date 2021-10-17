@@ -29,8 +29,38 @@ defmodule BuzzKillfeed.ClickbaitBuilder do
     "#{method} I #{sub_obj} #{particle_for(adj.value, noun)} #{adj.value} #{noun.name}"
   end
 
-  defp particle_for(adj, noun) when (noun.is_proper) do
-    "" end
+  def build_temptation do
+    adj = random_adjective()
+    verb = random_verb()
+    noun = random_noun([is_proper: false])
+    "#{random_temptation} #{verb.value} This #{adj.value} #{noun.name}"
+  end
+
+  defp random_temptation do
+    Enum.random([
+      "You Don't Want To",
+      "Bet You Can't",
+      "You Wish You Could",
+      "Just Try Not To",
+      "Everyone's Scared To",
+      "You'd Better Not",
+    ])
+  end
+
+  def build_voyeurism do
+    noun = random_noun(is_agent: true)
+
+    options = %{:tense => "present", :person => "third", :plurality => "singular"}
+    sub_obj = random_verb().value |> Verbs.conjugate(options)
+
+    adj = random_adjective().value
+    noun2 = random_noun()
+
+    "Watch As #{particle_for(noun.name, noun)} #{noun.name} #{sub_obj} #{particle_for(adj,noun2)} #{adj} #{noun2.name}"
+  end
+
+
+  defp particle_for(adj, noun) when (noun.is_proper), do: ""
   defp particle_for(adj, noun) do
     particle = Enum.random(["A", "The", "This", "Some"])
     cond do
