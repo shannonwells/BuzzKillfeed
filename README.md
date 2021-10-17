@@ -10,9 +10,9 @@ This rewrite will include some features I've been meaning to implement for awhil
     Generate your own headines by filling in some blanks and submit to get the hilarious result.
 * Improved styling and behavior
 * Better and more ways to share favorites
-* Tracking views so "Best Of" list can be shown.
+* Tracking views - by view count only, no session storage - so "Best Of" list can be shown.
 * Updated words and phrases
-* More family-friendly.  It was pretty much family friendly before, but now I'm being a bit more strict about content.
+* More family-friendly.
 
 See the old and busted [Ruby on Rails version](http://www.buzzkillfeed.me)
 

@@ -7,12 +7,12 @@
             shown, in order.
         </li>
         <li class="instruction"> Fill in each blank with their answer</li>
-        <li class="instruction"> Click "GO"</li>
+        <li class="instruction"> Click The Shiny, Happy, Candylike Button</li>
         <li class="instruction"> Read the hilarious result!</li>
     </ol>
     <div class="fitbGame--Result--Section hidden">
         <h1 class="fitbGame--NewHeadline"></h1>
-        <button class="fitbGame--Reload button round blue" type="submit">Again!</button>
+        <button class="fitbGame--Reload button round pink glossy" type="submit">Again!</button>
     </div>
     <div class="fitbGame--Form" id="template_<%= @template.id %>">
         <div class="fitbGame--HasError"></div>
@@ -25,7 +25,7 @@
             </label>
             <% end %>
         </div>
-        <button class="button pink round fitbGame--Submit">GO!</button>
+        <button class="button pink round glossy fitbGame--Submit">GO!</button>
         <div ladom class="hidden"></div>
     </div>
 </div>

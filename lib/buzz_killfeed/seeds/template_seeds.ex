@@ -14,15 +14,13 @@ defmodule BuzzKillfeed.Seeds.TemplateSeeds do
       "My {noun} Stopped {verb}ing, And Now I Can't Stop {verb}ing my {noun}",
       "{celebrity} Says \"I'm {adverb} {adjective} I Missed My Big Chance To {verb} Before I {verb}\"",
       "Poll: How Many Times Would You {verb} This {noun} If We Gave You {number} {plural_noun}?",
-      "It Might've Been {celebrity}'s {noun}, but {celebrity} Stole   The Show With Their {adjective} {noun}",
+      "It Might've Been {celebrity}'s {noun}, but {celebrity} Stole The Show With Their {adjective} {noun}",
       "{number} {adjective} {noun} Tricks From A Former {noun} Painter",
       "Can {adjective} {noun} Discolor Your Underwear? We Asked {number} {plural_noun} for Answers",
       "This {number} {time_period} Meditation From {celebrity} Had Me in {plural_noun} — in a Good Way",
-      "These {number} {adjective} {noun} {season} Dresses That'll Look {adjective} All The Way To {}",
+      "These {number} {adjective} {noun} {season} Dresses That'll Look {adjective} All The Way To {holiday}",
       "This {adjective} Hack Will {adverb} Change The Way You {verb} {plural_noun} - No Peeler Necessary!",
       "{brand_name} Fitness Has Revived the Annual {adjective} {time_period} Workout Challenge — Our {plural_noun} Are {verb}ing Already",
-      "{number} {noun} Patch Captions That Are Bound To Put You In A {adjective} Mood",
-      "A {person} Suffered Spontaneous {adjective} Combustion. What Happened Next Will Allow You To {verb} Happy",
       "This {person} Stumbled Upon A {adjective} {noun} in {place}. What Happened Next Made Me -- And Millions of {plural_noun} -- Feel {adjective}",
     ]
     |> Enum.map(fn v -> [value: v] end)

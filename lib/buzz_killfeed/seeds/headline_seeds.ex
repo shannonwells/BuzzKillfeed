@@ -23,14 +23,14 @@ defmodule BuzzKillfeed.Seeds.HeadlineSeeds do
           headline_type: 1
         ],
         [
-          headline: "Donald Trump Discovered There Were Snakes On His Motherf*n' Plane. What Happened Next Is the Best Thing You'll See In The Whole Frigging World.",
+          headline: "Donald Trump Discovered There Were Snakes On His Motherf*n' Plane. What Happened Next Is the Best Thing You'll See In Your Whole Life.",
           headline_type: 1
         ],
         [headline: "Watch As  Beavis Goes Near Gorgeous Kim Jong Un", headline_type: 4],
         [headline: "You Don't Want To Answer This Bozonic Leg Lamp", headline_type: 2],
         [headline: "Watch As This Honey Badger Sees This Fabulous Cranky Old Cat", headline_type: 4],
         [
-          headline: "Seth Rogen Built Darth Vader Out Of Sex Toys. What Happened Next Will Make You Crap Your Pants.",
+          headline: "Seth Rogen Built Darth Vader Out Of Poodles. What Happened Next Will Make You Crap Your Pants.",
           headline_type: 2
         ],
         [headline: "Watch As This Short Fingered Vulgarian Steals  Coma Inducing Obi-Wan Kenobi", headline_type: 4],
@@ -52,8 +52,6 @@ defmodule BuzzKillfeed.Seeds.HeadlineSeeds do
         [headline: "The 32 Smurfing Signs That Will Make Your Commute Less Crappy", headline_type: 0],
         [headline: "The 48 Alien Americans That Aren't Poop", headline_type: 0],
         [headline: "Watch As This Short Fingered Vulgarian Runs Into  Crooked Ivanka Trump", headline_type: 4],
-        [headline: "You Don't Want To Trick This HUGE Lover", headline_type: 2],
-        [headline: "You Don't Want To Flee This Short-Fingered Mom", headline_type: 2],
         [headline: "The 95 Filthy Felonies That Prove San Francisco Blows Goats", headline_type: 0],
         [headline: "Watch As  Kellyann Conway Sniffs  Confused Kim Kardashian", headline_type: 4],
         [headline: "You Don't Want To Befriend This Boozy Virgin Ragequitter", headline_type: 2],
@@ -65,6 +63,7 @@ defmodule BuzzKillfeed.Seeds.HeadlineSeeds do
         [headline: "The 20 Bacon-Wrapped Circuses That Will Dogwalk You If You Don't Leave Them Alone", headline_type: 0],
         [headline: "The 31 Unbelievable Signs That Prove San Francisco Blows Goats", headline_type: 0],
         [headline: "The 52 Weird Snowflakes That Are The Bees Knees", headline_type: 0],
+        [headline: "Bet You Can't HODL This Yuletide Gelt", headline_type: 2],
       ],
       on_conflict: :nothing
     )
