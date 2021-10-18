@@ -15,12 +15,8 @@ doctype 5
     <link rel="manifest" href="manifest.json"/>
 </head>
 <body>
-<nav>
-    <span class="nav--Item"><a href="/">Home</a></span>
-    <span class="nav--Item"><a href="/clickbait_generator">Clickbait Generator</a></span>
-    <span class="nav--Item"><a href="/fill_in_the_bait">Fill In the Bait</a></span>
-    <span class="nav--Item"><a href="/about">WAT</a></span>
-</nav>
+<%= render(BuzzKillfeedWeb.LayoutView, "desktop_nav.html") %>
+<%= render(BuzzKillfeedWeb.LayoutView, "mobile_nav.html") %>
 <main role="main">
     <%= @inner_content %>
 </main>

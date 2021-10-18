@@ -1,0 +1,6 @@
+<nav class="nav--mobile">
+    <span class="nav--mobile--Item"><a href="/">Home</a></span>
+    <span class="nav--mobile--Item"><a href="/clickbait_generator">Clickbait Generator</a></span>
+    <span class="nav--mobile--Item"><a href="/fill_in_the_bait">Fill In the Bait</a></span>
+    <span class="nav--mobile--Item"><a href="/about">WAT</a></span>
+</nav>

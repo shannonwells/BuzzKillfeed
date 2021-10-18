@@ -1,13 +1,27 @@
 .button.button--clickbait {
   @include candy-button;
-  font-weight: 700;
-  margin: 28px;
-  flex-basis: 0;
-  flex-grow: 1;
-  margin-top: 5px;
-  &:active {
-    position: relative;
-    top: 1px;
+}
+clickbait--section {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 20px 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// this is the displayed headline
+#headline {
+  min-height: 160px;
+  font-size: 40px;
+  text-align: center;
+  padding: 0 14px;
+  margin: 14px auto;
+  &.got-headline {
+    background: none;
   }
+}
+.sparkley {
+  transition: all 0.25s ease;
 }
 

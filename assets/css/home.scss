@@ -1,6 +1,5 @@
 // Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//  AND ALSO ALL SITEWIDE STUFF
 @import 'variables';
 @import 'mixins';
 
@@ -13,44 +12,19 @@ body {
 
 .jumbotron {
   background: $contrastcolor;
-  padding: 30px;
+  padding: .5em 1em;
+  @media (min-width: $breakpoint-tablet) {
+    padding: 30px;
+  }
 }
 
 a {
   color: $linkcolor;
 }
-
-h1 {
-  font-weight: bold;
-}
-
-.indent-sm {
-  margin-left: 10px;
-}
-
-nav {
-  display: flex;
-  background-color: $bgcolor;
-  color: $linkcolor;
-  padding: 0 32px;
-  line-height: 32px;
-  align-content: flex-start;
-  font-weight: bold;
-  justify-content: flex-start;
-  text-align: left;
-  @media (max-width: $breakpoint-tablet) {
-    font-size: smaller;
-    padding: 0 22px;
-  }
-}
-
-.nav--Item {
-  margin: 0 32px 0 0;
-  padding: 4px 8px;
-  &:hover, &:active {
-    transition: background-color 300ms ease-out;
-    border-radius: 4px 4px 0 0;
-    background-color: $contrastcolor;
+h1,h2,h3 {
+  text-align: center;
+  @media (min-width: $breakpoint-tablet) {
+    text-align: left;
   }
 }
 
@@ -59,93 +33,17 @@ main {
   background-color: $contrastcolor;
 }
 
-#footer {
-  background-color: $bgcolor;
-  margin: 0;
-  padding: 20px 0;
-  text-align: center;
-  .left {
-    float: left;
-  }
-  .nav-bottom {
-    padding: 0 10px;
-  }
-}
-
-#clickbait-buttons {
-  font-weight: bold;
-  font-size: 28px;
-  flex-wrap: wrap;
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-}
-
 .container {
   padding: 22px;
 }
 
-.share {
+.home--buttons {
   text-align: center;
-  .button {
-    width: 10%;
-    min-width: 100px;
-  }
-}
-#init-twit {
-  padding: 0 2em;
-  height: 50px;
-}
-
-#headline {
-  min-height: 160px;
-  font-size: 40px;
-  text-align: center;
-  padding: 0 14px;
-  margin: 14px auto;
-  &.got-headline {
-    background: none;
+  @media (min-width: $breakpoint-tablet) {
+    text-align: left;
   }
 }
 
-#clickbait {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  padding: 20px 0;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#clickbait {
-}
-
-#clickbait-placeholder {
-  display: block;
-}
-
-.sparkley {
-  transition: all 0.25s ease;
-}
-
-.text-center { text-align: center; }
-
-.clickbait-link {
-  width: 75%;
-  font-size: 22px;
-  padding: 11px;
-  display: block;
-  margin: 10px auto;
-}
-
-.ladom.modal {
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 80px;
-  border: 8px solid $button-grad;
-  background-color: $contrastcolor;
-  border-radius: 80px;
-}
 
 footer {
   padding: 0 32px;

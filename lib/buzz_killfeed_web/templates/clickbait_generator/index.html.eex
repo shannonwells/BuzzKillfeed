@@ -1,14 +1,10 @@
 <div.jumbotron>
-    <div id="clickbait" class="clickbait-area">
+    <div class="clickbait--section">
         <h1 id="headline"><%= @headline %></h1>
         <div id="clickbait-buttons">
             <%= for button_type <- button_types() do %>
                 <%= render("button.html", button_type: button_type) %>
             <% end %>
-        </div>
-        <div class="ladom" style="display: none"/>
-        <div class="share">
-            <button class="button button--clickbait sparkley xs candy-button" id="manual-ajax">Share Permalink</button>
         </div>
     </div>
 </div.jumbotron>
