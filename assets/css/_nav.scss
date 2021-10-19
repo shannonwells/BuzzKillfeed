@@ -7,28 +7,63 @@ nav {
   color: $linkcolor;
   font-weight: bold;
   text-align: left;
-  font-size: 10px;
-  padding: 0 2em;
+  font-size: 18px;
+  line-height: 2em;
 }
 
-.nav--Item {
-  margin: 0 32px 0 0;
-  padding: 4px 8px;
-  &:hover, &:active {
-    transition: background-color 300ms ease-out;
-    border-radius: 4px 4px 0 0;
-    background-color: $contrastcolor;
-  }
-}
-.nav--mobile {
+.menu--mobile {
+  color: $linkcolor;
   display: flex;
   flex-direction: column;
-  padding-bottom: 12px;
+  padding: 0 1em;
   @media (min-width: $breakpoint-tablet) {
     display: none;
   }
 }
 
+.menu--mobile--topbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.menu--mobile--title {
+  font-weight: bold;
+  margin: 0 0 .5em 0;
+}
+
+.menu--mobile--hamburger {
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: initial;
+  }
+}
+
+.menu--mobile--nav {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 12px;
+}
+
+.nav--desktop--item {
+  @media (min-width: $breakpoint-tablet) {
+    margin: 0 32px 0 0;
+    padding: 4px 8px;
+    &:hover, &:active {
+      transition: background-color 300ms ease-out;
+      border-radius: 4px 4px 0 0;
+      background-color: $contrastcolor;
+    }
+  }
+}
+
+// TBD when hide/show is finshed
 .nav--mobile--expanded {
   display: flex;
   flex-direction: column;
@@ -40,7 +75,7 @@ nav {
   @media (min-width: $breakpoint-tablet) {
     display: flex;
     justify-content: flex-start;
-    line-height: 32px;
+    line-height: 1.75em;
     align-content: flex-start;
     font-size: 14px;
     padding: 0 32px;

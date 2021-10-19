@@ -1,5 +1,5 @@
 <div class="jumbotron">
-    <h1>Buzz Killfeed<span class="mobile--hidden">, Here To Rescue You</span></h1>
+    <h1 class="home--title mobile--hidden">Buzz Killfeed, Here To Rescue You</h1>
     <h3 class=""> What do you want to do?</h3>
     <div class="home--buttons">
         <p class="home--button">

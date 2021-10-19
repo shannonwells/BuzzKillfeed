@@ -1,6 +1,13 @@
-<nav class="nav--mobile">
-    <span class="nav--mobile--Item"><a href="/">Home</a></span>
-    <span class="nav--mobile--Item"><a href="/clickbait_generator">Clickbait Generator</a></span>
-    <span class="nav--mobile--Item"><a href="/fill_in_the_bait">Fill In the Bait</a></span>
-    <span class="nav--mobile--Item"><a href="/about">WAT</a></span>
-</nav>
+<div class="menu--mobile">
+    <div class="menu--mobile--topbar">
+        <div class="menu--mobile--title">Buzz Killfeed</div>
+        <div class="menu--mobile--close hidden">XXX</div>
+        <div class="menu--mobile--hamburger">≡</div>
+    </div>
+    <nav class="menu--mobile--nav">
+        <span class=""><a href="/">Home</a></span>
+        <span class=""><a href="/clickbait_generator">Clickbait Generator</a></span>
+        <span class=""><a href="/fill_in_the_bait">Fill In the Bait</a></span>
+        <span class=""><a href="/about">WAT</a></span>
+    </nav>
+</div>
