@@ -4,7 +4,6 @@
 
 nav {
   background-color: $bgcolor;
-  color: $linkcolor;
   font-weight: bold;
   text-align: left;
   font-size: 18px;
@@ -15,7 +14,7 @@ nav {
   color: $linkcolor;
   display: flex;
   flex-direction: column;
-  padding: 0 1em;
+  padding: .5em 1em;
   @media (min-width: $breakpoint-tablet) {
     display: none;
   }
@@ -29,11 +28,20 @@ nav {
 
 
 .menu--mobile--title {
+  font-size: 24px;
   font-weight: bold;
-  margin: 0 0 .5em 0;
+}
+
+.menu--mobile--close {
+  font-size: 52px;
+  line-height: .5em;
 }
 
 .menu--mobile--hamburger {
+  font-size: 24px;
+  svg {
+    fill: $linkcolor;
+  }
 }
 
 @keyframes slideDown {

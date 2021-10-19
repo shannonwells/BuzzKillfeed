@@ -1,27 +1,48 @@
-.button.button--clickbait {
-  @include candy-button;
-}
-clickbait--section {
+.clickbait--section {
   display: flex;
   flex-direction: column;
-  align-content: center;
   padding: 20px 0;
   margin-left: auto;
   margin-right: auto;
 }
 
-// this is the displayed headline
-#headline {
-  min-height: 160px;
-  font-size: 40px;
+#clickbait-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.button.button--clickbait {
+  @include candy-button;
   text-align: center;
-  padding: 0 14px;
-  margin: 14px auto;
-  &.got-headline {
-    background: none;
+  padding: .5em .5em .3em .5em;
+  &:before {
+    display: none;
+    @media (min-width: $breakpoint-tablet) {
+      display: initial;
+    }
+  }
+  @media (min-width: $breakpoint-tablet) {
+    padding: .5em 1.5em .4em 1.3em;
   }
 }
+
 .sparkley {
   transition: all 0.25s ease;
 }
 
+// this is the displayed headline
+#headline {
+  text-align: center;
+  padding: 0 14px;
+  margin: 14px auto;
+
+  &.got-headline {
+    background: none;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    min-height: 160px;
+    font-size: 40px;
+  }
+}
