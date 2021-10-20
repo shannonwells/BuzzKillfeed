@@ -22,7 +22,7 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorView do
   def button_icon(button_type) do
     case button_type do
       "listicle" -> "✪"
-      "suspense" -> "⌛"
+      "suspense" -> "⟳"
       "temptation" -> "⚖"
       "confession" -> "☠"
       "voyeurism" -> "☻"

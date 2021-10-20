@@ -1,14 +1,14 @@
 <div class="jumbotron">
-    <h1 class="headline"> Fill In the Bait</h1>
-    <h2 class="subhead2"> A Game for 2 or More</h2>
-    <h3 class="subhead3"> How to play:</h3>
+    <h1>Fill In the Bait</h1>
+    <h2>A Game for 2 or More</h2>
+    <h3 class="fitb--rules--title">How to play:</h3>
     <ol class="instructions">
-        <li class="instruction"> Create your own hilarious headline! Ask your fellow player for the parts of speech
+        <li> Create your own hilarious headline! Ask your fellow player for the parts of speech
             shown, in order.
         </li>
-        <li class="instruction"> Fill in each blank with their answer</li>
-        <li class="instruction"> Click The Shiny, Happy, Candylike Button</li>
-        <li class="instruction"> Read the hilarious result!</li>
+        <li> Fill in each blank with their answer</li>
+        <li> Click The Shiny, Happy, Candylike Button</li>
+        <li> Read the hilarious result!</li>
     </ol>
     <div class="fitbGame--Result--Section hidden">
         <h1 class="fitbGame--NewHeadline"></h1>

@@ -23,9 +23,25 @@ a {
 }
 h1,h2,h3 {
   text-align: center;
+  margin: 0;
   @media (min-width: $breakpoint-tablet) {
     text-align: left;
+    margin: revert;
   }
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 26px;
+  margin-top: .25em
+}
+
+h3 {
+  font-size: 20px;
+  margin-top: .25em;
 }
 
 main {

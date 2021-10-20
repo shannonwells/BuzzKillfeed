@@ -11,45 +11,82 @@ button.fitbGame--Reload {
   margin-top: 22px;
   height: fit-content;
   font-weight: bold;
+  text-align: center;
+  @media (min-width: $breakpoint-tablet) {
+    text-align: left;
+  }
 }
 
-.fitbGame__Blank--missing  {
+.fitbGame__Blank--missing {
   border: 2px solid #ff00a1;
 }
 
 .fitbGame--Labels {
-  margin-top: 22px;
-  display: table;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: 22px;
+    display: table;
+  }
 }
 
 .fitbGame--Label {
-  display: table-row;
-  margin-bottom: 22px;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: $breakpoint-tablet) {
+    display: table-row;
+    margin-bottom: 22px;
+  }
 }
 
-.fitbGame--LabelText,.fitbGame--Blank {
-  margin-right: 12px;
-  display: table-cell;
+.fitbGame--LabelText, .fitbGame--Blank {
+  @media (min-width: $breakpoint-tablet) {
+    margin-right: 12px;
+    display: table-cell;
+  }
 }
 
 .fitbGame--LabelText {
-  padding: 6px 12px;
-  text-align: right;
+  font-weight: bold;
+  @media (min-width: $breakpoint-tablet) {
+    padding: 6px 12px;
+    text-align: right;
+  }
 }
 
 .fitbGame--Pointer {
-  margin-right: 12px;
-  font-size: x-large;
+  display: none;
+  @media (min-width: $breakpoint-tablet) {
+    display: revert;
+    margin-right: 12px;
+    font-size: x-large;
+  }
 }
 
 .fitbGame--Blank {
+  margin-top: .5em;
   padding: 4px;
   text-align: left;
-  width: 300px;
+  font-size: large;
+  width: 200px;
+  border-radius: 10px;
+  border-color: transparent;
+  @media (min-width: $breakpoint-tablet) {
+    font-size: revert;
+    width: 300px;
+  }
 }
 
 button.fitbGame--Submit {
-  margin-top: 22px;
+  display: block;
+  margin: 0 auto 22px auto;
   @include candy-button;
   padding: 12px 52px;
+  @media (min-width: $breakpoint-tablet) {
+    display: revert;
+    margin: revert;
+    margin-top: 22px;
+  }
 }
