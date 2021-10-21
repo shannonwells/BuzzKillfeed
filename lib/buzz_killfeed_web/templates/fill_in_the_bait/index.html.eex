@@ -18,7 +18,7 @@
             <%= for word <- get_needed_words(@template.value)  do %>
             <label class="fitbGame--Label" for="<%= word %>">
                 <span class="fitbGame--LabelText"><%= String.capitalize(word) |> String.replace("_", " ")%></span>
-                <span class="fitbGame--Pointer">👉</span>
+                <span class="fitbGame--Pointer">☞</span>
                 <input class="fitbGame--Blank" id="<%= word %>" required>
             </label>
             <% end %>
