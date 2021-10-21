@@ -1,4 +1,16 @@
 .about--title {
   margin-bottom: 1em;
-  text-align: center;
+  margin-left: 0;
+}
+
+.about--new--item {
+  list-style: none;
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+}
+.new--item--name {
+  width: 200px;
+  flex-grow: 0;
+  flex-shrink: 0;
 }

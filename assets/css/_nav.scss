@@ -59,9 +59,21 @@ nav {
   padding-bottom: 12px;
 }
 
+.nav--desktop {
+  display: none;
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    justify-content: flex-start;
+    line-height: 1.75em;
+    align-content: flex-start;
+    font-size: 14px;
+    padding: 0 32px;
+  }
+}
+
 .nav--desktop--item {
   @media (min-width: $breakpoint-tablet) {
-    margin: 0 32px 0 0;
+    margin: 12px 32px 0 0;
     padding: 4px 8px;
     &:hover, &:active {
       transition: background-color 300ms ease-out;
@@ -76,16 +88,4 @@ nav {
   display: flex;
   flex-direction: column;
   padding-bottom: 12px;
-}
-
-.nav--desktop {
-  display: none;
-  @media (min-width: $breakpoint-tablet) {
-    display: flex;
-    justify-content: flex-start;
-    line-height: 1.75em;
-    align-content: flex-start;
-    font-size: 14px;
-    padding: 0 32px;
-  }
 }
