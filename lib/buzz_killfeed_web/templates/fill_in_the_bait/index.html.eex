@@ -1,14 +1,12 @@
 <div class="jumbotron">
-    <h1>Fill In the Bait</h1>
-    <h2>A Game for 2 or More</h2>
-    <h3 class="fitb--rules--title">How to play:</h3>
-    <ol class="instructions">
-        <li> Create your own hilarious headline! Ask your fellow player for the parts of speech
-            shown, in order.
-        </li>
-        <li> Fill in each blank with their answer</li>
-        <li> Click The Shiny, Happy, Candylike Button</li>
-        <li> Read the hilarious result!</li>
+    <h1>Fill In the Bait: A Game for You or More</h1>
+    <p>Create your own hilarious headline! Ask your fellow player for the parts of speech
+        shown, in order.</p>
+    <h3>How to play:</h3>
+    <ol class="fitb--rules">
+        <li>Fill in each blank with their answer</li>
+        <li>Press the shiny happy candylike button</li>
+        <li>Read the hilarious result!</li>
     </ol>
     <div class="fitbGame--Result--Section hidden">
         <h1 class="fitbGame--NewHeadline"></h1>
@@ -20,12 +18,12 @@
             <%= for word <- get_needed_words(@template.value)  do %>
             <label class="fitbGame--Label" for="<%= word %>">
                 <span class="fitbGame--LabelText"><%= String.capitalize(word) |> String.replace("_", " ")%></span>
-                <span class="fitbGame--Pointer">👉</span>
+                <span class="fitbGame--Pointer">☞</span>
                 <input class="fitbGame--Blank" id="<%= word %>" required>
             </label>
             <% end %>
         </div>
-        <button class="button pink round glossy fitbGame--Submit">GO!</button>
+        <button class="button pink round glossy fitbGame--Submit">Go!</button>
         <div ladom class="hidden"></div>
     </div>
 </div>
