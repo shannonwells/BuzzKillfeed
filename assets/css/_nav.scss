@@ -11,7 +11,7 @@ nav {
 }
 
 .menu--mobile {
-  color: $linkcolor;
+  color: $menu-linkcolor;
   display: flex;
   flex-direction: column;
   padding: .5em 1em;
@@ -26,6 +26,9 @@ nav {
   justify-content: space-between;
 }
 
+.menu--mobile--link a {
+  color: $footerText;
+}
 
 .menu--mobile--title {
   font-size: 24px;
@@ -40,7 +43,7 @@ nav {
 .menu--mobile--hamburger {
   font-size: 24px;
   svg {
-    fill: $linkcolor;
+    fill: $menu-linkcolor;
   }
 }
 
@@ -83,9 +86,20 @@ nav {
   }
 }
 
+.nav--desktop--item a {
+  color: $menu-linkcolor;
+}
+
 // TBD when hide/show is finshed
 .nav--mobile--expanded {
   display: flex;
   flex-direction: column;
   padding-bottom: 12px;
 }
+
+.dark-mode {
+  .xkxk--item {
+    color: $contrastcolor;
+  }
+}
+

@@ -5,12 +5,27 @@
 
 .about--new--item {
   list-style: none;
-  margin-left: 0;
-  display: flex;
-  align-items: center;
+  margin-left: -40px;
+  @media (min-width: $breakpoint-tablet) {
+    margin-left: -20px;
+    display: flex;
+    align-items: center;
+  }
 }
 .new--item--name {
-  width: 200px;
-  flex-grow: 0;
-  flex-shrink: 0;
+  @media (min-width: $breakpoint-tablet) {
+    width: 200px;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+}
+
+.button-bullet {
+  display: none;
+  @media (min-width: $breakpoint-tablet) {
+    display: revert;
+  }
+}
+.about--answer {
+  margin-bottom: 2em;
 }

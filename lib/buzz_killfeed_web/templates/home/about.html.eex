@@ -1,4 +1,4 @@
-<div class="container">
+<div class="jumbotron">
     <h1 class="about--title button green">I Have Questions.</h1>
 
     <h2 class="about--title">What Is This?</h2>
@@ -6,35 +6,47 @@
     Here I do both.
     <div class="about--new">
         <h2 class="about--title">What's New?</h1>
-        <ul>
-            <li class="about--new--item">
-                <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
-                <strong class="new--item--name"><a href="/fill_in_the_bait">Fill In the Bait:</a></strong>
-                 &nbsp;Play with others and generate hilarious headlines with your own words!</li>
-            <li class="about--new--item">
-                <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
-                <strong class="new--item--name">New words and phrases:</strong>
-                I've updated the site, adding more words and
-                phrases
-                that are up to date and retired ones that never really worked well or have stopped being topical.</li>
-            <li class="about--new--item">
-                <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
-                <strong class="new--item--name">Best of page:</strong> You can still save and share the headlines you love, but now
-                the site keeps track of and displays the most popular headlines!</li>
-            <li class="about--new--item">
-                <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
-                <strong class="new--item--name">Seasonal changes:</strong> some words and phrases only show up a certain time of
-                year.
-                Keep checking back for fresh new headlines!</li>
-            <li class="about--new--item">
-                <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
-                <strong class="new--item--name">New styles:</strong> I've refreshed the site with mobile-first design!
-                Well...<em>design</em> is maybe a strong word.</li>
-        </ul>
-
+            <ul>
+                <li class="about--new--item">
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
+                    <strong class="new--item--name"><a href="/fill_in_the_bait">Fill In the Bait:</a></strong>
+                    &nbsp;Play with others and generate hilarious headlines with your own words!
+                </li>
+                <li class="about--new--item">
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
+                    <strong class="new--item--name">New words and phrases:</strong>
+                    I've updated the site, adding more words and
+                    phrases
+                    that are up to date and retired ones that never really worked well or have stopped being topical.
+                </li>
+                <li class="about--new--item">
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
+                    <strong class="new--item--name"><a href="/bestof">Best of CBG:</a></strong> You can still save and
+                    share the headlines you love, but now
+                    the site keeps track of and displays the most popular headlines!
+                </li>
+                <li class="about--new--item">
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
+                    <strong class="new--item--name">Seasonal changes:</strong> some words and phrases only show up a
+                    certain time of
+                    year.
+                    Keep checking back for fresh new headlines!
+                </li>
+                <li class="about--new--item">
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
+                    <strong class="new--item--name">New styles:</strong> I've refreshed the site with mobile-first
+                    styling
+                    and some accessibility changes.
+                </li>
+                <li class="about--new--item">
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
+                    <strong class="new--item--name">There might be:</strong>
+                    <span>some Easter eggs.</span>
+                </li>
+            </ul>
     </div>
     <h2>How do you do this?</h2>
-    <p>
+    <p class="about--answer">
         I've deconstructed clickbait, basically, and also I comb the internet for trends and
         fads in clickbait.
         Finally, I curate the results to randomly generate topical, seasonal headlines,
@@ -43,9 +55,10 @@
     </p>
 
     <h2>I can't believe you made that awful headline! What's wrong with you?</h2>
-    <p>Okay. I think you need to reread the previous paragraph, or maybe you're just getting fussy. Did you get enough
+    <p class="about--answer">
+        Okay. I think you need to reread the previous paragraph, or maybe you're just getting fussy. Did you get enough
         sleep? The headlines are put together by randomly selecting words and phrases.</p>
-    <p>
+    <p class="about--answer">
         Seriously though, I try to make this pretty family friendly.
         Generally, any public figure or anyone with wealth and power is fair game for good sport.
         I'm sorry if you're offended. Everyone should be able to take a little good-natured ribbing, shouldn't they?
@@ -53,31 +66,19 @@
         Please <a target="new" href="https://github.com/shannonwells/BuzzKillfeed/issues/new">file a helpful issue on
         the GitHub repository.</a>
     </p>
-    <p>
+    <p class="about--answer">
         Since I can't control what people type into the Fill In the Bait game, I decided not to let
         people save and share the results; there's too much potential for abuse and I
         don't want a few to ruin it for everyone else.
     </p>
-    <h2>Why is BuzzKillfeed so ugly?</h2>
-    <p>
-        That's not very nice! Okay I said it, but it's because I expect people will have opinions about
-        the site design — again. The short answer is, darn it Jim, I'm a software engineer, not a designer!
-        The long answer is, I have great respect for web designers — the good ones at least. It's a hard thing to do
-        well.
-        This is my hobby project. It's just me, I have no budget, and I don't want to ask my designer friends
-        to do stuff for free — again. So I keep it simple, using a fun, over the top color scheme I like, with
-        fun, over the top candy buttons and <span class="sparkley">sparkles</span> and shiny things.
-    </p>
-    <section>
-        <h3 class="button blue glossy sparkley">Credits</h3>
-        <ul>
-            <li> Thanks to Simon Goellner for the &nbsp;
-                <a href="https://codepen.io/simeydotme/pen/jgcvi">Magical Sparkles.</a>
-            </li>
-            <li>
-                Thanks to <a href="https://simurai.com/">Simural</a> for the
-                <a href="https://simurai.com/archive/buttons/">Bon Bon Buttons</a>.
-            </li>
-        </ul>
-    </section>
+    <h3 class="about--title button blue glossy sparkley">Credits</h3>
+    <ul>
+        <li> Thanks to Simon Goellner for the &nbsp;
+            <a href="https://codepen.io/simeydotme/pen/jgcvi">Magical Sparkles.</a>
+        </li>
+        <li>
+            Thanks to <a href="https://simurai.com/">Simural</a> for the
+            <a href="https://simurai.com/archive/buttons/">Bon Bon Buttons</a>.
+        </li>
+    </ul>
 </div>

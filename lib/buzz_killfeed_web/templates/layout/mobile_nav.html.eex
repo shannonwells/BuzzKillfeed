@@ -13,9 +13,9 @@
         </div>
     </div>
     <nav class="menu--mobile--nav hidden">
-        <span class=""><a href="/">Home</a></span>
-        <span class=""><a href="/clickbait_generator">Clickbait Generator</a></span>
-        <span class=""><a href="/fill_in_the_bait">Fill In the Bait</a></span>
-        <span class=""><a href="/about">WAT</a></span>
+        <span class="menu--mobile--link"><a href="/">Home</a></span>
+        <span class="menu--mobile--link"><a href="/clickbait_generator">Clickbait Generator</a></span>
+        <span class="menu--mobile--link"><a href="/fill_in_the_bait">Fill In the Bait</a></span>
+        <span class="menu--mobile--link"><a href="/about">WAT</a></span>
     </nav>
 </div>

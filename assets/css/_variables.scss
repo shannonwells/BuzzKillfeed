@@ -1,18 +1,32 @@
-$bgcolor: #000000;
-//    $bgcolor: #ba1800;  // Winter, Valentines
+$space-cadet: #2B2D42;
+$middle-blue: #92DCE5;
+$midnight-eagle: #185A63;
+$cultured: #F8F7F9;
+$corn: #F7EC59;
+$citrine: #E9DA0C;
 
-$white: rgba(255, 255, 255, 1);
-$linkcolor: #d53595;
-$buttonbg: #bd0075;
-$button-grad: #ff5bb0;
-$button-shad: #fbafe3;
-$buttontext: $white;
-$hovercolor: #ff36b5;
-$active-button-color: rgba(129, 0, 75, 0.76);
-$contrastcolor: rgb(160, 225, 224);
+// palette 5
+$mint-cream: #F7FFF7;
+$jet: #343434;
+// $space-cadet
+$naples-yellow: #ffe66d;
+$air-blue: #b9d3e1;
 
-$buttonBackground: #2c3e50;
-$buttonColor: rgba(255, 255, 255, 1);
-$footerText: #ff6dc3;
+// desaturated palette 5
+$baby-powder: f9fbf9;
+$jet2: #555555;
+$charcoal: #41424D;
+$sage-beige: #c7c1a3;
+$cadet-grey: #8c9aa1;
 
-$med-green: hsl(88, 70%, 40%);
+
+// current favorite, fun but not overwhelming, friendly
+// and like a classic little boy bedroom.
+// Goes well with the candy buttons.
+$bgcolor: $space-cadet;
+$menu-linkcolor: $citrine;
+$linkcolor: $jet2;
+$contrastcolor: $air-blue;
+$headercolor: $space-cadet;
+$text-color: $jet2;
+$footerText: $naples-yellow;
