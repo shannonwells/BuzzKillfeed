@@ -40,7 +40,7 @@ jobs:
     - name: Set up git private repo
       # https://github.com git:github.com
       run: |
-        git config --global url."https://${{ secrets.CHECKOUT_CREDS }}@github.com/shannonwells".insteadOf "https://github.com"
+        git config --global url."https://${{ secrets.CHECKOUT_CREDS }}@github.com".insteadOf "https://github.com"
     - name: Restore dependencies cache
       uses: actions/cache@v2
       with:
