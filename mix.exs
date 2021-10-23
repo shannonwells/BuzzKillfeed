@@ -52,7 +52,7 @@ defmodule BuzzKillfeed.Mixfile do
       {:phoenix_slime, "~> 0.13.1"},
       {:inflex, "~> 2.1"},
       {:verbs, "~> 0.6.0"},
-      {:bkf_seeds, git: "git@github.com:shannonwells/bkf-seeds.git"}
+      {:bkf_seeds, git: "https://github.com/shannonwells/bkf-seeds.git"}
    ]
   end
 
