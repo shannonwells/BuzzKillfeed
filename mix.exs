@@ -51,7 +51,8 @@ defmodule BuzzKillfeed.Mixfile do
       {:plug_cowboy, "~> 2.5"},
       {:phoenix_slime, "~> 0.13.1"},
       {:inflex, "~> 2.1"},
-      {:verbs, "~> 0.6.0"}
+      {:verbs, "~> 0.6.0"},
+      {:bkf_seeds, git: "https://github.com/shannonwells/bkf-seeds.git"}
    ]
   end
 
