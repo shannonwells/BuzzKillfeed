@@ -33,7 +33,8 @@ node_modules
 *.dump
 cache_manifest.json
 
-/priv/static/css
+/assets/css/app.css
+/assets/css/app.css.map
 /priv/static/js
 /rel
 
