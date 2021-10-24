@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron home">
     <h1 class="home--title mobile--hidden">Buzz Killfeed, Here To Rescue You</h1>
     <h3 class=""> What do you want to do?</h3>
     <div class="home--buttons">
@@ -7,7 +7,7 @@
                 some clickbait!</a>
         </p>
         <p class="home--button">
-            <a class="button sparkley round green button--clickbait" href="/best_of">I want to see the best clickbait
+            <a class="button sparkley round green button--clickbait" href="/bestof">I want to see the best clickbait
                 ever!</a>
         </p>
         <p class="home--button">

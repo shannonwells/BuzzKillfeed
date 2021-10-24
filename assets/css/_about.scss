@@ -20,12 +20,6 @@
   }
 }
 
-.button-bullet {
-  display: none;
-  @media (min-width: $breakpoint-tablet) {
-    display: revert;
-  }
-}
 .about--answer {
   margin-bottom: 2em;
 }

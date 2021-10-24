@@ -1,45 +1,45 @@
-<div class="jumbotron">
+<div class="jumbotron about">
     <h1 class="about--title button green">I Have Questions.</h1>
 
     <h2 class="about--title">What Is This?</h2>
     This is my side project. I like to make people laugh. I like writing software.
     Here I do both.
     <div class="about--new">
-        <h2 class="about--title">What's New?</h1>
+        <h2 class="about--title">What's New?</h2>
             <ul>
                 <li class="about--new--item">
-                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "pink"}) %>
                     <strong class="new--item--name"><a href="/fill_in_the_bait">Fill In the Bait:</a></strong>
                     &nbsp;Play with others and generate hilarious headlines with your own words!
                 </li>
                 <li class="about--new--item">
-                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "green"}) %>
                     <strong class="new--item--name">New words and phrases:</strong>
                     I've updated the site, adding more words and
                     phrases
                     that are up to date and retired ones that never really worked well or have stopped being topical.
                 </li>
                 <li class="about--new--item">
-                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "blue"}) %>
                     <strong class="new--item--name"><a href="/bestof">Best of CBG:</a></strong> You can still save and
                     share the headlines you love, but now
                     the site keeps track of and displays the most popular headlines!
                 </li>
                 <li class="about--new--item">
-                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "pink"}) %>
                     <strong class="new--item--name">Seasonal changes:</strong> some words and phrases only show up a
                     certain time of
                     year.
                     Keep checking back for fresh new headlines!
                 </li>
                 <li class="about--new--item">
-                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "green"}) %>
                     <strong class="new--item--name">New styles:</strong> I've refreshed the site with mobile-first
                     styling
                     and some accessibility changes.
                 </li>
                 <li class="about--new--item">
-                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html") %>
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "blue"}) %>
                     <strong class="new--item--name">There might be:</strong>
                     <span>some Easter eggs.</span>
                 </li>

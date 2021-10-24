@@ -1,0 +1,11 @@
+<div class="jumbotron bestof">
+    <h2 class="bestof--title">Clickbait Generator Top Ten</h2>
+    <ol class="bestof--list">
+        <%= for h <- @headlines  do %>
+        <li class="bestof--headline">
+            <%= h.headline %>
+        </li>
+        <% end %>
+    </ol>
+    <a class="bestof--cta button button--clickbait pink round" href="/clickbait_generator">I want to play!</a>
+</div>

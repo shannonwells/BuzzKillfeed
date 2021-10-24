@@ -55,7 +55,10 @@ defmodule BuzzKillfeed.RepoHelpers do
   Returns all headlines
   """
   def list_headlines do
-    Repo.all(Headline)
+    Headline
+    |> order_by(desc: :views)
+    |> limit(10)
+    |> Repo.all()
   end
 
   @doc """

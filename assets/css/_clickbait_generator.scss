@@ -1,7 +1,6 @@
 .clickbait--section {
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
   margin-left: auto;
   margin-right: auto;
 }
@@ -15,7 +14,8 @@
 .button.button--clickbait {
   @include candy-button;
   text-align: center;
-  padding: .5em .5em .3em .5em;
+  padding: .7em .5em .5em .5em;
+  font-size: 18px;
   &:before {
     display: none;
     @media (min-width: $breakpoint-tablet) {
@@ -23,7 +23,8 @@
     }
   }
   @media (min-width: $breakpoint-tablet) {
-    padding: .5em 1.5em .4em 1.3em;
+    font-size: 24px;
+    padding: .5em 1.5em .3em 1.3em;
   }
 }
 
@@ -34,8 +35,8 @@
 // this is the displayed headline
 #headline {
   text-align: center;
-  padding: 0 14px;
-  margin: 14px auto;
+  margin: 0 auto;
+  margin-bottom: 14px;
 
   &.got-headline {
     background: none;
