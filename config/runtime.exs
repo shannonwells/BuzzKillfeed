@@ -13,10 +13,10 @@ if config_env() == :prod do
       environment variable DATABASE_URL is missing.
       For example: ecto://USER:PASS@HOST/DATABASE
       """
-
-  config :buzz_killfeed, BuzzKillfeed.Repo,
-          ssl: true,
-         # socket_options: [:inet6],
+  # configure the database
+  config :buzz_killfeed,
+         BuzzKillfeed.Repo,
+         ssl: true,
          url: database_url,
          pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
 

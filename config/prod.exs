@@ -51,8 +51,4 @@ config :buzz_killfeed, BuzzKillfeedWeb.Endpoint,
 # start per endpoint:
 #
 #     config :buzz_killfeed, BuzzKillfeedWeb.Endpoint, server: true
-#
 
-# Configure your database
-config :buzz_killfeed, BuzzKillfeed.Repo
-  # ssl: true
