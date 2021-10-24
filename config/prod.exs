@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 # For production, we often load configuration from external
 # sources, such as your system environment. For this reason,
@@ -24,9 +24,9 @@ config :buzz_killfeed, BuzzKillfeedWeb.Endpoint,
 # To get SSL working, you will need to add the `https` key
 # to the previous section and set your `:url` port to 443:
 #
-     config :buzz_killfeed, BuzzKillfeedWeb.Endpoint,
-            url: [scheme: "https", host: "bkf-staging.herokuapp.com", port: 443],
-            force_ssl: [rewrite_on: [:x_forwarded_proto]],
+config :buzz_killfeed, BuzzKillfeedWeb.Endpoint,
+      url: [scheme: "https", host: "bkf-staging.herokuapp.com", port: 443],
+      force_ssl: [rewrite_on: [:x_forwarded_proto]]
 #
 # Where those two env variables return an absolute path to
 # the key and cert in disk or a relative path inside priv,
