@@ -33,7 +33,7 @@ defmodule BuzzKillfeed.ClickbaitBuilder do
     adj = random_adjective()
     verb = random_verb()
     noun = random_noun([is_proper: false])
-    "#{random_temptation} #{verb.value} This #{adj.value} #{noun.name}"
+    "#{random_temptation()} #{verb.value} This #{adj.value} #{noun.name}"
   end
 
   defp random_temptation do

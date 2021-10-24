@@ -13,7 +13,6 @@ import "./nav"
 // import them using relative paths:
 //
 //     import "./vendor/some-package.js"
-import "./vendor/jquery.modal.min"
 import "./vendor/sparklotron"
 //
 // Alternatively, you can `npm install some-package` and import
