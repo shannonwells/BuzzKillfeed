@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron fill_in_the_bait">
     <h1>Fill In the Bait: A Game for You or More</h1>
     <p>Create your own hilarious headline! Ask your fellow player for the parts of speech
         shown, in order.</p>
@@ -24,6 +24,6 @@
             <% end %>
         </div>
         <button class="button pink round glossy fitbGame--Submit">Go!</button>
-        <div ladom class="hidden"></div>
+        <div class="hidden"></div>
     </div>
 </div>

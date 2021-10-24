@@ -1,1 +1,1 @@
-<span class="button glossy round pink button--bullet">☞</span>
+<span class="button glossy round <%= @color %> button--bullet">☞</span>

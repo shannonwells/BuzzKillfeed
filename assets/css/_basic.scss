@@ -15,5 +15,9 @@
 
 .button--bullet {
   padding: 2px 2px 2px 1px;
+  display: none;
+  @media (min-width: $breakpoint-tablet) {
+    display: revert;
+  }
 }
 

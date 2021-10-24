@@ -21,10 +21,6 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorController do
     render conn, "headline.json", %{headline: headline}
   end
 
-  def best_of(conn, _params) do
-    render conn, "best_of.html"
-  end
-
   def show(conn, %{"id" => id}) do
     headline = get_headline!(id)
     conn

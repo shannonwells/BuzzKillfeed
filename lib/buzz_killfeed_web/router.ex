@@ -27,9 +27,12 @@ defmodule BuzzKillfeedWeb.Router do
 
     get "/", ClickbaitGeneratorController, :index
 
-    get "/best_of", ClickbaitGeneratorController, :best_of
-
     get "/:id", ClickbaitGeneratorController, :show
+  end
+
+  scope "/bestof", Bestof do
+    pipe_through :browser
+    get "/", BestofController, :index
   end
 
   scope "/api" do

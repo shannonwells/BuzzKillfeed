@@ -1,0 +1,30 @@
+.bestof {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: $breakpoint-tablet) {
+    display: block;
+  }
+}
+
+.bestof--title {
+  margin-bottom: 14px;
+}
+
+.bestof--list {
+  margin: 0 auto;
+  font-weight: bolder;
+  text-align: justify;
+  @media (min-width: $breakpoint-tablet) {
+    list-style: decimal;
+    font-size: large;
+  }
+}
+
+.bestof--headline {
+  margin-left: 0;
+  margin-bottom: 1em;
+}
+
+.bestof--cta {
+  font-size: 32px;
+}
