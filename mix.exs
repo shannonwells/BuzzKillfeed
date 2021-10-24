@@ -31,6 +31,8 @@ defmodule BuzzKillfeed.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
+    co_creds = System.get_env("HEROKU_CHECKOUT_CREDS") || ""
+
     [
       {:phoenix, "~> 1.6.0"},
       {:phoenix_ecto, "~> 4.4"},
@@ -52,7 +54,7 @@ defmodule BuzzKillfeed.Mixfile do
       {:phoenix_slime, "~> 0.13.1"},
       {:inflex, "~> 2.1"},
       {:verbs, "~> 0.6.0"},
-      {:bkf_seeds, git: "https://github.com/shannonwells/bkf-seeds.git"}
+      {:bkf_seeds, git: "https://#{co_creds}github.com/shannonwells/bkf-seeds.git"}
    ]
   end
 
