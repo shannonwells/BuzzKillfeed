@@ -25,7 +25,7 @@ config :buzz_killfeed, BuzzKillfeedWeb.Endpoint,
 # to the previous section and set your `:url` port to 443:
 #
 config :buzz_killfeed, BuzzKillfeedWeb.Endpoint,
-      url: [scheme: "https", host: "bkf-staging.herokuapp.com", port: 443],
+      url: [scheme: "https", host: "#{System.get_env("HEROKU_APP_NAME")}.herokuapp.com", port: 443],
       force_ssl: [rewrite_on: [:x_forwarded_proto]]
 #
 # Where those two env variables return an absolute path to
