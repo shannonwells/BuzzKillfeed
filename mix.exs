@@ -31,7 +31,7 @@ defmodule BuzzKillfeed.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    co_creds = System.get_env("HEROKU_CHECKOUT_CREDS") || "" <> "@"
+    co_creds = System.get_env("HEROKU_CHECKOUT_CREDS") || ""
 
     [
       {:phoenix, "~> 1.6.0"},
