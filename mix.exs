@@ -19,7 +19,7 @@ defmodule BuzzKillfeed.Mixfile do
   def application do
     [
       mod: {BuzzKillfeed.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :os_mon]
     ]
   end
 

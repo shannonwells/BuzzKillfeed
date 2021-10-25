@@ -63,7 +63,7 @@
         I'm sorry if you're offended. Everyone should be able to take a little good-natured ribbing, shouldn't they?
         Maybe there is something I didn't know or catch about a word or a person. I welcome new knowledge and insights!
         Please <a target="new" href="https://github.com/shannonwells/BuzzKillfeed/issues/new">file a helpful issue on
-        the GitHub repository.</a>
+        the GitHub repository</a> if you find a bug or have an improvement to suggest.
     </p>
 
     <h2>Why can't I share my Fill In The Bait headline?</h2>
@@ -74,12 +74,16 @@
     </p>
     <h3 class="about--title button purple glossy sparkley">Credits</h3>
     <ul>
-        <li> Thanks to Simon Goellner for the &nbsp;
+        <li>
+            Simon Goellner for the
             <a href="https://codepen.io/simeydotme/pen/jgcvi">Magical Sparkles.</a>
         </li>
         <li>
-            Thanks to <a href="https://simurai.com/">Simural</a> for the
+            <a href="https://simurai.com/">Simural</a> for the
             <a href="https://simurai.com/archive/buttons/">Bon Bon Buttons</a>.
+        </li>
+        <li>
+            <a href="https://coolors.co/">Coolors.co</a>, a great tool for helping me choose the new palette.
         </li>
     </ul>
 </div>

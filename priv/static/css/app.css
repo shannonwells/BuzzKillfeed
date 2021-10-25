@@ -39,6 +39,9 @@ nav {
   flex-direction: column;
   padding: 0.5em 1em;
 }
+.menu--mobile:hover, .menu--mobile:active {
+  color: #555555;
+}
 @media (min-width: 768px) {
   .menu--mobile {
     display: none;
