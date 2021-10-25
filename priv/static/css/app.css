@@ -558,7 +558,7 @@ button.button:hover {
 
 /* Damn, this became a fat baby..  */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .mobile--hidden {
