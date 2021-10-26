@@ -2,12 +2,6 @@ defmodule BuzzKillfeed.Repo do
   use Ecto.Repo,
       otp_app: :buzz_killfeed,
       adapter: Ecto.Adapters.Postgres
-  import Ecto.Query
-  alias BuzzKillfeed.Adjective
-  alias BuzzKillfeed.First
-  alias BuzzKillfeed.Noun
-  alias BuzzKillfeed.Predicate
-  alias BuzzKillfeed.Headline
 
   @doc """
   Dynamically loads the repository url from the

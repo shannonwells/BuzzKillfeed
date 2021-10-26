@@ -1,5 +1,5 @@
 %{
-  "bkf_seeds": {:git, "https://github.com/shannonwells/bkf-seeds.git", "795b3b85759c7baf4ce461fc500edd7968709f34", []},
+  "bkf_seeds": {:git, "https://github.com/shannonwells/bkf-seeds.git", "3f49ea78ef41fad0f59c9b4c19d6747271fc3731", []},
   "castore": {:hex, :castore, "0.1.12", "b5755d7668668a74c0e3c4c68df91da927e063a5cade17d693eff04e6ab64805", [:mix], [], "hexpm", "981c79528f88ec4ffd627214ad4cdd25052dc56c002996c603011ae37ec1b4b0"},
   "certifi": {:hex, :certifi, "2.8.0", "d4fb0a6bb20b7c9c3643e22507e42f356ac090a1dcea9ab99e27e0376d695eba", [:rebar3], [], "hexpm", "6ac7efc1c6f8600b08d625292d4bbf584e14847ce1b6b5c44d983d273e1097ea"},
   "connection": {:hex, :connection, "1.1.0", "ff2a49c4b75b6fb3e674bfc5536451607270aac754ffd1bdfe175abe4a6d7a68", [:mix], [], "hexpm", "722c1eb0a418fbe91ba7bd59a47e28008a189d47e37e0e7bb85585a016b2869c"},
