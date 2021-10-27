@@ -13,33 +13,32 @@
                     &nbsp;Play with others and generate hilarious headlines with your own words!
                 </li>
                 <li class="about--new--item">
-                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "green"}) %>
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "orange"}) %>
                     <strong class="new--item--name">New words and phrases:</strong>
                     I've updated the site, adding more words and
                     phrases
                     that are up to date and retired ones that never really worked well or have stopped being topical.
                 </li>
                 <li class="about--new--item">
-                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "blue"}) %>
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "yellow"}) %>
                     <strong class="new--item--name"><a href="/bestof">Best of CBG:</a></strong> You can still save and
                     share the headlines you love, but now
                     the site keeps track of and displays the most popular headlines!
                 </li>
                 <li class="about--new--item">
-                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "pink"}) %>
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "green"}) %>
                     <strong class="new--item--name">Seasonal changes:</strong> some words and phrases only show up a
                     certain time of
                     year.
                     Keep checking back for fresh new headlines!
                 </li>
                 <li class="about--new--item">
-                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "green"}) %>
-                    <strong class="new--item--name">New styles:</strong> I've refreshed the site with mobile-first
-                    styling
-                    and some accessibility changes.
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "blue"}) %>
+                    <strong class="new--item--name">New styles:</strong> I've refreshed the site with new colors, mobile-first
+                    styling, and some accessibility changes.
                 </li>
                 <li class="about--new--item">
-                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "blue"}) %>
+                    <%= render(BuzzKillfeedWeb.LayoutView, "candy_button_bullet.html", %{color: "purple"}) %>
                     <strong class="new--item--name">There might be:</strong>
                     <span>some Easter eggs.</span>
                 </li>
@@ -66,12 +65,14 @@
         Please <a target="new" href="https://github.com/shannonwells/BuzzKillfeed/issues/new">file a helpful issue on
         the GitHub repository.</a>
     </p>
+
+    <h2>Why can't I share my Fill In The Bait headline?</h2>
     <p class="about--answer">
         Since I can't control what people type into the Fill In the Bait game, I decided not to let
-        people save and share the results; there's too much potential for abuse and I
-        don't want a few to ruin it for everyone else.
+        people save and share the results. There's too much potential for abuse and I
+        don't want a few determined KAOS agents to ruin it for everyone else.
     </p>
-    <h3 class="about--title button blue glossy sparkley">Credits</h3>
+    <h3 class="about--title button purple glossy sparkley">Credits</h3>
     <ul>
         <li> Thanks to Simon Goellner for the &nbsp;
             <a href="https://codepen.io/simeydotme/pen/jgcvi">Magical Sparkles.</a>
