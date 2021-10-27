@@ -1,0 +1,5 @@
+{
+    "headline_id":  "<%= @headline_id %>"
+}
+
+

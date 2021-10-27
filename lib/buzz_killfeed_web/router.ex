@@ -32,11 +32,13 @@ defmodule BuzzKillfeedWeb.Router do
 
   scope "/bestof", Bestof do
     pipe_through :browser
-    resources "/", BestofController, only: [:create,:show, :index]
+    get "/", BestofController, :index
+    get "/:id", BestofController, :show
   end
 
   scope "/api" do
     resources "/fill_in_the_bait", FillInTheBait.FillInTheBaitController, only: [:create]
+    resources "/bestof", Bestof.BestofController, only: [:create]
     scope "/clickbait_generator", ClickbaitGenerator do
       pipe_through :api
 

@@ -37,7 +37,7 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorView do
       "suspense" -> "pink"
       "temptation" -> "blue"
       "confession" -> "green"
-      "voyeurism" -> "orange"
+      "voyeurism" -> "purple"
     end
   end
 end

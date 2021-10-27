@@ -1,10 +1,12 @@
 const CBG = {
     getNewHeadline: function (event) {
-        CBG.getHeadline($(this).attr('id'));
+        const headlineType = $(this).attr('id')
+        CBG.setActiveButton(headlineType);
+        CBG.requestHeadline(headlineType);
     },
-    getHeadline: function (headlineType) {
+    requestHeadline: function (headlineType) {
         $.getJSON(`/api/clickbait_generator/generate/${headlineType}`, {}, this.onGetSuccess);
-        CBG.resetLocationHash();
+        this.resetLocationHash();
     },
 
     resetLocationHash: function () {
@@ -12,7 +14,8 @@ const CBG = {
     },
 
     setActiveButton: function(headline_type) {
-        var $activeButton = $("#" + headline_type);
+        console.log("headline type: ", headline_type)
+        var $activeButton = $("." + headline_type);
         $("#clickbait-buttons .button--clickbait").removeClass('active');
         $activeButton.addClass('active');
     },
@@ -24,7 +27,7 @@ const CBG = {
             '" data-via="ShannonEWells" data-size="large" data-count="none" data-hashtags="clickbaitgenerator"></a>'].join('');
 
         $("#init-twit").html(twit_html);
-        twttr.widgets.load();
+        // twttr.widgets.load();
     },
 
     // maybe this will do something else later, like register analytics
@@ -32,7 +35,7 @@ const CBG = {
         data = JSON.parse(data)
         // clear the share modal link
         $(".ladom").html("");
-        $("#headline").html(data.headline);
+        $(".headline").html(data.headline);
 
         const ogUrl = document.createElement("meta");
 
@@ -42,14 +45,13 @@ const CBG = {
 
         const ogTitle =  document.createElement("meta");
         ogTitle.setAttribute("property", "og:title");
-        ogTitle.setAttribute("content", data.clickbait.headline);
+        ogTitle.setAttribute("content", data.headline);
 
         const ogImage =  document.createElement("meta");
         ogImage.setAttribute("property", "og:image");
         ogImage.setAttribute("content", "/images/animagicalunicorn.gif");
 
-        CBG.reTwit(data.clickbait.headline);
-        CBG.setActiveButton(data.clickbait.type);
+        CBG.reTwit(data.headline);
     },
 
     onShareSuccess: function (html) {
@@ -59,38 +61,42 @@ const CBG = {
     },
 
     sharePermalink: function (event) {
-        var $modalDiv = $(".ladom");
-        event.preventDefault();
-        if ($modalDiv.text() === "") {
-            var headLine = $("#headline").text();
+        // var $modalDiv = $(".ladom");
+        // event.preventDefault();
+        // if ($modalDiv.text() === "") {
+            var headLine = $(".headline").text();
             var headlineType = "listicle";
-            $.post("/clickbaits",
-                { clickbait: {
+            $.post("/bestof",
+                { headline: {
                     headline: headLine,
                     headline_type: headlineType,
                 }
             },
             this.onShareSuccess);
-        } else {
-            $modalDiv.modal();
-        }
+        // } else {
+        //     $modalDiv.modal();
+        // }
     }
 }
 
 
 $(document).ready(function () {
-    $("a.clickbaits #clickbait-buttons .button--clickbait").click(function (event) {
-        window.location = '/';
-    });
-    $('#clickbait-buttons .button--clickbait').click(CBG.getNewHeadline);
-    $('#manual-ajax').click(CBG.sharePermalink);
+    console.log("here")
+    if ($(".clickbait_generator").length) {
+        console.log("there")
+        $('#clickbait-buttons .button--clickbait').click(CBG.getNewHeadline);
+        $('#manual-ajax').click(CBG.sharePermalink);
 
-    // rainbow as a color generates random rainbow colros
-    // count determines number of sparkles
-    // overlap allows sparkles to migrate... watch out for other dom elements though.
-    $(".sparkley").sparkleh({
-        color: "rainbow",
-        count: 75,
-        overlap: 15
-    });
+        // rainbow as a color generates random rainbow colros
+        // count determines number of sparkles
+        // overlap allows sparkles to migrate... watch out for other dom elements though.
+        $(".sparkley").sparkleh({
+            color: "rainbow",
+            count: 75,
+            overlap: 15
+        });
+
+        $(".headline--share--button").click(CBG.sharePermalink)
+    }
+
 });

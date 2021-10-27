@@ -1,10 +1,13 @@
 <div class="jumbotron clickbait_generator">
     <div class="clickbait--section">
-        <h1 id="headline"><%= @headline %></h1>
+        <h1 class="headline" id="headline_<%= @headline.id %>">
+            <%= @headline.headline %>
+        </h1>
         <div id="clickbait-buttons">
             <%= for button_type <- button_types() do %>
                 <%= render("button.html", button_type: button_type) %>
             <% end %>
         </div>
+        <p data-icon="⇗" class="headline--share--button button yellow sparkley button--clickbait">Share</p>
     </div>
 </div>

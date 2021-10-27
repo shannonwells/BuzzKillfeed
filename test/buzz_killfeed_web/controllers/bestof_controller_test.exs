@@ -13,4 +13,21 @@ defmodule BuzzKillfeedWeb.BestofControllerTest do
       assert html_response(conn, 200) =~ r3.headline
     end
   end
+
+  describe "show" do
+    test "GET show works", %{conn: conn} do
+      r = headline_fixture()
+      conn = get conn, "/bestof/#{r.id}"
+      assert redirected_to(conn, 302) == clickbait_generator_path(conn, :index)
+    end
+  end
+
+  describe "create" do
+    # TODO: verify if you can just cause any headline to be "saved".
+    test "POST create works", %{conn: conn} do
+      valid_attrs = %{headline: "Foo Bar Has a Bazz!"}
+      conn = post conn, "/api/bestof", valid_attrs
+      assert json_response(conn, 200)
+    end
+  end
 end

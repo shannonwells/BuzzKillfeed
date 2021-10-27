@@ -4,15 +4,21 @@ defmodule Bestof.BestofController do
 
   def index(conn, _params) do
     conn
-    |> render("index.html", headlines: RepoHelpers.list_headlines())
+    |> assign(:headlines, RepoHelpers.list_headlines())
+    |> render("index.html")
   end
 
-  def create(conn, %{headline: headline}) do
-
-  end
-
-  def show(conn, %{headline_id: id}) do
+  # TODO make sure you can't just save whatever
+  def create(conn, %{"headline" => headline}) do
+    {:ok, h} = RepoHelpers.create_headline(%{"headline" => headline})
     conn
-    |> render("show.html", headline: RepoHelpers.get_headline!(id))
+    |> assign(:headline_id, h.id)
+    |> render("create.json")
+  end
+
+  def show(conn, %{"id" => id}) do
+    conn
+    |> assign(:id, id)
+    |> redirect(to: Routes.clickbait_generator_path(conn, :index))
   end
 end

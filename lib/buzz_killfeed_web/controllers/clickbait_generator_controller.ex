@@ -3,9 +3,12 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorController do
   import BuzzKillfeed.RepoHelpers
   import BuzzKillfeed.ClickbaitBuilder
 
-  def index(conn, _params) do
-    conn
-    |> render("index.html", %{headline: random_headline().headline})
+  def index(conn, params) do
+    case params do
+      %{"id" => id} -> assign(conn, :headline, get_headline!(id))
+      %{} -> assign(conn, :headline, random_headline())
+    end
+    |> render("index.html")
   end
 
   # TODO: should be restricted to JSON only
@@ -21,10 +24,6 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorController do
     render conn, "headline.json", %{headline: headline}
   end
 
-  def show(conn, %{"id" => id}) do
-    headline = get_headline!(id)
-    conn
-    |> render( "index.html", %{headline: headline.value})
-  end
-
+  #  same as Bestof#Show
+  def show(conn, params), do: index(conn, params)
 end

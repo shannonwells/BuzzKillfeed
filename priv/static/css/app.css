@@ -781,18 +781,26 @@ footer {
   transition: all 0.25s ease;
 }
 
-#headline {
+.headline {
   text-align: center;
   margin: 0 auto;
   margin-bottom: 14px;
 }
-#headline.got-headline {
+.headline.got-headline {
   background: none;
 }
 @media (min-width: 768px) {
-  #headline {
+  .headline {
     min-height: 160px;
     font-size: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .button--clickbait.headline--share--button {
+    margin: 12px auto;
+    padding: 0.75em 0.5em;
+    width: fit-content;
   }
 }
 
