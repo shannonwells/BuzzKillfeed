@@ -217,18 +217,33 @@ button.button:hover {
 
 /* -------------- colours -------------- */
 .button.orange {
-  color: #996300 !important;
-  background-color: #ffa600;
-  -webkit-box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em 0.3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em 0.3em, #cc8500 0 0.1em 3px, #996300 0 0.3em 1px, rgba(0, 0, 0, 0.2) 0 0.5em 5px;
+  color: #b03103 !important;
+  background-color: #ff841f;
+  -webkit-box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em 0.3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em 0.3em, #c55311 0 0.1em 3px, #85390a 0 0.3em 1px, rgba(0, 0, 0, 0.2) 0 0.5em 5px;
   /* drop shadow */
-  -moz-box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em 0.3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em 0.3em, #cc8500 0 0.1em 3px, #996300 0 0.3em 1px, rgba(0, 0, 0, 0.2) 0 0.5em 5px;
+  -moz-box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em 0.3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em 0.3em, #c55311 0 0.1em 3px, #85390a 0 0.3em 1px, rgba(0, 0, 0, 0.2) 0 0.5em 5px;
   /* drop shadow */
-  box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em 0.3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em 0.3em, #cc8500 0 0.1em 3px, #996300 0 0.3em 1px, rgba(0, 0, 0, 0.2) 0 0.5em 5px;
+  box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em 0.3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em 0.3em, #c55311 0 0.1em 3px, #85390a 0 0.3em 1px, rgba(0, 0, 0, 0.2) 0 0.5em 5px;
   /* drop shadow */
 }
 
 .button.orange:hover {
-  background-color: #ffc14d;
+  background-color: #ffa64d;
+}
+
+.button.yellow {
+  color: #7a6800 !important;
+  background-color: #ffea00;
+  -webkit-box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em 0.3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em 0.3em, #b3a509 0 0.1em 3px, #8d8102 0 0.3em 1px, rgba(0, 0, 0, 0.2) 0 0.5em 5px;
+  /* drop shadow */
+  -moz-box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em 0.3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em 0.3em, #b3a509 0 0.1em 3px, #8d8102 0 0.3em 1px, rgba(0, 0, 0, 0.2) 0 0.5em 5px;
+  /* drop shadow */
+  box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em 0.3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em 0.3em, #b3a509 0 0.1em 3px, #8d8102 0 0.3em 1px, rgba(0, 0, 0, 0.2) 0 0.5em 5px;
+  /* drop shadow */
+}
+
+.button.yellow:hover {
+  background-color: #fff36b;
 }
 
 .button.blue {
@@ -244,6 +259,21 @@ button.button:hover {
 
 .button.blue:hover {
   background-color: #a8d7ff;
+}
+
+.button.purple {
+  color: #3a3399 !important;
+  background-color: #8082ff;
+  -webkit-box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em 0.3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em 0.3em, #7053c6 0 0.1em 3px, #4d3399 0 0.3em 1px, rgba(0, 0, 0, 0.2) 0 0.5em 5px;
+  /* drop shadow */
+  -moz-box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em 0.3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em 0.3em, #7053c6 0 0.1em 3px, #4d3399 0 0.3em 1px, rgba(0, 0, 0, 0.2) 0 0.5em 5px;
+  /* drop shadow */
+  box-shadow: inset rgba(255, 254, 255, 0.6) 0 0.3em 0.3em, inset rgba(0, 0, 0, 0.15) 0 -0.1em 0.3em, #7053c6 0 0.1em 3px, #4d3399 0 0.3em 1px, rgba(0, 0, 0, 0.2) 0 0.5em 5px;
+  /* drop shadow */
+}
+
+.button.purple:hover {
+  background-color: #b8a8ff;
 }
 
 .button.green {

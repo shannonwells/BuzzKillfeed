@@ -119,43 +119,90 @@ button.button:hover {
 
 /* -------------- colours -------------- */
 
+$ornj: hsl(22, 84%, 42%);
+$burnt-ornj: hsl(23, 86%, 28%);
 .button.orange {
-  color: hsl(39, 100%, 30%) !important;
-  background-color: hsl(39, 100%, 50%);
+  color: hsl(16, 97%, 35%) !important;
+  background-color: hsl(27, 100%, 56%);
 
   -webkit-box-shadow: inset $white-tp 0 0.3em .3em, inset $glassy2 0 -0.1em .3em, /* inner shadow */
-  hsl(39, 100%, 40%) 0 .1em 3px, hsl(39, 100%, 30%) 0 .3em 1px, /* color border */
+  $ornj 0 .1em 3px, $burnt-ornj 0 .3em 1px, /* color border */
   $glassy3 0 .5em 5px; /* drop shadow */
   -moz-box-shadow: inset $white-tp 0 0.3em .3em, inset $glassy2 0 -0.1em .3em, /* inner shadow */
-  hsl(39, 100%, 40%) 0 .1em 3px, hsl(39, 100%, 30%) 0 .3em 1px, /* color border */
+  $ornj 0 .1em 3px, $burnt-ornj 0 .3em 1px, /* color border */
   $glassy3 0 .5em 5px; /* drop shadow */
   box-shadow: inset $white-tp 0 0.3em .3em, inset $glassy2 0 -0.1em .3em, /* inner shadow */
-  hsl(39, 100%, 40%) 0 .1em 3px, hsl(39, 100%, 30%) 0 .3em 1px, /* color border */
+  $ornj 0 .1em 3px, $burnt-ornj 0 .3em 1px, /* color border */
   $glassy3 0 .5em 5px; /* drop shadow */
 }
 
 .button.orange:hover {
-  background-color: hsl(39, 100%, 65%);
+  background-color: hsl(30, 100%, 65%);
+}
+
+$yeller: hsl(55, 90%, 37%);
+$burnt-yeller: hsl(55, 97%, 28%);
+.button.yellow {
+  color: hsl(51, 100%, 24%) !important;
+  background-color: hsl(55, 100%, 50%);
+
+  -webkit-box-shadow: inset $white-tp 0 0.3em .3em, inset $glassy2 0 -0.1em .3em, /* inner shadow */
+  $yeller 0 .1em 3px, $burnt-yeller 0 .3em 1px, /* color border */
+  $glassy3 0 .5em 5px; /* drop shadow */
+  -moz-box-shadow: inset $white-tp 0 0.3em .3em, inset $glassy2 0 -0.1em .3em, /* inner shadow */
+  $yeller 0 .1em 3px, $burnt-yeller 0 .3em 1px, /* color border */
+  $glassy3 0 .5em 5px; /* drop shadow */
+  box-shadow: inset $white-tp 0 0.3em .3em, inset $glassy2 0 -0.1em .3em, /* inner shadow */
+  $yeller 0 .1em 3px, $burnt-yeller 0 .3em 1px, /* color border */
+  $glassy3 0 .5em 5px; /* drop shadow */
+}
+
+.button.yellow:hover {
+  background-color: hsl(55, 100%, 71%);
 }
 
 
+
+$true-blue: hsl(208, 50%, 55%);
+$indigo: hsl(208, 50%, 40%);
 .button.blue {
   color: hsl(208, 50%, 40%) !important;
   background-color: hsl(208, 100%, 75%);
 
   -webkit-box-shadow: inset $white-tp 0 0.3em .3em, inset $glassy2 0 -0.1em .3em, /* inner shadow */
-  hsl(208, 50%, 55%) 0 .1em 3px, hsl(208, 50%, 40%) 0 .3em 1px, /* color border */
+  $true-blue 0 .1em 3px, $indigo 0 .3em 1px, /* color border */
   $glassy3 0 .5em 5px; /* drop shadow */
   -moz-box-shadow: inset $white-tp 0 0.3em .3em, inset $glassy2 0 -0.1em .3em, /* inner shadow */
-  hsl(208, 50%, 55%) 0 .1em 3px, hsl(208, 50%, 40%) 0 .3em 1px, /* color border */
+  $true-blue 0 .1em 3px, $indigo 0 .3em 1px, /* color border */
   $glassy3 0 .5em 5px; /* drop shadow */
   box-shadow: inset $white-tp 0 0.3em .3em, inset $glassy2 0 -0.1em .3em, /* inner shadow */
-  hsl(208, 50%, 55%) 0 .1em 3px, hsl(208, 50%, 40%) 0 .3em 1px, /* color border */
+  $true-blue 0 .1em 3px, $indigo 0 .3em 1px, /* color border */
   $glassy3 0 .5em 5px; /* drop shadow */
 }
 
 .button.blue:hover {
   background-color: hsl(208, 100%, 83%);
+}
+
+$viola: hsl(255, 50%, 55%);
+$eggplant: hsl(255, 50%, 40%);
+.button.purple {
+  color: hsl(244, 50%, 40%) !important;
+  background-color: hsl(239, 100%, 75%);
+
+  -webkit-box-shadow: inset $white-tp 0 0.3em .3em, inset $glassy2 0 -0.1em .3em, /* inner shadow */
+  $viola 0 .1em 3px, $eggplant 0 .3em 1px, /* color border */
+  $glassy3 0 .5em 5px; /* drop shadow */
+  -moz-box-shadow: inset $white-tp 0 0.3em .3em, inset $glassy2 0 -0.1em .3em, /* inner shadow */
+  $viola 0 .1em 3px, $eggplant 0 .3em 1px, /* color border */
+  $glassy3 0 .5em 5px; /* drop shadow */
+  box-shadow: inset $white-tp 0 0.3em .3em, inset $glassy2 0 -0.1em .3em, /* inner shadow */
+  $viola 0 .1em 3px, $eggplant 0 .3em 1px, /* color border */
+  $glassy3 0 .5em 5px; /* drop shadow */
+}
+
+.button.purple:hover {
+  background-color: hsl(251, 100%, 83%);
 }
 
 .button.green {
@@ -176,24 +223,25 @@ button.button:hover {
   background-color: hsl(88, 70%, 75%);
 }
 
+$rosy: hsl(340, 70%, 50%);
+$mauve: hsl(340, 80%, 40%);
 .button.pink {
   color: hsl(340, 100%, 30%) !important;
   background-color: hsl(340, 100%, 75%);
   -webkit-box-shadow: inset $white-tp 0 0.3em .3em, inset $glassy2 0 -0.1em .3em, /* inner shadow */
-  hsl(340, 70%, 50%) 0 .1em 3px, hsl(340, 80%, 40%) 0 .3em 1px, /* color border */
+  $rosy 0 .1em 3px, $mauve 0 .3em 1px, /* color border */
   $glassy3 0 .5em 5px; /* drop shadow */
   -moz-box-shadow: inset $white-tp 0 0.3em .3em, inset $glassy2 0 -0.1em .3em, /* inner shadow */
-  hsl(340, 70%, 50%) 0 .1em 3px, hsl(340, 80%, 40%) 0 .3em 1px, /* color border */
+  $rosy 0 .1em 3px, $mauve 0 .3em 1px, /* color border */
   $glassy3 0 .5em 5px; /* drop shadow */
   box-shadow: inset $white-tp 0 0.3em .3em, inset $glassy2 0 -0.1em .3em, /* inner shadow */
-  hsl(340, 70%, 50%) 0 .1em 3px, hsl(340, 80%, 40%) 0 .3em 1px, /* color border */
+  $rosy 0 .1em 3px, $mauve 0 .3em 1px, /* color border */
   $glassy3 0 .5em 5px; /* drop shadow */
 }
 
 .button.pink:hover {
   background-color: hsl(340, 100%, 83%);
 }
-
 
 .button.transparent {
   color: $whitish !important;
