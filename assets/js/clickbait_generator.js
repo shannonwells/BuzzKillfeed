@@ -1,5 +1,7 @@
 const CBG = {
-    getNewHeadline: function (event) {
+    buttonSelector: ".button--clickbait",
+
+    getNewHeadline: function () {
         const headlineType = $(this).attr('id')
         CBG.setActiveButton(headlineType);
         CBG.requestHeadline(headlineType);
@@ -13,11 +15,14 @@ const CBG = {
         location.hash = "";
     },
 
-    setActiveButton: function(headline_type) {
-        console.log("headline type: ", headline_type)
-        var $activeButton = $("." + headline_type);
-        $("#clickbait-buttons .button--clickbait").removeClass('active');
-        $activeButton.addClass('active');
+    getActiveHeadlineType: function() {
+        return $(CBG.buttonSelector + ".active").attr('id')
+    },
+
+    setActiveButton: function(headlineType) {
+        const activeButton = $("#" + headlineType);
+        $(CBG.buttonSelector).removeClass('active');
+        activeButton.addClass('active');
     },
 
     reTwit: function(headline) {
@@ -55,24 +60,22 @@ const CBG = {
     },
 
     onShareSuccess: function (html) {
-        var $modalDiv = $(".ladom");
-        $(html).appendTo($modalDiv);
-        $modalDiv.modal();
+        // var $modalDiv = $(".ladom");
+        // $(html).appendTo($modalDiv);
+        // $modalDiv.modal();
     },
 
     sharePermalink: function (event) {
         // var $modalDiv = $(".ladom");
         // event.preventDefault();
         // if ($modalDiv.text() === "") {
-            var headLine = $(".headline").text();
-            var headlineType = "listicle";
-            $.post("/bestof",
-                { headline: {
+            const headLine = $(".headline").text();
+            const headlineType = CBG.getActiveHeadlineType();
+            $.post("/api/bestof",
+                {
                     headline: headLine,
                     headline_type: headlineType,
-                }
-            },
-            this.onShareSuccess);
+                }, CBG.onShareSuccess);
         // } else {
         //     $modalDiv.modal();
         // }

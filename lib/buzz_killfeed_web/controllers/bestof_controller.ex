@@ -1,6 +1,7 @@
 defmodule Bestof.BestofController do
   use BuzzKillfeedWeb, :controller
   alias BuzzKillfeed.RepoHelpers
+  alias ClickbaitGenerator.ClickbaitGeneratorView
 
   def index(conn, _params) do
     conn
@@ -9,8 +10,12 @@ defmodule Bestof.BestofController do
   end
 
   # TODO make sure you can't just save whatever
-  def create(conn, %{"headline" => headline}) do
-    {:ok, h} = RepoHelpers.create_headline(%{"headline" => headline})
+  def create(conn, %{"headline" => h, "headline_type" => ht}) do
+    {:ok, h} = RepoHelpers.create_headline(%{
+      "headline" => h,
+      "headline_type" => ClickbaitGeneratorView.headline_str_to_int(ht),
+      "views" => 1
+    })
     conn
     |> assign(:headline_id, h.id)
     |> render("create.json")
@@ -21,4 +26,5 @@ defmodule Bestof.BestofController do
     |> assign(:id, id)
     |> redirect(to: Routes.clickbait_generator_path(conn, :index))
   end
+
 end

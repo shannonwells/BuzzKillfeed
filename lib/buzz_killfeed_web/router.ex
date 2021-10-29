@@ -38,7 +38,7 @@ defmodule BuzzKillfeedWeb.Router do
 
   scope "/api" do
     resources "/fill_in_the_bait", FillInTheBait.FillInTheBaitController, only: [:create]
-    resources "/bestof", Bestof.BestofController, only: [:create]
+    post "/bestof", Bestof.BestofController, :create
     scope "/clickbait_generator", ClickbaitGenerator do
       pipe_through :api
 

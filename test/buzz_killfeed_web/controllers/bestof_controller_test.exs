@@ -25,7 +25,7 @@ defmodule BuzzKillfeedWeb.BestofControllerTest do
   describe "create" do
     # TODO: verify if you can just cause any headline to be "saved".
     test "POST create works", %{conn: conn} do
-      valid_attrs = %{headline: "Foo Bar Has a Bazz!"}
+      valid_attrs = %{headline: "Foo Bar Has a Bazz!", headline_type: "listicle"}
       conn = post conn, "/api/bestof", valid_attrs
       assert json_response(conn, 200)
     end

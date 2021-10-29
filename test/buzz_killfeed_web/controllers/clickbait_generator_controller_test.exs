@@ -5,6 +5,9 @@ defmodule BuzzKillfeedWeb.ClickbaitGeneratorControllerTest do
   import BuzzKillfeed.PredicatesFixtures
   import BuzzKillfeed.HeadlinesFixtures
   import BuzzKillfeed.VerbsFixtures
+  alias BuzzKillfeed.RepoHelpers
+  alias ClickbaitGenerator.ClickbaitGeneratorView
+
 
   describe "generate (JSON)" do
     # being unable to nest describes is hella stupid.
@@ -34,6 +37,27 @@ defmodule BuzzKillfeedWeb.ClickbaitGeneratorControllerTest do
       record = headline_fixture()
       conn = get conn, "/clickbait_generator", id: record.id
       assert html_response(conn, 200) =~ record.headline
+    end
+  end
+
+  describe "POST new headline (JSON)" do
+    test "saves correct headlines", %{conn: conn} do
+      [
+        %{headline: "Foo bar bazzed.", headline_type: "voyeurism" },
+        %{headline: "Foo bar bopped.", headline_type: "confession"},
+        %{headline: "Foo bar booed.", headline_type: "suspense"},
+      ]
+      |> Enum.each(fn valid_attrs ->
+        conn = post conn, "/api/bestof", valid_attrs
+        {:ok, %{"headline_id" => newid}} = Jason.decode(json_response(conn, 200) )
+
+        assert(String.match?(newid, ~r/[\d]+/))
+        h = RepoHelpers.get_headline!(newid)
+        assert(h.headline_type == ClickbaitGeneratorView.headline_str_to_int(valid_attrs.headline_type))
+        assert(h.views == 1)
+      end)
+
+
     end
   end
 end
