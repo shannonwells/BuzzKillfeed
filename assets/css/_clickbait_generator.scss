@@ -33,7 +33,7 @@
 }
 
 // this is the displayed headline
-#headline {
+.headline {
   text-align: center;
   margin: 0 auto;
   margin-bottom: 14px;
@@ -46,4 +46,36 @@
     min-height: 160px;
     font-size: 40px;
   }
+}
+
+.button--clickbait.headline--share--button {
+  @media (min-width: $breakpoint-tablet) {
+    margin: 12px auto;
+    padding: .75em .5em;
+    width: fit-content;
+  }
+}
+
+#headline--share--dialog {
+  //background-color: $floral-white;
+  //display: flex;
+  //flex-direction: column;
+  width: fit-content;
+  //border: 10px solid $air-blue;
+  //border-radius: 18px;
+
+}
+
+.share--dialog--title {
+  font-size: larger;
+}
+
+.share--dialog--link {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.copy-icon {
+  border-radius: 6px;
+  cursor: pointer;
 }

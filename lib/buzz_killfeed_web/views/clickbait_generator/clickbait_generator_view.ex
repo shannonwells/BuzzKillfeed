@@ -1,7 +1,12 @@
 defmodule ClickbaitGenerator.ClickbaitGeneratorView do
   use BuzzKillfeedWeb, :view
-  def button_types() do
-    ["listicle", "suspense", "temptation", "confession", "voyeurism"]
+
+  @headline_types  ["listicle", "suspense", "temptation", "confession", "voyeurism"]
+
+  def button_types(), do: @headline_types
+
+  def headline_str_to_int(button_type) do
+    @headline_types |> Enum.find_index(fn el -> el == button_type end)
   end
 
   def button_class(button_type, headline_type) do
@@ -37,7 +42,7 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorView do
       "suspense" -> "pink"
       "temptation" -> "blue"
       "confession" -> "green"
-      "voyeurism" -> "orange"
+      "voyeurism" -> "purple"
     end
   end
 end

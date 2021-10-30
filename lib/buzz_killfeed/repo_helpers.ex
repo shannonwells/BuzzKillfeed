@@ -79,7 +79,11 @@ defmodule BuzzKillfeed.RepoHelpers do
   def create_headline(attrs \\ %{}) do
     %Headline{}
     |> Headline.changeset(attrs)
-    |> Repo.insert()
+    |> Repo.insert!()
+  end
+
+  def get_or_create_headline(attrs \\ %{}) do
+    Repo.get_by(Headline, headline: attrs["headline"]) || create_headline(attrs)
   end
 
   @doc """

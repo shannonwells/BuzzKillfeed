@@ -12,6 +12,10 @@ nav {
 
 .menu--mobile {
   color: $menu-linkcolor;
+  &:hover,&:active {
+    color: $linkcolor
+  }
+
   display: flex;
   flex-direction: column;
   padding: .5em 1em;

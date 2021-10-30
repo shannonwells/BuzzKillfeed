@@ -12,8 +12,8 @@ defmodule BuzzKillfeed.Headline do
   @doc false
   def changeset(headline, attrs) do
     headline
-    |> cast(attrs, [:headline])
+    |> cast(attrs, [:headline, :headline_type, :views])
     |> validate_required([:headline])
-    |> unique_constraint(:value)
+    |> unique_constraint(:headline)
   end
 end

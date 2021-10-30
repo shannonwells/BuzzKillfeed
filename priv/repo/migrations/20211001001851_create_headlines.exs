@@ -8,6 +8,7 @@ defmodule BuzzKillfeed.Repo.Migrations.CreateHeadlines do
       add :views, :integer
       timestamps()
     end
+    create unique_index(:headlines, [:headline])
 
     alter table(:headlines) do
       modify(:inserted_at, :timestamp, default: fragment("NOW()"))

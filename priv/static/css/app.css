@@ -3,6 +3,33 @@
 /* Custom Stuff */
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:bold+Lobster);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
+.hidden {
+  display: none !important;
+}
+
+.mobile--hidden {
+  display: none;
+}
+@media (min-width: 768px) {
+  .mobile--hidden {
+    display: initial;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.button--bullet {
+  padding: 2px 2px 2px 1px;
+  display: none;
+}
+@media (min-width: 768px) {
+  .button--bullet {
+    display: revert;
+  }
+}
+
 @keyframes glowing {
   0% {
     background-color: rgba(43, 168, 5, 0.11);
@@ -25,107 +52,65 @@
     box-shadow: 0 0 3px 5px rgba(0, 168, 55, 0.4);
   }
 }
-nav {
-  background-color: #2B2D42;
-  font-weight: bold;
-  text-align: left;
-  font-size: 18px;
-  line-height: 2em;
+#main, #main-winter, #main-valentines {
+  -webkit-animation: main 10s 5s infinite ease;
+  /* Chrome, Safari, Opera */
 }
 
-.menu--mobile {
-  color: #E9DA0C;
-  display: flex;
-  flex-direction: column;
-  padding: 0.5em 1em;
-}
-@media (min-width: 768px) {
-  .menu--mobile {
-    display: none;
+/* Chrome, Safari, Opera */
+@-webkit-keyframes main-valentines {
+  0% {
+    background: #ffe2ea;
+  }
+  50% {
+    background: #ff00a1;
+  }
+  100% {
+    background: #ba000c;
   }
 }
-
-.menu--mobile--topbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.menu--mobile--link a {
-  color: #ffe66d;
-}
-
-.menu--mobile--title {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.menu--mobile--close {
-  font-size: 52px;
-  line-height: 0.5em;
-}
-
-.menu--mobile--hamburger {
-  font-size: 24px;
-}
-.menu--mobile--hamburger svg {
-  fill: #E9DA0C;
-}
-
-@keyframes slideDown {
+/* Standard syntax */
+@keyframes main-valentines {
   from {
-    height: 0;
+    background: #ffe2ea;
   }
   to {
-    height: initial;
+    background: #ba000c;
   }
 }
-.menu--mobile--nav {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 12px;
-}
-
-.nav--desktop {
-  display: none;
-}
-@media (min-width: 768px) {
-  .nav--desktop {
-    display: flex;
-    justify-content: flex-start;
-    line-height: 1.75em;
-    align-content: flex-start;
-    font-size: 14px;
-    padding: 0 32px;
+/* Chrome, Safari, Opera */
+@-webkit-keyframes main-winter-switch {
+  0% {
+    background: #ba000c;
+  }
+  50% {
+    background: #0038b8;
+  }
+  100% {
+    background: #ba000c;
   }
 }
-
-@media (min-width: 768px) {
-  .nav--desktop--item {
-    margin: 12px 32px 0 0;
-    padding: 4px 8px;
+/* Standard syntax */
+@keyframes main-winter-switch {
+  from {
+    background: #0038b8;
   }
-  .nav--desktop--item:hover, .nav--desktop--item:active {
-    transition: background-color 300ms ease-out;
-    border-radius: 4px 4px 0 0;
-    background-color: #b9d3e1;
+  to {
+    background: #ba000c;
   }
 }
-
-.nav--desktop--item a {
-  color: #E9DA0C;
+.pulse {
+  animation: pulse-animation 2s infinite;
 }
 
-.nav--mobile--expanded {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 12px;
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
 }
-
-.dark-mode .xkxk--item {
-  color: #b9d3e1;
-}
-
 /* BonBon Buttons 1.1 by simurai.com
 
 1.1 Added unprefixed attributes, :focus style, <button> support
@@ -587,33 +572,6 @@ button.button:hover {
 }
 
 /* Damn, this became a fat baby..  */
-.hidden {
-  display: none !important;
-}
-
-.mobile--hidden {
-  display: none;
-}
-@media (min-width: 768px) {
-  .mobile--hidden {
-    display: initial;
-  }
-}
-
-.center {
-  text-align: center;
-}
-
-.button--bullet {
-  padding: 2px 2px 2px 1px;
-  display: none;
-}
-@media (min-width: 768px) {
-  .button--bullet {
-    display: revert;
-  }
-}
-
 @keyframes glowing {
   0% {
     background-color: rgba(43, 168, 5, 0.11);
@@ -636,6 +594,110 @@ button.button:hover {
     box-shadow: 0 0 3px 5px rgba(0, 168, 55, 0.4);
   }
 }
+nav {
+  background-color: #2B2D42;
+  font-weight: bold;
+  text-align: left;
+  font-size: 18px;
+  line-height: 2em;
+}
+
+.menu--mobile {
+  color: #E9DA0C;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em 1em;
+}
+.menu--mobile:hover, .menu--mobile:active {
+  color: #555555;
+}
+@media (min-width: 768px) {
+  .menu--mobile {
+    display: none;
+  }
+}
+
+.menu--mobile--topbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu--mobile--link a {
+  color: #ffe66d;
+}
+
+.menu--mobile--title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu--mobile--close {
+  font-size: 52px;
+  line-height: 0.5em;
+}
+
+.menu--mobile--hamburger {
+  font-size: 24px;
+}
+.menu--mobile--hamburger svg {
+  fill: #E9DA0C;
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: initial;
+  }
+}
+.menu--mobile--nav {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 12px;
+}
+
+.nav--desktop {
+  display: none;
+}
+@media (min-width: 768px) {
+  .nav--desktop {
+    display: flex;
+    justify-content: flex-start;
+    line-height: 1.75em;
+    align-content: flex-start;
+    font-size: 14px;
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav--desktop--item {
+    margin: 12px 32px 0 0;
+    padding: 4px 8px;
+  }
+  .nav--desktop--item:hover, .nav--desktop--item:active {
+    transition: background-color 300ms ease-out;
+    border-radius: 4px 4px 0 0;
+    background-color: #b9d3e1;
+  }
+}
+
+.nav--desktop--item a {
+  color: #E9DA0C;
+}
+
+.nav--mobile--expanded {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 12px;
+}
+
+.dark-mode .xkxk--item {
+  color: #b9d3e1;
+}
+
 @keyframes glowing {
   0% {
     background-color: rgba(43, 168, 5, 0.11);
@@ -778,19 +840,45 @@ footer {
   transition: all 0.25s ease;
 }
 
-#headline {
+.headline {
   text-align: center;
   margin: 0 auto;
   margin-bottom: 14px;
 }
-#headline.got-headline {
+.headline.got-headline {
   background: none;
 }
 @media (min-width: 768px) {
-  #headline {
+  .headline {
     min-height: 160px;
     font-size: 40px;
   }
+}
+
+@media (min-width: 768px) {
+  .button--clickbait.headline--share--button {
+    margin: 12px auto;
+    padding: 0.75em 0.5em;
+    width: fit-content;
+  }
+}
+
+#headline--share--dialog {
+  width: fit-content;
+}
+
+.share--dialog--title {
+  font-size: larger;
+}
+
+.share--dialog--link {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.copy-icon {
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .fitbGame--Form {
