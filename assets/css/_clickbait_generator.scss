@@ -56,18 +56,24 @@
   }
 }
 
-#headline--share--dialog {
-  //background-color: $floral-white;
-  //display: flex;
-  //flex-direction: column;
-  width: fit-content;
-  //border: 10px solid $air-blue;
-  //border-radius: 18px;
+.blocker.current:before {
+  @media (max-width: $breakpoint-tablet) {
+    display: inline;
+    margin: 22px 0;
+  }
+}
 
+#headline--share--dialog {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: $breakpoint-tablet) {
+    width: fit-content;
+  }
 }
 
 .share--dialog--title {
   font-size: larger;
+  font-family: "Lobster", cursive;
 }
 
 .share--dialog--link {

@@ -11,9 +11,9 @@
         <p data-icon="⇗" class="headline--share--button button yellow sparkley button--clickbait">Share</p>
         <div id="headline--share--dialog" class="hidden modal button round button--clickbait yellow">
             <div class="">
-                <p class="share--dialog--title">Share me</p>
+                <p class="share--dialog--title">Share me&nbsp;<a class="copy-icon pulse">📑</a></p>
                 <p>
-                    <a class="share--dialog--link" href="/">the link</a>&nbsp;<a class="copy-icon pulse">📑</a>
+                    <a class="share--dialog--link" href="/">the link</a>
                 </p>
             </div>
         </div>

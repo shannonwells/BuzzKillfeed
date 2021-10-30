@@ -1,6 +1,5 @@
 .about--title {
-  margin-bottom: 1em;
-  margin-left: 0;
+    margin-left: 0;
 }
 
 .about--new--item {
@@ -12,6 +11,7 @@
     align-items: center;
   }
 }
+
 .new--item--name {
   @media (min-width: $breakpoint-tablet) {
     width: 200px;

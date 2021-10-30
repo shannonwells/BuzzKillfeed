@@ -34,6 +34,10 @@ nav {
   color: $footerText;
 }
 
+.menu--mobile--title, .menu--mobile--close {
+  color: $naples-yellow;
+}
+
 .menu--mobile--title {
   font-size: 24px;
   font-weight: bold;

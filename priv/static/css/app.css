@@ -627,6 +627,10 @@ nav {
   color: #ffe66d;
 }
 
+.menu--mobile--title, .menu--mobile--close {
+  color: #ffe66d;
+}
+
 .menu--mobile--title {
   font-size: 24px;
   font-weight: bold;
@@ -863,12 +867,26 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  .blocker.current:before {
+    display: inline;
+    margin: 22px 0;
+  }
+}
+
 #headline--share--dialog {
-  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  #headline--share--dialog {
+    width: fit-content;
+  }
 }
 
 .share--dialog--title {
   font-size: larger;
+  font-family: "Lobster", cursive;
 }
 
 .share--dialog--link {
@@ -1012,7 +1030,6 @@ button.fitbGame--Submit {
 }
 
 .about--title {
-  margin-bottom: 1em;
   margin-left: 0;
 }
 
