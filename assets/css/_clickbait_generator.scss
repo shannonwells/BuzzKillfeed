@@ -57,14 +57,25 @@
 }
 
 #headline--share--dialog {
-  display: flex;
-  flex-direction: column;
+  //background-color: $floral-white;
+  //display: flex;
+  //flex-direction: column;
+  width: fit-content;
+  //border: 10px solid $air-blue;
+  //border-radius: 18px;
+
+}
+
+.share--dialog--title {
+  font-size: larger;
 }
 
 .share--dialog--link {
-
+  font-weight: bold;
+  margin-right: 8px;
 }
 
 .copy-icon {
+  border-radius: 6px;
   cursor: pointer;
 }

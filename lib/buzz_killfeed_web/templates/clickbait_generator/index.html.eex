@@ -5,16 +5,17 @@
         </h1>
         <div id="clickbait-buttons">
             <%= for button_type <- button_types() do %>
-                <%= render("button.html", button_type: button_type) %>
+            <%= render("button.html", button_type: button_type) %>
             <% end %>
         </div>
         <p data-icon="⇗" class="headline--share--button button yellow sparkley button--clickbait">Share</p>
-        <div id="headline--share--dialog" class="hidden modal">
-            <p>Share this link:</p>
-            <p>
-                <a class="share--dialog--link" href="/">the link</a>
-                <a class="copy-icon">📑</a>
-            </p>
+        <div id="headline--share--dialog" class="hidden modal button round button--clickbait yellow">
+            <div class="">
+                <p class="share--dialog--title">Share me</p>
+                <p>
+                    <a class="share--dialog--link" href="/">the link</a>&nbsp;<a class="copy-icon pulse">📑</a>
+                </p>
+            </div>
         </div>
     </div>
 </div>
