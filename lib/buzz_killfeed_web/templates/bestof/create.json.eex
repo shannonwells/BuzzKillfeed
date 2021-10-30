@@ -1,5 +1,5 @@
 {
-    "headline_id":  "<%= @headline_id %>"
+    "share_url":  "<%= Routes.bestof_url(@conn, :show, @headline_id) %>"
 }
 
 

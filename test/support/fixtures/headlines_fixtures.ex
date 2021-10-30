@@ -8,12 +8,10 @@ defmodule BuzzKillfeed.HeadlinesFixtures do
   Generate a headline.
   """
   def headline_fixture(attrs \\ %{}) do
-    {:ok, headline} =
       attrs
       |> Enum.into(%{
         headline: "some headline"
       })
       |> create_headline()
-    headline
   end
 end

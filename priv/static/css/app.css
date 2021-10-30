@@ -804,6 +804,15 @@ footer {
   }
 }
 
+#headline--share--dialog {
+  display: flex;
+  flex-direction: column;
+}
+
+.copy-icon {
+  cursor: pointer;
+}
+
 .fitbGame--Form {
   font-size: large;
   margin: 0 auto;

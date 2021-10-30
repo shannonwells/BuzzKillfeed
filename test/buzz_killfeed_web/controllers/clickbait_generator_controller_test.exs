@@ -18,7 +18,7 @@ defmodule BuzzKillfeedWeb.ClickbaitGeneratorControllerTest do
 
       conn = get conn, "/api/clickbait_generator/generate/listicle"
       {:ok, %{"headline" => h}} = Jason.decode(json_response(conn, 200))
-      assert( String.match? h, ~r/The \d+ Goofy Buckets That Jumped The Shark\Z/ )
+      assert(String.match? h, ~r/The \d+ Goofy Buckets That Jumped The Shark\Z/)
 
     end
     test "generate a confession", %{conn: conn} do
@@ -27,7 +27,7 @@ defmodule BuzzKillfeedWeb.ClickbaitGeneratorControllerTest do
       verb_fixture()
       conn = get conn, "/api/clickbait_generator/generate/confession"
       {:ok, %{"headline" => h}} = Jason.decode(json_response(conn, 200))
-      assert( String.match? h, ~r/I Jumped \w+ Goofy Bucket\Z/ )
+      assert(String.match? h, ~r/I Jumped \w+ Goofy Bucket\Z/)
     end
   end
 
@@ -43,19 +43,17 @@ defmodule BuzzKillfeedWeb.ClickbaitGeneratorControllerTest do
   describe "POST new headline (JSON)" do
     test "saves correct headlines", %{conn: conn} do
       [
-        %{headline: "Foo bar bazzed.", headline_type: "voyeurism" },
+        %{headline: "Foo bar bazzed.", headline_type: "voyeurism"},
         %{headline: "Foo bar bopped.", headline_type: "confession"},
         %{headline: "Foo bar booed.", headline_type: "suspense"},
       ]
-      |> Enum.each(fn valid_attrs ->
-        conn = post conn, "/api/bestof", valid_attrs
-        {:ok, %{"headline_id" => newid}} = Jason.decode(json_response(conn, 200) )
-
-        assert(String.match?(newid, ~r/[\d]+/))
-        h = RepoHelpers.get_headline!(newid)
-        assert(h.headline_type == ClickbaitGeneratorView.headline_str_to_int(valid_attrs.headline_type))
-        assert(h.views == 1)
-      end)
+      |> Enum.each(
+           fn valid_attrs ->
+             conn = post conn, "/api/bestof", valid_attrs
+             {:ok, %{"share_url" => url}} = Jason.decode(json_response(conn, 200))
+             assert(String.match?(url, ~r/[\d]+$/))
+           end
+         )
 
 
     end

@@ -20,12 +20,12 @@ defmodule BuzzKillfeed.HeadlinesTest do
 
     test "create_headline/1 with valid data creates a headline" do
       val = "some title"
-      {:ok, record} = RepoHelpers.create_headline(%{headline: val})
+      record = RepoHelpers.create_headline(%{headline: val})
       assert record.headline == val
     end
 
     test "create_headline/1 with invalid data returns error changeset" do
-      assert {:error, %Ecto.Changeset{}} = RepoHelpers.create_headline(@invalid_attrs)
+      assert_raise Ecto.InvalidChangesetError, fn -> RepoHelpers.create_headline(@invalid_attrs) end
     end
 
     test "delete_headline/1 deletes the headline" do

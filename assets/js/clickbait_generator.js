@@ -15,17 +15,17 @@ const CBG = {
         location.hash = "";
     },
 
-    getActiveHeadlineType: function() {
+    getActiveHeadlineType: function () {
         return $(CBG.buttonSelector + ".active").attr('id')
     },
 
-    setActiveButton: function(headlineType) {
+    setActiveButton: function (headlineType) {
         const activeButton = $("#" + headlineType);
         $(CBG.buttonSelector).removeClass('active');
         activeButton.addClass('active');
     },
 
-    reTwit: function(headline) {
+    reTwit: function (headline) {
         var twit_html = [
             '<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://clickbaitgenerator.herokuapp.com" data-text="',
             headline,
@@ -48,46 +48,47 @@ const CBG = {
         ogUrl.setAttribute("content", document.URL);
         document.head.appendChild(ogUrl);
 
-        const ogTitle =  document.createElement("meta");
+        const ogTitle = document.createElement("meta");
         ogTitle.setAttribute("property", "og:title");
         ogTitle.setAttribute("content", data.headline);
 
-        const ogImage =  document.createElement("meta");
+        const ogImage = document.createElement("meta");
         ogImage.setAttribute("property", "og:image");
         ogImage.setAttribute("content", "/images/animagicalunicorn.gif");
 
         CBG.reTwit(data.headline);
     },
 
-    onShareSuccess: function (html) {
-        // var $modalDiv = $(".ladom");
-        // $(html).appendTo($modalDiv);
-        // $modalDiv.modal();
+    onShareSuccess: function (xhr) {
+        const share_url = JSON.parse(xhr).share_url
+        console.log({share_url})
+        $(".share--dialog--link").attr("href", share_url).text(share_url)
+        $(".modal")
+            .removeClass("hidden")
+            .modal();
     },
 
     sharePermalink: function (event) {
-        // var $modalDiv = $(".ladom");
-        // event.preventDefault();
-        // if ($modalDiv.text() === "") {
-            const headLine = $(".headline").text();
-            const headlineType = CBG.getActiveHeadlineType();
-            $.post("/api/bestof",
-                {
-                    headline: headLine,
-                    headline_type: headlineType,
-                }, CBG.onShareSuccess);
-        // } else {
-        //     $modalDiv.modal();
-        // }
+        const headLine = $(".headline").text();
+        const headlineType = CBG.getActiveHeadlineType();
+        $.post("/api/bestof",
+            {
+                headline: headLine,
+                headline_type: headlineType,
+            }, CBG.onShareSuccess);
+    },
+
+    copyLinkToClipboard(event) {
+        const copyText = $(".share--dialog--link").text();
+        navigator.clipboard.writeText(copyText);
     }
 }
 
 
 $(document).ready(function () {
-    console.log("here")
     if ($(".clickbait_generator").length) {
-        console.log("there")
         $('#clickbait-buttons .button--clickbait').click(CBG.getNewHeadline);
+        $("#headline--share--dialog .copy-icon").click(CBG.copyLinkToClipboard)
         $('#manual-ajax').click(CBG.sharePermalink);
 
         // rainbow as a color generates random rainbow colros

@@ -14,6 +14,6 @@ defmodule BuzzKillfeed.Headline do
     headline
     |> cast(attrs, [:headline, :headline_type, :views])
     |> validate_required([:headline])
-    |> unique_constraint(:value)
+    |> unique_constraint(:headline)
   end
 end

@@ -55,3 +55,16 @@
     width: fit-content;
   }
 }
+
+#headline--share--dialog {
+  display: flex;
+  flex-direction: column;
+}
+
+.share--dialog--link {
+
+}
+
+.copy-icon {
+  cursor: pointer;
+}

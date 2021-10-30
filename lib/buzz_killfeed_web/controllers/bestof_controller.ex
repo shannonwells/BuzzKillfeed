@@ -11,7 +11,7 @@ defmodule Bestof.BestofController do
 
   # TODO make sure you can't just save whatever
   def create(conn, %{"headline" => h, "headline_type" => ht}) do
-    {:ok, h} = RepoHelpers.create_headline(%{
+    h = RepoHelpers.get_or_create_headline(%{
       "headline" => h,
       "headline_type" => ClickbaitGeneratorView.headline_str_to_int(ht),
       "views" => 1
@@ -23,8 +23,7 @@ defmodule Bestof.BestofController do
 
   def show(conn, %{"id" => id}) do
     conn
-    |> assign(:id, id)
-    |> redirect(to: Routes.clickbait_generator_path(conn, :index))
+    |> redirect(to: Routes.clickbait_generator_path(conn, :show, id))
   end
 
 end

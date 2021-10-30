@@ -26,7 +26,6 @@ defmodule BuzzKillfeedWeb.Router do
     pipe_through :browser
 
     get "/", ClickbaitGeneratorController, :index
-
     get "/:id", ClickbaitGeneratorController, :show
   end
 

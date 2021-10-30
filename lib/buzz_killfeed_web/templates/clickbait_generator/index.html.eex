@@ -9,5 +9,12 @@
             <% end %>
         </div>
         <p data-icon="⇗" class="headline--share--button button yellow sparkley button--clickbait">Share</p>
+        <div id="headline--share--dialog" class="hidden modal">
+            <p>Share this link:</p>
+            <p>
+                <a class="share--dialog--link" href="/">the link</a>
+                <a class="copy-icon">📑</a>
+            </p>
+        </div>
     </div>
 </div>
