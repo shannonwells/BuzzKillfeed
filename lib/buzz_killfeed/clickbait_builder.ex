@@ -62,7 +62,7 @@ defmodule BuzzKillfeed.ClickbaitBuilder do
 
   defp particle_for(_, noun) when (noun.is_proper), do: ""
   defp particle_for(adj, _) do
-    particle = Enum.random(["A", "The", "This", "Some"])
+    particle = Enum.random(["A", "This", "Some"])
     cond do
       (particle === "A" && String.match?(adj, ~r/\A[aeiou]/i)) -> "An"
       true -> particle
