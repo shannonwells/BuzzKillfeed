@@ -1,5 +1,5 @@
 <div class="jumbotron about">
-    <h1 class="about--title button green">I Have Questions.</h1>
+    <h2 class="about--title button green">I Have Questions.</h2>
 
     <h2 class="about--title">What Is This?</h2>
     This is my side project. I like to make people laugh. I like writing software.
@@ -72,7 +72,7 @@
         people save and share the results. There's too much potential for abuse and I
         don't want a few determined KAOS agents to ruin it for everyone else.
     </p>
-    <h3 class="about--title button purple glossy sparkley">Credits</h3>
+    <h2 class="about--title button purple glossy sparkley">Credits</h2>
     <ul>
         <li>
             Simon Goellner for the
