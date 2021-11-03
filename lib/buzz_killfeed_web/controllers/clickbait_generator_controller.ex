@@ -5,7 +5,7 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorController do
 
   def index(conn, params) do
     case params do
-      %{"id" => id} -> assign(conn, :headline, get_headline!(id))
+      %{"id" => id} -> get_headline_and_bump_view(conn, id)
       %{} -> assign(conn, :headline, random_headline())
     end
     |> render("index.html")
@@ -24,6 +24,12 @@ defmodule ClickbaitGenerator.ClickbaitGeneratorController do
     render conn, "headline.json", %{headline: headline}
   end
 
-  #  same as Bestof#Show
+  #  same as Bestof#show
   def show(conn, params), do: index(conn, params)
+
+  defp get_headline_and_bump_view(conn, id) do
+    IO.inspect(conn.req_headers)
+    {:ok, h } = bump_headline_view_count(id)
+    assign(conn, :headline, h)
+  end
 end

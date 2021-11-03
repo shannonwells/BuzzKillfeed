@@ -6,7 +6,6 @@ defmodule BuzzKillfeedWeb.ClickbaitGeneratorControllerTest do
   import BuzzKillfeed.HeadlinesFixtures
   import BuzzKillfeed.VerbsFixtures
   alias BuzzKillfeed.RepoHelpers
-  alias ClickbaitGenerator.ClickbaitGeneratorView
 
 
   describe "generate (JSON)" do
@@ -37,6 +36,8 @@ defmodule BuzzKillfeedWeb.ClickbaitGeneratorControllerTest do
       record = headline_fixture()
       conn = get conn, "/clickbait_generator", id: record.id
       assert html_response(conn, 200) =~ record.headline
+#      record = RepoHelpers.get_headline!(record.id)
+#      assert(2 == record.views)
     end
   end
 

@@ -10,11 +10,11 @@ defmodule BuzzKillfeed.Application do
     children = [
       # Start the Ecto repository
       BuzzKillfeed.Repo,
-      # Start the Telemetry supervisor
-      BuzzKillfeedWeb.Telemetry,
-      # Start the PubSub system
+#      # Start the Telemetry supervisor
+#      BuzzKillfeedWeb.Telemetry,
+#      # Start the PubSub system
       {Phoenix.PubSub, name: BuzzKillfeed.PubSub},
-      # Start the Endpoint (http/https)
+#      # Start the Endpoint (http/https)
       BuzzKillfeedWeb.Endpoint
       # Start a worker by calling: BuzzKillfeed.Worker.start_link(arg)
       # {BuzzKillfeed.Worker, arg}

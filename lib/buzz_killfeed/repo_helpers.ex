@@ -3,6 +3,7 @@ defmodule BuzzKillfeed.RepoHelpers do
   Helpers for getting records.
   """
   import Ecto.Query, warn: true
+  import Ecto.Changeset
   alias BuzzKillfeed.Repo
   alias BuzzKillfeed.Adjective
   alias BuzzKillfeed.First
@@ -20,41 +21,62 @@ defmodule BuzzKillfeed.RepoHelpers do
                   |> select(count())
                   |> Repo.one()
     offset = Enum.random(1..num_records) - 1
-    table |> where(^filter_tuple) |> offset(^offset) |> limit(1) |> Repo.one()
+    table
+    |> where(^filter_tuple)
+    |> offset(^offset)
+    |> limit(1)
+    |> Repo.one()
   end
 
-  def random_noun() do random_record([], Noun)end
-  def random_noun(filter_tuple) do random_record(filter_tuple, Noun)end
+  def random_noun() do
+    random_record([], Noun)end
+  def random_noun(filter_tuple) do
+    random_record(filter_tuple, Noun)end
 
-  def random_headline() do random_headline([]) end
-  def random_headline(filter_tuple) do random_record(filter_tuple, Headline) end
+  def random_headline() do
+    random_headline([]) end
+  def random_headline(filter_tuple) do
+    random_record(filter_tuple, Headline) end
 
-  def random_template() do random_template([]) end
-  def random_template(filter_tuple) do random_record(filter_tuple, Template) end
+  def random_template() do
+    random_template([]) end
+  def random_template(filter_tuple) do
+    random_record(filter_tuple, Template) end
 
-  def random_adjective() do random_record([], Adjective) end
-  def random_adjective(filter_tuple) do random_record(filter_tuple, Adjective) end
+  def random_adjective() do
+    random_record([], Adjective) end
+  def random_adjective(filter_tuple) do
+    random_record(filter_tuple, Adjective) end
 
-  def random_first() do random_record([], First) end
-  def random_first(filter_tuple) do random_record(filter_tuple, First) end
+  def random_first() do
+    random_record([], First) end
+  def random_first(filter_tuple) do
+    random_record(filter_tuple, First) end
 
-  def random_next() do random_record([], Next) end
-  def random_next(filter_tuple) do random_record(filter_tuple, Next) end
+  def random_next() do
+    random_record([], Next) end
+  def random_next(filter_tuple) do
+    random_record(filter_tuple, Next) end
 
-  def random_predicate() do random_record([], Predicate) end
-  def random_predicate(filter_tuple) do random_record(filter_tuple, Predicate) end
+  def random_predicate() do
+    random_record([], Predicate) end
+  def random_predicate(filter_tuple) do
+    random_record(filter_tuple, Predicate) end
 
-  def random_verb() do random_record([], Verb) end
-  def random_verb(filter_tuple) do random_record(filter_tuple, Verb) end
+  def random_verb() do
+    random_record([], Verb) end
+  def random_verb(filter_tuple) do
+    random_record(filter_tuple, Verb) end
 
   ######
 
   # # # # # # # #  HEADLINES
 
   @doc """
-  Returns all headlines
+  Returns top N headlines in descending order of view count,
+  then by updated_at
   """
-  def list_headlines do
+  def bestof_headlines do
     Headline
     |> order_by(desc: :views)
     |> limit(10)
@@ -62,20 +84,20 @@ defmodule BuzzKillfeed.RepoHelpers do
   end
 
   @doc """
-  Gets a single headline by id.
-  Raises `Ecto.NoResultsError` if the headline does not exist.
+    Returns most recent headlines as a lazy Enumerable
   """
-  def get_headline!(id) do Repo.get!(Headline, id) end
+  def freshest_headlines do
+    Headline
+    |> order_by(desc: [:views, :created_at])
+    |> limit(10)
+    |> Repo.all()
+  end
 
   @doc """
-  Creates a headline.
-  ## Examples
-      iex> create_headline(%{headline: value})
-      {:ok, %headline{}}
-
-      iex> create_headline(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
+    returns a headline by id.
   """
+  def get_headline!(id), do: Repo.get!(Headline, id)
+
   def create_headline(attrs \\ %{}) do
     %Headline{}
     |> Headline.changeset(attrs)
@@ -99,13 +121,11 @@ defmodule BuzzKillfeed.RepoHelpers do
 
   # # # # getters
 
-
   def get_template!(id) do
     Repo.get!(Template, id) end
 
   def get_first!(id) do
     Repo.get!(First, id) end
-
 
   @doc """
   Gets a single noun by id.
@@ -113,8 +133,6 @@ defmodule BuzzKillfeed.RepoHelpers do
   """
   def get_noun!(id) do
     Repo.get!(Noun, id) end
-
-
 
   #### Creators
   def create_template(attrs \\ %{}) do
@@ -176,5 +194,11 @@ defmodule BuzzKillfeed.RepoHelpers do
     %Verb{}
     |> Verb.changeset(attrs)
     |> Repo.insert()
+  end
+
+  def bump_headline_view_count(id) do
+    h = get_headline!(id)
+    Headline.changeset(h, %{views: h.views+1})
+    |> Repo.update()
   end
 end

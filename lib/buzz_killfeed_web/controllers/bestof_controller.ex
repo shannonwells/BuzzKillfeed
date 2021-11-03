@@ -5,7 +5,7 @@ defmodule Bestof.BestofController do
 
   def index(conn, _params) do
     conn
-    |> assign(:headlines, RepoHelpers.list_headlines())
+    |> assign(:headlines, RepoHelpers.bestof_headlines())
     |> render("index.html")
   end
 

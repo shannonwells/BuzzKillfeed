@@ -10,7 +10,7 @@ defmodule BuzzKillfeed.HeadlinesTest do
 
     test "list_headlines/0 returns all headlines" do
       headline = headline_fixture()
-      assert RepoHelpers.list_headlines() == [headline]
+      assert RepoHelpers.bestof_headlines() == [headline]
     end
 
     test "get_headline!/1 returns the headline with given id" do
