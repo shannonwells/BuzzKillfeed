@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: buzzkillfeed.me
+Token: 8463b53269c45d61883fe6cbce8b1839dbfe6f9c3abbe41ed285423ce7a91291
