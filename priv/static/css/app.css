@@ -20,12 +20,12 @@
   text-align: center;
 }
 
-.button--bullet {
+.button.button--bullet {
   padding: 2px 2px 2px 1px;
   display: none;
 }
 @media (min-width: 768px) {
-  .button--bullet {
+  .button.button--bullet {
     display: revert;
   }
 }
